@@ -25,28 +25,28 @@
             ],
             "styles": [
               "src/styles.css",
-              "assets/css/animate.css",
-              "assets/css/bootstrap.min.css",
-              "assets/css/flaticon.css",
-              "assets/css/font-awesome.css",
-              "assets/css/main.css",
-              "assets/css/owl.carousel.css",
-              "assets/css/prettyPhoto.css",
-              "assets/css/responsive.css",
-              "assets/css/shortcodes.css",
-              "assets/css/themify-icons.css"
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/main.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/prettyPhoto.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/shortcodes.css",
+              "src/assets/css/themify-icons.css"
             ],
             "scripts": [
-              "assets/js/bootstrap.min.js",
-              "assets/js/jquery.easing.js",
-              "assets/js/jquery.min.js",
-              "assets/js/jquery.prettyPhoto.js",
-              "assets/js/jquery-validate.js",
-              "assets/js/jquery-waypoints.js",
-              "assets/js/main.js",
-              "assets/js/numinate.min6959.js",
-              "assets/js/owl.carousel.js",
-              "assets/js/tether.min.js"
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/jquery.easing.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery.prettyPhoto.js",
+              "src/assets/js/jquery-validate.js",
+              "src/assets/js/jquery-waypoints.js",
+              "src/assets/js/main.js",
+              "src/assets/js/numinate.min6959.js",
+              "src/assets/js/owl.carousel.js",
+              "src/assets/js/tether.min.js"
             ]
           },
           "configurations": {
