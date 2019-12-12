@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeeklyProgramComponent } from './WeeklyPrograms/weekly-program/weekly-program.component';
 import { DailyProgramListComponent } from './WeeklyPrograms/daily-program-list/daily-program-list.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { DailyProgramItemWorkoutComponent } from './WeeklyPrograms/daily-program-item-workout/daily-program-item-workout.component';
 import { DailyProgramItemMealComponent } from './WeeklyPrograms/daily-program-item-meal/daily-program-item-meal.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,13 @@ import { DailyProgramItemMealComponent } from './WeeklyPrograms/daily-program-it
     DailyProgramListComponent,
     
     DailyProgramItemWorkoutComponent,
-    DailyProgramItemMealComponent
+    DailyProgramItemMealComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -42,12 +42,13 @@
               "src/assets/revolution/css/settings.css",
             ],
             "scripts": [
-              "src/assets/js/bootstrap.min.js",
+
               "src/assets/js/jquery.easing.js",
               "src/assets/js/jquery.min.js",
               "src/assets/js/jquery.prettyPhoto.js",
               "src/assets/js/jquery-validate.js",
               "src/assets/js/jquery-waypoints.js",
+              "src/assets/js/bootstrap.min.js",
               "src/assets/js/main.js",
               "src/assets/js/numinate.min6959.js",
               "src/assets/js/owl.carousel.js",

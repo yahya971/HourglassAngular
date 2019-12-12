@@ -5,8 +5,7 @@
     "\\src\\app",
     "\\src\\app\\Models",
     "\\src\\app\\WeeklyPrograms",
-    "\\src\\app\\WeeklyPrograms\\daily-program-list",
-    "\\src\\assets\\revolution"
+    "\\src\\app\\WeeklyPrograms\\daily-program-list"
   ],
   "SelectedNode": "\\src\\app\\Models\\sports-program.model.ts",
   "PreviewInSolutionExplorer": false
