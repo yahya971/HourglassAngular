@@ -1,3 +1,40 @@
-<div class="content-inner active mt-15">
-  <app-daily-program-item></app-daily-program-item>
+<div class="row tab-row">
+  <div class="col-md-12">
+    <div class="ttm-tabs ttm-tabs-style-classic ttm-tabs-bgcolor-grey">
+      <ul class="tabs">
+        <li [ngClass]='{"tab":true,"active":clicked[i]}' *ngFor="let day of week; let i=index " (click)="showDay(i)"><a ><i class="fa fa-gift"></i><span>{{day}}</span></a></li>
+
+      </ul>
+
+      <div class="content-tab">
+
+
+
+
+        <div class="section-title text-center clearfix">
+          <div class="title-header">
+            <h5>Your Meals</h5>
+
+          </div>
+        </div>
+        <div class="content-inner active mt-15">
+          <app-daily-program-item-meal></app-daily-program-item-meal>
+        </div>
+
+        <div class="section-title text-center clearfix">
+          <div class="title-header">
+            <h5>Your Workouts</h5>
+          </div>
+        </div>
+        <div class="content-inner active mt-15">
+          <app-daily-program-item-workout></app-daily-program-item-workout>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+

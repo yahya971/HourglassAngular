@@ -21,7 +21,10 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/assets",
+              "src/assets/version",
+              "src/assets/revolution/assets",
+              "src/assets/images"
             ],
             "styles": [
               "src/styles.css",

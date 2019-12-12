@@ -3,8 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets"
+    "\\src\\app\\Models",
+    "\\src\\app\\WeeklyPrograms",
+    "\\src\\app\\WeeklyPrograms\\daily-program-list",
+    "\\src\\assets\\revolution"
   ],
-  "SelectedNode": "\\src\\assets",
+  "SelectedNode": "\\src\\app\\Models\\sports-program.model.ts",
   "PreviewInSolutionExplorer": false
 }
