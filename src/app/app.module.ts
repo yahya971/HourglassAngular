@@ -15,6 +15,7 @@ import { RelatedCoursesComponent } from './coach/related-courses/related-courses
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from '@angular/forms';
+import { CoachComponent } from './coach/coach/coach.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {FormsModule} from '@angular/forms';
     RelatedCoursesComponent,
     LoginComponent,
     RegisterComponent
+    CoachComponent
   ],
   imports: [
     BrowserModule,
