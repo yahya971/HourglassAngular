@@ -1,0 +1,27 @@
+
+
+  <div class="featured-imagebox featured-imagebox-team-details">
+    <div class="featured-thumbnail"><!-- team-member-image -->
+      <img class="img-fluid" src="data:image/jpeg;base64,{{coach.photo}}"alt="">
+    </div>
+    <div class="featured-content featured-content-data">
+      <div class="featured-title"><!-- team-member-name -->
+        <h5>{{coach.name}} {{coach.lastname}}</h5>
+      </div>
+      <div class="ttm-team-position">{{coach.speciality}}</div><!-- team-member-position -->
+      <ul class="ttm-team-details-list">
+        <li>Phone :{{coach.phone}}</li>
+        <li><a href="mailto:info@example.com">{{coach.email}}</a></li>
+        <li>Age : <span class="ttm-textcolor-body"> {{coach.age}} Year Old </span> </li>
+        <li>Experience : <span class="ttm-textcolor-body"> {{coach.experience}} Years </span> </li>
+      </ul>
+      <div class="ttm-team-social-links-wrapper ttm-social-links-wrapper list-inline">
+        <ul class="social-icons list-inline">
+          <li><a class="tooltip-top" target="_blank" href="#" data-tooltip="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="tooltip-top" target="_blank" href="#" data-tooltip="twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="tooltip-top" target="_blank" href="#" data-tooltip="google-plus"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+

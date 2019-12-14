@@ -1,0 +1,125 @@
+<div class="col-md-12">
+  <h3 class="mb-10">Hello, I am {{coach.name}} {{coach.lastname}}</h3>
+  <p class="ttm-textcolor-skincolor">{{coach.speciality}}</p>
+  <div class="pt-15">
+    <p>{{coach.resume}}</p>
+  </div>
+</div>
+<div class="row pt-20">
+  <div class="col-md-6">
+    <div class="mt-15">
+      <h4 class="font-25">Coach Skills</h4>
+      <!-- ttm-progress-bar -->
+      <div class="ttm-progress-bar">
+        <h4>Private Coaching</h4>
+        <div class="progress" [attr.data-value]="coach.score1*10">
+          <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score1*10+'%'">
+          </div>
+        </div>
+      </div><!-- ttm-progress-bar end -->
+      <!-- ttm-progress-bar -->
+      <div class="ttm-progress-bar">
+        <h4>Weight Loss</h4>
+        <div class="progress" [attr.data-value]="coach.score2*10">
+          <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score2*10+'%'">
+          </div>
+        </div>
+      </div><!-- ttm-progress-bar end -->
+      <!-- ttm-progress-bar -->
+      <div class="ttm-progress-bar">
+        <h4>Nutrition</h4>
+        <div class="progress" [attr.data-value]="coach.score3*10">
+          <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score3*10+'%'">
+          </div>
+        </div>
+      </div><!-- ttm-progress-bar end -->
+      <!-- ttm-progress-bar -->
+      <div class="ttm-progress-bar">
+        <h4>Medical Issues</h4>
+        <div class="progress" [attr.data-value]="coach.score4*10">
+          <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score4*10+'%'">
+          </div>
+        </div>
+      </div><!-- ttm-progress-bar end -->
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="mt-15">
+      <h4 class="font-25">Classes Experience</h4>
+      <!--ttm-fid-->
+      <div class="ttm-fid inside ttm-fid-view-lefticon mb-0">
+        <div class="ttm-fid-left">
+          <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+            <i class="flaticon flaticon-diet"></i>
+          </div>
+          <h4 class="ttm-fid-inner">
+            <span>7 to </span>
+            <span data-appear-animation="animateDigits"
+                  data-from="0"
+                  data-to="60"
+                  data-interval="5"
+                  data-before=""
+                  data-before-style="sup"
+                  data-after=""
+                  data-after-style="sub"
+            >60</span>
+          </h4>
+        </div>
+        <div class="ttm-fid-contents text-left">
+          <h3 class="ttm-fid-title"><span class="ttm-textcolor-body">Days Nutrition Program</span></h3>
+        </div>
+      </div>
+      <!-- ttm-fid end-->
+      <!--ttm-fid-->
+      <div class="ttm-fid inside ttm-fid-view-lefticon mb-0">
+        <div class="ttm-fid-left">
+          <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+            <i class="flaticon flaticon-gym"></i>
+          </div>
+          <h4 class="ttm-fid-inner">
+                                                    <span data-appear-animation="animateDigits"
+                                                          data-from="0"
+                                                          data-to="1600"
+                                                          data-interval="25"
+                                                          data-before=""
+                                                          data-before-style="sup"
+                                                          data-after="+"
+                                                          data-after-style="sub"
+                                                    >1600</span>
+            <span class="ml-5">+</span>
+          </h4>
+        </div>
+        <div class="ttm-fid-contents text-left">
+          <h3 class="ttm-fid-title"><span class="ttm-textcolor-body">Happy Customers After Diet</span></h3>
+        </div>
+
+
+        <!-- ttm-fid end-->
+        <!--ttm-fid-->
+        <div class="ttm-fid inside ttm-fid-view-lefticon mb-0">
+          <div class="ttm-fid-left">
+            <div class="ttm-fid-icon-wrapper ttm-textcolor-skincolor">
+              <i class="flaticon flaticon-meditation"></i>
+            </div>
+            <h4 class="ttm-fid-inner">
+                                                    <span data-appear-animation="animateDigits"
+                                                          data-from="0"
+                                                          data-to="150"
+                                                          data-interval="25"
+                                                          data-before=""
+                                                          data-before-style="sup"
+                                                          data-after="+"
+                                                          data-after-style="sub"
+                                                    >150</span>
+              <span class="ml-5">+</span>
+            </h4>
+          </div>
+          <div class="ttm-fid-contents text-left">
+            <h3 class="ttm-fid-title"><span class="ttm-textcolor-body">Private &amp; Group Sessions</span></h3>
+          </div>
+        </div>
+        <!-- ttm-fid end-->
+      </div>
+    </div>
+  </div>
+</div>

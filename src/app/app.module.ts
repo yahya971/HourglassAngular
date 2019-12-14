@@ -9,21 +9,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { DailyProgramItemWorkoutComponent } from './WeeklyPrograms/daily-program-item-workout/daily-program-item-workout.component';
 import { DailyProgramItemMealComponent } from './WeeklyPrograms/daily-program-item-meal/daily-program-item-meal.component';
 import { TestComponent } from './test/test.component';
+import { SidebarComponent } from './coach/sidebar/sidebar.component';
+import { DescriptionComponent } from './coach/description/description.component';
+import { RelatedCoursesComponent } from './coach/related-courses/related-courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeeklyProgramComponent,
     DailyProgramListComponent,
-    
+
     DailyProgramItemWorkoutComponent,
     DailyProgramItemMealComponent,
-    TestComponent
+    TestComponent,
+    SidebarComponent,
+    DescriptionComponent,
+    RelatedCoursesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
