@@ -1,0 +1,207 @@
+<!-- <div *ngIf="isSignedUp; else signupForm">
+  Your registration is successful. Please login!
+</div>
+
+<ng-template #signupForm>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="form.name" #name="ngModel" required />
+        <div *ngIf="f.submitted && name.invalid">
+          <div *ngIf="name.errors.required">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Your last name</label>
+        <input type="text" class="form-control" id="lastName" name="name" [(ngModel)]="form.lastname" #lastname="ngModel" required />
+        <div *ngIf="f.submitted && lastname.invalid">
+          <div *ngIf="lastname.errors.required">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+        <div *ngIf="f.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="6" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">Register</button>
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+          Signup failed!<br/>{{errorMessage}}
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template> -->
+
+<!--
+
+
+
+<ng-template #signupForm>
+
+  <div class="wrapper">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div id="wizard"> -->
+        <!-- SECTION 1 -->
+       <!-- <h4></h4>
+        <section>
+          <div class="form-header">
+            <div class="avartar">
+              <a href="#">
+                <img src="../../assets/images/register/avartar.png" alt="">
+              </a>
+              <div class="avartar-picker">
+                <input type="file" name="file-1[]" id="file-1" class="inputfile"
+                       data-multiple-caption="{count} files selected" multiple/>
+                <label for="file-1">
+                  <i class="zmdi zmdi-camera"></i>
+                  <span>Choose Picture</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-holder active">
+                <input type="text" placeholder="Name" class="form-control"
+                       id="name"  [(ngModel)]="form.name" name="name" #name="ngModel"  required/>
+                <div *ngIf="f.submitted && name.invalid">
+                  <div *ngIf="name.errors.required">Name is required</div>
+                </div>
+              </div>
+
+              <div class="form-holder">
+                <input type="text" placeholder="Last Name" class="form-control"
+                       [(ngModel)]="form.lastname" name="lastname" #lastname="ngModel" required>
+                <div *ngIf="f.submitted && lastname.invalid">
+                  <div *ngIf="lastname.errors.required">Name is required</div>
+                </div>
+              </div>
+              <div class="form-holder">
+                <input type="text" placeholder="User Name" class="form-control"
+                       [(ngModel)]="form.username" name="username" #username="ngModel"
+                       required>
+                <div *ngIf="f.submitted && username.invalid">
+                  <div *ngIf="username.errors.required">Username is required</div>
+                </div>
+              </div>
+            </div>
+          <div class="form-holder">
+            <input type="text" placeholder="Email" class="form-control"
+                   [(ngModel)]="form.email" name="email" #email="ngModel" required email>
+            <div *ngIf="f.submitted && email.invalid">
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-holder">
+            <input type="password" placeholder="Password" class="form-control"
+                   [(ngModel)]="form.password" name="password" #password="ngModel"
+                   required minlength="6">
+            <div *ngIf="f.submitted && password.invalid">
+              <div *ngIf="password.errors.required">Password is required</div>
+              <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+          </div>
+          </div>
+        </section> -->
+
+        <!-- SECTION 2 -->
+       <!-- <h4></h4>
+        <section>
+          <div class="grid">
+            <div class="row">
+              <a href="#" class="grid-item"
+                 style="background-image: url(../../assets/images/register/programming-bg.jpg);">
+                <div class="inner">
+                  <img src="../../assets/images/register/programming.png" alt="">
+                  <span>Programming</span>
+                </div>
+              </a>
+              <a href="#" class="grid-item"
+                 style="background-image: url('../../assets/images/register/research-bg.jpg');">
+                <div class="inner">
+                  <img src="../../assets/images/register/research.png" alt="">
+                  <span>Research</span>
+                </div>
+
+              </a>
+              <a href="#" class="grid-item"
+                 style="background-image: url('../../assets/images/register/teacher-bg.jpg');">
+                <div class="inner">
+                  <img src="../../assets/images/register/teacher.png" alt="">
+                  <span>Teacher</span>
+                </div>
+
+              </a>
+            </div>
+            <div class="row">
+              <a href="#" class="grid-item"
+                 style="background-image: url('../../assets/images/register/tour-guide-bg.jpg');">
+                <div class="inner">
+                  <img src="../../assets/images/register/tour-guide.png" alt="">
+                  <span>Tour Guide</span>
+                </div>
+              </a>
+              <a href="#" class="grid-item"
+                 style="background-image: url('../../assets/images/register/business-bg.jpg');">
+                <div class="inner">
+                  <img src="../../assets/images/register/business.png" alt="">
+                  <span>Business</span>
+                </div>
+              </a>
+              <a href="#" class="grid-item"
+                 style="background-image: url('../../assets/images/register/artist-bg.jpg');">
+                <div class="inner">
+                  <img src="../../assets/images/register/artist.png" alt="">
+                  <span>Artist</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- SECTION 3 -->
+        <!--<h4></h4>
+        <section>
+
+          <div class="form-row">
+            <div class="form-holder">
+              <input type="text" placeholder="Street Name" class="form-control">
+            </div>
+            <div class="form-holder">
+              <input type="text" placeholder="Street Number" class="form-control">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-holder">
+              <input type="text" placeholder="City" class="form-control">
+            </div>
+            <div class="form-holder">
+              <input type="text" placeholder="Country" class="form-control">
+            </div>
+          </div>
+        </section>
+      </div>
+    </form>
+  </div>
+</ng-template> -->

@@ -12,6 +12,9 @@ import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './coach/sidebar/sidebar.component';
 import { DescriptionComponent } from './coach/description/description.component';
 import { RelatedCoursesComponent } from './coach/related-courses/related-courses.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { RelatedCoursesComponent } from './coach/related-courses/related-courses
     TestComponent,
     SidebarComponent,
     DescriptionComponent,
-    RelatedCoursesComponent
+    RelatedCoursesComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
