@@ -4,9 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\Models",
-    "\\src\\app\\WeeklyPrograms",
-    "\\src\\app\\WeeklyPrograms\\daily-program-list"
+    "\\src\\app\\services",
+    "\\src\\app\\test",
+    "\\src\\app\\WeeklyPrograms"
   ],
-  "SelectedNode": "\\src\\app\\Models\\sports-program.model.ts",
+  "SelectedNode": "\\src\\app\\services\\coach.service.ts",
   "PreviewInSolutionExplorer": false
 }

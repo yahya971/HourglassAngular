@@ -12,6 +12,7 @@ import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './coach/sidebar/sidebar.component';
 import { DescriptionComponent } from './coach/description/description.component';
 import { RelatedCoursesComponent } from './coach/related-courses/related-courses.component';
+import { CoachComponent } from './coach/coach/coach.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RelatedCoursesComponent } from './coach/related-courses/related-courses
     TestComponent,
     SidebarComponent,
     DescriptionComponent,
-    RelatedCoursesComponent
+    RelatedCoursesComponent,
+    CoachComponent
   ],
   imports: [
     BrowserModule,
