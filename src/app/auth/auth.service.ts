@@ -4,10 +4,11 @@ import {AuthLoginInfo} from './login-info';
 import {Observable} from 'rxjs';
 import {JwtResponse} from './jwt-response';
 import {SignUpInfo} from './signup-info';
+import {SignUpCoachInfo} from './signupcoach-info';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
-}
+};
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class AuthService {
 
   private loginUrl = 'http://localhost:8080/api/auth/signin';
   private signupUrl = 'http://localhost:8080/api/auth/signup';
+  private signupCoachUrl = 'http://localhost:8080/api/auth/signup/coach';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +27,9 @@ export class AuthService {
 
   signUp(info: SignUpInfo): Observable<string> {
     return this.http.post<string>(this.signupUrl, info, httpOptions);
+  }
+
+  signUpCoach(info: SignUpCoachInfo): Observable<string> {
+    return this.http.post<string>(this.signupCoachUrl, info, httpOptions);
   }
 }
