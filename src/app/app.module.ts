@@ -14,8 +14,13 @@ import { DescriptionComponent } from './coach/description/description.component'
 import { RelatedCoursesComponent } from './coach/related-courses/related-courses.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CoachComponent } from './coach/coach/coach.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Test2Component } from './test2/test2.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -31,13 +36,20 @@ import { CoachComponent } from './coach/coach/coach.component';
     RelatedCoursesComponent,
     LoginComponent,
     RegisterComponent,
-    CoachComponent
+    CoachComponent,
+    Test2Component
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+     MatStepperModule,
+    MatNativeDateModule,
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
