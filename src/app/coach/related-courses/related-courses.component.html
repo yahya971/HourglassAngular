@@ -2,10 +2,10 @@
   <div class="col-md-12">
     <h4 class="font-25">Classes Are Active</h4>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" *ngFor="let program of programs">
         <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image mt-15">
           <div class="featured-thumbnail">
-            <img class="img-fluid" src="../../../assets/images/blog/08.jpg" alt="">
+            <img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}"alt="">
           </div>
           <div class="ttm-box-bottom-content">
             <div class="featured-icon">
@@ -15,37 +15,12 @@
               </div>
             </div>
             <div class="featured-title featured-title">
-              <h5><a href="individual-coaching.html" tabindex="-1">Individual Coaching</a></h5>
+              <h5><a href="individual-coaching.html" tabindex="-1">{{program.objectifs}}</a></h5>
             </div>
             <div class="featured-desc">
-              <p>We provide air conditioning service, repair maintenance support 24/7, delivered by qualified service
-                engineers.</p>
+              <p>{{program.description}}</p>
               <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
                  href="individual-coaching.html">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="featured-imagebox featured-imagebox-service ttm-box-view-top-image mt-15">
-          <div class="featured-thumbnail">
-            <img class="img-fluid" src="../../../assets/images/blog/02.jpg" alt="">
-          </div>
-          <div class="ttm-box-bottom-content">
-            <div class="featured-icon">
-              <div
-                class="ttm-icon ttm-icon_element-fill ttm-icon_element-background-color-skincolor ttm-icon_element-size-md ttm-icon_element-style-rounded">
-                <i class="flaticon flaticon-nutritionist-1"></i>
-              </div>
-            </div>
-            <div class="featured-title featured-title">
-              <h5><a href="child-nutrition.html" tabindex="-1">Workout Routines</a></h5>
-            </div>
-            <div class="featured-desc">
-              <p>Our main goal for the child nutrition is to provide a healthy and nutritious breakfast to child for
-                better health.</p>
-              <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-black btn-inline ttm-btn-underline pt-3"
-                 href="workout-routines.html">Read More</a>
             </div>
           </div>
         </div>

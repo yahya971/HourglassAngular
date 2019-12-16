@@ -30,7 +30,7 @@ import { CoachComponent } from './coach/coach/coach.component';
     DescriptionComponent,
     RelatedCoursesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
     CoachComponent
   ],
   imports: [

@@ -18,9 +18,8 @@ export class CoachService {
   }
 
   saveCoach(coach: Coach) {
-
-
+    this.http.post<Coach>('http://localhost:8080/coach/addCoach', coach).subscribe(res => {
+      console.log(res)
+    });
   }
-
-
 }
