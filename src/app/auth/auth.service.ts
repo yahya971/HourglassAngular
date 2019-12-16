@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {JwtResponse} from './jwt-response';
 import {SignUpInfo} from './signup-info';
 import {SignUpCoachInfo} from './signupcoach-info';
+import {SignUpClientInfo} from './signupclient-info';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -18,6 +19,7 @@ export class AuthService {
   private loginUrl = 'http://localhost:8080/api/auth/signin';
   private signupUrl = 'http://localhost:8080/api/auth/signup';
   private signupCoachUrl = 'http://localhost:8080/api/auth/signup/coach';
+  private signupClientUrl = 'http://localhost:8080/api/auth/signup/client';
 
   constructor(private http: HttpClient) { }
 
@@ -32,4 +34,9 @@ export class AuthService {
   signUpCoach(info: SignUpCoachInfo): Observable<string> {
     return this.http.post<string>(this.signupCoachUrl, info, httpOptions);
   }
+
+  signUpClient(info: SignUpClientInfo): Observable<string> {
+    return this.http.post<string>(this.signupClientUrl, info, httpOptions);
+  }
+
 }

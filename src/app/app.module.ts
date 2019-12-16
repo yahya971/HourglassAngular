@@ -21,6 +21,8 @@ import { Test2Component } from './test2/test2.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
+import { RegisterClientComponent } from './register-client/register-client.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } 
     LoginComponent,
     RegisterComponent,
     CoachComponent,
-    Test2Component
+    Test2Component,
+    RegisterClientComponent
 
   ],
   imports: [
@@ -49,7 +52,7 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } 
     BrowserAnimationsModule,
      MatStepperModule,
     MatNativeDateModule,
-    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

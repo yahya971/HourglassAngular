@@ -1,3 +1,4 @@
+// cette classe est pour les testes
 export class SignUpInfo {
   username: string;
   email: string;
