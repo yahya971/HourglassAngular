@@ -23,7 +23,6 @@ export class TestComponent implements OnInit {
     });*/
   }
   onSubmit(formulaire: NgForm) {
-    formulaire.value.
     this.coachService.saveCoach(formulaire.value);
     }
 }
