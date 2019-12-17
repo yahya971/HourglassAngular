@@ -28,19 +28,19 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-              "src/styles.css",
-              "src/assets/css/animate.css",
               "src/assets/css/bootstrap.min.css",
-              "src/assets/css/flaticon.css",
-              "src/assets/css/font-awesome.css",
-              "src/assets/css/main.css",
+              "src/assets/css/animate.css",
               "src/assets/css/owl.carousel.css",
-              "src/assets/css/prettyPhoto.css",
-              "src/assets/css/responsive.css",
-              "src/assets/css/shortcodes.css",
+              "src/assets/css/font-awesome.css",
               "src/assets/css/themify-icons.css",
+              "src/assets/css/flaticon.css",
+              "src/styles.css",
               "src/assets/revolution/css/layers.css",
-              "src/assets/revolution/css/settings.css"
+              "src/assets/revolution/css/settings.css",
+              "src/assets/css/prettyPhoto.css",
+              "src/assets/css/shortcodes.css",
+              "src/assets/css/main.css",
+              "src/assets/css/responsive.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",

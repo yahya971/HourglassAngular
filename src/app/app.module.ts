@@ -23,6 +23,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {MatRadioModule} from '@angular/material/radio';
     RegisterComponent,
     CoachComponent,
     Test2Component,
-    RegisterClientComponent
+    RegisterClientComponent,
+    NavbarComponent,
+    FooterComponent
 
   ],
   imports: [
