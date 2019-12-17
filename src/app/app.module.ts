@@ -25,6 +25,7 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import {MatRadioModule} from '@angular/material/radio';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     Test2Component,
     RegisterClientComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    IndexComponent
 
   ],
   imports: [

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthLoginInfo} from '../auth/login-info';
 import {AuthService} from '../auth/auth.service';
 import {TokenStorageService} from '../auth/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +18,17 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenService: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenService: TokenStorageService, private router:Router) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenService.getAuthorities();
+      this.router.navigate(['/']).then(value => {
+        console.log(value); // true if navigation is successful
+      }, reason => {
+        console.log(reason); // when there's an error
+      });
     }
   }
 
