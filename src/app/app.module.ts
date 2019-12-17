@@ -12,7 +12,23 @@ import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './coach/sidebar/sidebar.component';
 import { DescriptionComponent } from './coach/description/description.component';
 import { RelatedCoursesComponent } from './coach/related-courses/related-courses.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CoachComponent } from './coach/coach/coach.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Test2Component } from './test2/test2.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
+import { RegisterClientComponent } from './register-client/register-client.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { CoursComponent } from './cours/cours/cours.component';
+import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
+import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
+import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +42,29 @@ import { CoachComponent } from './coach/coach/coach.component';
     SidebarComponent,
     DescriptionComponent,
     RelatedCoursesComponent,
-    CoachComponent
+    LoginComponent,
+    RegisterComponent,
+    CoachComponent,
+    Test2Component,
+    RegisterClientComponent,
+    NavbarComponent,
+    FooterComponent,
+    CoursComponent,
+    CoursActivesComponent,
+    AboutCoursComponent,
+    PricingPlanComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+     MatStepperModule,
+    MatNativeDateModule,
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

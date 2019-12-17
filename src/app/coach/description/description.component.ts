@@ -16,6 +16,7 @@ export class DescriptionComponent implements OnInit {
   ngOnInit() {
     this.coachService.getCoachById(1).subscribe(value => {
       this.coach = value;
+      console.log(this.coach)
     });
   }
 }

@@ -1,0 +1,157 @@
+<!--<div *ngIf="isSignedUp; else signupForm">
+  Your registration is successful. Please login!
+</div>
+
+<ng-template #signupForm>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="form.name" #name="ngModel" required />
+        <div *ngIf="f.submitted && name.invalid">
+          <div *ngIf="name.errors.required">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Your last name</label>
+        <input type="text" class="form-control" id="lastName" name="name" [(ngModel)]="form.lastname" #lastname="ngModel" required />
+        <div *ngIf="f.submitted && lastname.invalid">
+          <div *ngIf="lastname.errors.required">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="form.email" #email="ngModel" required email />
+        <div *ngIf="f.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="6" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">Register</button>
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+          Signup failed!<br/>{{errorMessage}}
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template> -->
+
+
+<div *ngIf="isSubmitted">
+  <h4>Details submitted successfully</h4>
+</div>
+<div *ngIf="!isSubmitted">
+  <h3>Coach sign up</h3>
+  <form [formGroup]="appraisalFormGroup">
+    <mat-horizontal-stepper #linearHorizontalStepper="matHorizontalStepper" formArrayName="appraisalForm" [linear]="true">
+
+      <mat-step formGroupName="0" [stepControl]="appraisalForm?.get([0])">
+        <ng-template matStepLabel>Personal Details</ng-template>
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input type="text" matInput formControlName="firstname" required >
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input type="text" #addr matInput formControlName="lastname" required >
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" #addr matInput formControlName="email" required >
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" #addr matInput formControlName="username" required >
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" #addr matInput formControlName="password" required >
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext (click)="check()">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="1" [stepControl]="appraisalForm?.get([1])">
+        <ng-template matStepLabel>
+          <div>Coach Details</div>
+        </ng-template>
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input type="number" matInput formControlName="age" required>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Experience</mat-label>
+          <input type="number" matInput formControlName="experience" required>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input type="number" matInput formControlName="phone" >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Photo</mat-label>
+          <input matInput formControlName="photo" >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Resume</mat-label>
+          <textarea matInput formControlName="resume" >please write down your resume </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Speciality</mat-label>
+          <input matInput formControlName="speciality" required>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <h4>Following details submitted, please confirm and hit submit</h4>
+        <br/>Name: {{appraisalForm?.get([0]).get('firstname').value}}
+        {{appraisalForm?.get([0]).get('lastname').value}}
+        <br/>Email : {{appraisalForm?.get([0]).get('email').value}}
+        <br/>Username : {{appraisalForm?.get([0]).get('username').value}}
+        <br/>Age :{{appraisalForm?.get([1]).get('age').value}}
+        <br/>Experience :{{appraisalForm?.get([1]).get('experience').value}}
+        <br/>Phone :{{appraisalForm?.get([1]).get('phone').value}}
+        <br/>Photo :{{appraisalForm?.get([1]).get('photo').value}}
+        <br/>resume :{{appraisalForm?.get([1]).get('resume').value}}
+        <br/>speciality :{{appraisalForm?.get([1]).get('speciality').value}}
+        <br/>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="linearHorizontalStepper.reset()">Reset</button>
+          <button mat-button (click)="onSubmit()">Submit</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</div>

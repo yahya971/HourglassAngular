@@ -1,1 +1,53 @@
-<p>test works!</p>
+<div class="container-fluid" >
+<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+  <div class="form-group">
+    <label for="exampleInputId">id</label>
+    <input type="text" class="form-control" id="exampleInputId" aria-describedby="emailHelp"ngModel name="Id" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel name="email" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputName">name</label>
+    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" ngModel name="name" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputLastName">lastname</label>
+    <input type="text" class="form-control" id="exampleInputLastName" aria-describedby="emailHelp"  ngModel name="lastname">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputUserName">username</label>
+    <input type="text" class="form-control" id="exampleInputUserName" aria-describedby="emailHelp" ngModel name="username">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputAge">age</label>
+    <input type="text" class="form-control" id="exampleInputAge" aria-describedby="emailHelp" ngModel name="age">
+  </div>
+  <div class="form-group">
+    <label for="exampleResume">Resume</label>
+    <input type="text" class="form-control" id="exampleResume" aria-describedby="emailHelp"ngModel name="resume" >
+  </div>
+  <div class="form-group">
+    <label for="exampleSpeciality">Speciality</label>
+    <input type="text" class="form-control" id="exampleSpeciality" aria-describedby="emailHelp"ngModel name="speciality" >
+  </div>
+  <div class="form-group">
+    <label for="exampleExperience">Experience</label>
+    <input type="text" class="form-control" id="exampleExperience" aria-describedby="emailHelp"ngModel name="experience" >
+  </div>
+  <div class="form-group">
+    <label for="examplePhone">Phone</label>
+    <input type="text" class="form-control" id="examplePhone" aria-describedby="emailHelp"ngModel name="phone" >
+  </div>
+  <div class="form-group">
+    <label for="examplePhoto">Photo</label>
+    <input type="file" class="form-control" id="examplePhoto" aria-describedby="emailHelp"ngModel name="photo" >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ngModel name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
