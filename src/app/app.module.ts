@@ -25,6 +25,10 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import {MatRadioModule} from '@angular/material/radio';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { CoursComponent } from './cours/cours/cours.component';
+import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
+import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
+import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { FooterComponent } from './footer/footer.component';
     Test2Component,
     RegisterClientComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    CoursComponent,
+    CoursActivesComponent,
+    AboutCoursComponent,
+    PricingPlanComponent
 
   ],
   imports: [
