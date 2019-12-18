@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {style} from "@angular/animations";
+import {ProgramService} from '../../services/program.service';
+import {Program} from '../../Models/program.model';
+
 
 @Component({
   selector: 'app-programme-semaine',
@@ -8,8 +10,12 @@ import {style} from "@angular/animations";
 })
 export class ProgrammeSemaineComponent implements OnInit {
 
-  constructor() { }
+  program: Program;
+  constructor(private programservice: ProgramService) { }
   ngOnInit() {
+    this.programservice.getProgramById(1).subscribe(value => {
+      this.program = value ;
+    });
   }
 
 }
