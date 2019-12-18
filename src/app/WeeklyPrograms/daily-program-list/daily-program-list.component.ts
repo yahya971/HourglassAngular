@@ -14,10 +14,10 @@ export class DailyProgramListComponent implements OnInit {
   sportsPrograms: Array<any>=[];
   constructor(private npService: NutritionalProgramService, private sportsService: SportsProgramService) {
     this.sportsService.getDayProgramByWeightLossProgram(1).subscribe(value1 => {
-      this.sportsPrograms = value1[0];
+      this.sportsPrograms = value1;
       console.log(value1);
       this.npService.getDayProgramByWeightLossProgram(1).subscribe(value => {
-        this.nutritionalPrograms = value[0];
+        this.nutritionalPrograms = value;
         console.log(value);
       })
     })}

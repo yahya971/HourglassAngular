@@ -18,8 +18,10 @@
           </div>
         </div>
         <div class="content-inner active mt-15" style="margin-bottom:50px">
-          <div *ngFor="let program of nutritionalPrograms.meals">
-            <app-daily-program-item-meal [meal]="program" *ngIf="clicked[week.indexOf(nutritionalPrograms.day)]"></app-daily-program-item-meal>
+          <div *ngFor="let program of nutritionalPrograms">
+            <div *ngFor="let meal of program.meals">
+              <app-daily-program-item-meal [meal]="meal" *ngIf="clicked[week.indexOf(program.day)]"></app-daily-program-item-meal>
+            </div>
           </div>
         </div>
 
@@ -29,9 +31,10 @@
           </div>
         </div>
         <div class="content-inner active mt-15">
-          <div *ngFor="let workout of sportsPrograms.workouts">
-            <app-daily-program-item-workout [workout]="workout" *ngIf="clicked[week.indexOf(sportsPrograms.day)]"></app-daily-program-item-workout>
-          </div>
+          <div *ngFor="let program of sportsPrograms">
+            <div *ngFor="let workout of program.workouts">
+            <app-daily-program-item-workout [workout]="workout" *ngIf="clicked[week.indexOf(program.day)]"></app-daily-program-item-workout>
+          </div></div>
         </div>
 
       </div>
