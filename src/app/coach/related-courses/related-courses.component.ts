@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Program} from "../../Models/program.model";
-import {ProgramService} from "../../services/program.service";
+import {Program} from '../../Models/program.model';
+import {ProgramService} from '../../services/program.service';
 
 @Component({
   selector: 'app-related-courses',
@@ -16,7 +16,7 @@ export class RelatedCoursesComponent implements OnInit {
   ngOnInit() {
     this.programservice.getProgramByCoachId(1).subscribe(value => {
       this.programs = value;
-      console.log(this.programs)
+      console.log(this.programs);
     });
 
   }

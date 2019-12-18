@@ -119,7 +119,7 @@
             <div class="widget-left clearfix">
               <div class="info-widget">
                 <div class="ttm-btn-box pr-20 pb-20">
-                  <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" href="#" title="">Become a coach<i class="ti ti-hand-point-right"></i></a>
+                  <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" routerLink="/coach/register" title="">Become a coach<i class="ti ti-hand-point-right"></i></a>
                 </div>
               </div>
             </div>
@@ -141,16 +141,21 @@
             <div class="widget-right clearfix">
               <div class="info-widget">
                 <div class="row">
-                <div class="col-sm">
+                <div class="col-sm" *ngIf="!islogged">
                   <div class="ttm-btn-box pr-20 pb-20">
-                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" href="#" title="">Sign up<i class="ti ti-hand-point-right"></i></a>
+                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" routerLink="/client/register" title="">Sign up<i class="ti ti-hand-point-right"></i></a>
                   </div>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" *ngIf="!islogged">
                   <div class="ttm-btn-box pr-20 pb-20">
-                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" href="#" title="">Sign in<i class="ti ti-hand-point-right"></i></a>
+                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor" routerLink="/login" title="">Sign in<i class="ti ti-hand-point-right"></i></a>
                   </div>
                 </div>
+                  <div class="col-sm" *ngIf="islogged">
+                    <div class="ttm-btn-box pr-20 pb-20">
+                      <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor"  (click)="signOut()" title="">Sign out<i class="ti ti-hand-point-right"></i></a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

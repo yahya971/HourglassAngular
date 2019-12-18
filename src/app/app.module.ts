@@ -25,11 +25,18 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import {MatRadioModule} from '@angular/material/radio';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { IndexComponent } from './index/index.component';
+
 import { CoursComponent } from './cours/cours/cours.component';
 import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
 import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
 import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
-import { ToBase64Pipe } from './pipes/to-base64.pipe';
+import { AboutProgramComponent } from './programmeDuJour/about-program/about-program.component';
+import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
+import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
+import { ProgrammeSemaineComponent } from './programmeDuJour/programme-semaine/programme-semaine.component';
+
 
 @NgModule({
   declarations: [
@@ -50,11 +57,15 @@ import { ToBase64Pipe } from './pipes/to-base64.pipe';
     RegisterClientComponent,
     NavbarComponent,
     FooterComponent,
+    IndexComponent,
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
     PricingPlanComponent,
-    ToBase64Pipe
+    AboutProgramComponent,
+    ProgrammeDuJourComponent,
+    ContactCoachComponent,
+    ProgrammeSemaineComponent
 
   ],
   imports: [
