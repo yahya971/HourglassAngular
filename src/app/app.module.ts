@@ -57,9 +57,7 @@ import { ProgrammeSemaineComponent } from './programmeDuJour/programme-semaine/p
     RegisterClientComponent,
     NavbarComponent,
     FooterComponent,
-
-    IndexComponent
-
+    IndexComponent,
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
