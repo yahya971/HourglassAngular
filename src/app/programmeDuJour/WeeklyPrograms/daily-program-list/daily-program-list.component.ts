@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NutritionalProgramService } from '../../services/nutritional-program.service';
-import { SportsProgramService } from '../../services/sports-program.service';
+import { NutritionalProgramService } from '../../../services/nutritional-program.service';
+import { SportsProgramService } from '../../../services/sports-program.service';
 
 @Component({
   selector: 'app-daily-program-list',

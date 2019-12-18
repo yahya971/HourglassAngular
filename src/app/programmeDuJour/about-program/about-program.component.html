@@ -6,7 +6,7 @@
           <!-- ttm_single_image-wrapper -->
           <div class="ttm_single_image-wrapper res-991-mt-60">
             <div class="text-left pattern-style position-relative">
-              <img class="img-fluid width-100" src="../../../assets/images/single-img-twenty.jpg" alt="">
+              <img class="img-fluid width-100" src="data:image/jpeg;base64,{{program.backgroundImage}}" alt="">
             </div>
           </div><!-- ttm_single_image-wrapper end -->
           <div class="about-overlay-shape">
@@ -16,7 +16,7 @@
                 <div class="about-content ttm-col-bgcolor-yes ttm-bg ttm-bgcolor-skincolor spacing-8 ttm-textcolor-white mt_109">
                   <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
                   <div class="layer-content">
-                    <h4 class="mb-15">Loss The Fat Eat Right Be Bright</h4>
+                    <h4 class="mb-15">{{program.objectifs}}</h4>
                   </div>
                 </div><!-- ttm_single_image-wrapper end -->
               </div>
@@ -30,11 +30,11 @@
           <!-- section title -->
           <div class="section-title clearfix">
             <div class="title-header">
-              <h5>Special Offers</h5>
-              <h2 class="title">Our Nutrition Plans</h2>
+              <h5>Your program</h5>
+              <h2 class="title">{{program.name}}</h2>
             </div>
             <div class="title-desc">
-              <p>Each meal is a building a block of the healthy eating style. Make sure to include all the food groups throughout the day. Make fruits, veggies, grains, dairy, and protein foods part of your daily meals and snacks. And limit added sugars, saturated fat &amp; sodium.</p>
+              <p>{{program.description}}</p>
             </div>
           </div><!-- section title end -->
           <!-- row-->
