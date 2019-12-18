@@ -1,12 +1,14 @@
-<div class="row no-gutters box-shadow1">
+<div class="row no-gutters box-shadow1" style="margin-bottom:25px">
   <div class="col-md-6">
     <!-- col-img-bg-img-fourteen-->
     <div class="col-bg-img-fourteen ttm-col-bgimage-yes ttm-bg res-767-pb-300">
-      <div class="ttm-col-wrapper-bg-layer ttm-bg-layer">
+      <div class=" ttm-bg-layer">
+        <img class="img-fluid" src="data:image/jpg;base64,{{workout.photo}}" style="height: 100%;
+    width: 100%;">
         <div class="ttm-bg-layer-inner"></div>
       </div>
       <div class="layer-content">
-        <h5 class="text-center tab-inner-heading">Break Fast</h5>
+        <h5 class="text-center tab-inner-heading">{{workout.startingHour}} <br > To : {{workout.endingHour}}</h5>
       </div>
     </div><!-- col-img-bg-img-fourteen end-->
   </div>
@@ -16,10 +18,10 @@
         <div class="ttm-bg-layer-inner"></div>
       </div>
       <div class="layer-content">
-        <h5>Plate of veggies and fruits for starter</h5>
-        <p>Vegetable &amp; fruit are full of nutrients that support good health. Fruits and red, orange, and dark-green veggies such as tomatoes, and the sweet potatoes and broccoli.</p>
-        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-black mt-10 mb-20" href="#">organic</a>
-        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-skincolor mt-10 ml-15 mb-20" href="#">Fresh</a>
+        <h5>{{workout.name}}</h5>
+        <p>{{workout.description}}</p>
+        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-black mt-10 mb-20" href="javascript:void(0);">{{workout.equipment}}</a>
+        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-skincolor mt-10 ml-15 mb-20" href="javascript:void(0);">Burned Calories: {{workout.burnedCalories}}</a>
       </div>
     </div>
   </div>

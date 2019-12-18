@@ -4,10 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\coach",
-    "\\src\\app\\services",
     "\\src\\app\\WeeklyPrograms",
-    "\\src\\app\\WeeklyPrograms\\daily-program-item-meal"
+    "\\src\\app\\WeeklyPrograms\\daily-program-list"
   ],
-  "SelectedNode": "\\src\\app\\services\\meal.service.ts",
+  "SelectedNode": "\\src\\app\\WeeklyPrograms\\daily-program-list\\daily-program-list.component.ts",
   "PreviewInSolutionExplorer": false
 }

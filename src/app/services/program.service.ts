@@ -11,4 +11,7 @@ export class ProgramService {
   getProgramByCoachId(id) {
     return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/byCoach/' + id );
   }
+  getProgramByClientId(id) {
+    return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/byClient/' + id);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-daily-program-item-meal',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-program-item-meal.component.css']
 })
 export class DailyProgramItemMealComponent implements OnInit {
-
+  @Input() meal: any;
   constructor() { }
 
   ngOnInit() {

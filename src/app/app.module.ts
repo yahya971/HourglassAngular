@@ -29,6 +29,7 @@ import { CoursComponent } from './cours/cours/cours.component';
 import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
 import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
 import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
+import { ToBase64Pipe } from './pipes/to-base64.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.componen
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
-    PricingPlanComponent
+    PricingPlanComponent,
+    ToBase64Pipe
 
   ],
   imports: [

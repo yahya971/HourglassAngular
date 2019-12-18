@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NutritionalProgramService } from '../../services/nutritional-program.service';
+import { SportsProgramService } from '../../services/sports-program.service';
 
 @Component({
   selector: 'app-daily-program-list',
@@ -8,7 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class DailyProgramListComponent implements OnInit {
   week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   clicked = [true, false, false, false, false, false, false];
-  constructor() { }
+  nutritionalPrograms: Array<any>=[];
+  sportsPrograms: Array<any>=[];
+  constructor(private npService: NutritionalProgramService, private sportsService: SportsProgramService) {
+    this.sportsService.getDayProgramByWeightLossProgram(1).subscribe(value1 => {
+      this.sportsPrograms = value1[0];
+      console.log(value1);
+      this.npService.getDayProgramByWeightLossProgram(1).subscribe(value => {
+        this.nutritionalPrograms = value[0];
+        console.log(value);
+      })
+    })}
 
   showDay(i) {
     for (let j = 0; j < this.clicked.length; j++)
@@ -19,6 +31,8 @@ export class DailyProgramListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
   }
 
 }
