@@ -29,6 +29,10 @@ import { CoursComponent } from './cours/cours/cours.component';
 import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
 import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
 import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
+import { AboutProgramComponent } from './programmeDuJour/about-program/about-program.component';
+import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
+import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
+import { ProgrammeSemaineComponent } from './programmeDuJour/programme-semaine/programme-semaine.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.componen
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
-    PricingPlanComponent
+    PricingPlanComponent,
+    AboutProgramComponent,
+    ProgrammeDuJourComponent,
+    ContactCoachComponent,
+    ProgrammeSemaineComponent
 
   ],
   imports: [
