@@ -3,11 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Models",
+    "\\src\\app\\coach",
     "\\src\\app\\services",
-    "\\src\\app\\test",
-    "\\src\\app\\WeeklyPrograms"
+    "\\src\\app\\WeeklyPrograms",
+    "\\src\\app\\WeeklyPrograms\\daily-program-item-meal"
   ],
-  "SelectedNode": "\\src\\app\\services\\coach.service.ts",
+  "SelectedNode": "\\src\\app\\services\\meal.service.ts",
   "PreviewInSolutionExplorer": false
 }

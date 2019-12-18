@@ -25,6 +25,9 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import {MatRadioModule} from '@angular/material/radio';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { IndexComponent } from './index/index.component';
+
 import { CoursComponent } from './cours/cours/cours.component';
 import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
 import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
@@ -33,6 +36,7 @@ import { AboutProgramComponent } from './programmeDuJour/about-program/about-pro
 import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
 import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
 import { ProgrammeSemaineComponent } from './programmeDuJour/programme-semaine/programme-semaine.component';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +57,9 @@ import { ProgrammeSemaineComponent } from './programmeDuJour/programme-semaine/p
     RegisterClientComponent,
     NavbarComponent,
     FooterComponent,
+
+    IndexComponent
+
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
