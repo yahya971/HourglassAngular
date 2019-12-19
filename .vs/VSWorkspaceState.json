@@ -4,8 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\coach",
-    "\\src\\app\\WeeklyPrograms",
-    "\\src\\app\\WeeklyPrograms\\daily-program-list"
+    "\\src\\app\\services",
+    "\\src\\app\\WeeklyPrograms"
   ],
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }
