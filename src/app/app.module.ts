@@ -35,6 +35,7 @@ import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.componen
 import { AboutProgramComponent } from './programmeDuJour/about-program/about-program.component';
 import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
 import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
+import { ListCoachsComponent } from './coach/list-coachs/list-coachs.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-c
     AboutProgramComponent,
     ProgrammeDuJourComponent,
     ContactCoachComponent,
+    ListCoachsComponent,
   ],
   imports: [
     BrowserModule,

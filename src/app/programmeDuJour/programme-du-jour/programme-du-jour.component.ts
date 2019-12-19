@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Program} from '../../Models/program.model';
 import {ProgramService} from '../../services/program.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-programme-du-jour',
@@ -9,11 +10,15 @@ import {ProgramService} from '../../services/program.service';
 })
 export class ProgrammeDuJourComponent implements OnInit {
   program: Program;
-  constructor(private programService: ProgramService) { }
+  id: any;
+  constructor(private programService: ProgramService, private router: ActivatedRoute) {
+    router.params.subscribe(params => {this.id = params.id; } );
+  }
 
   ngOnInit() {
-    this.programService.getProgramById(1).subscribe(value => {
+    this.programService.getProgramById(this.id).subscribe(value => {
       this.program = value;
+      console.log(this.program);
     });
   }
 
