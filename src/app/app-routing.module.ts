@@ -6,7 +6,6 @@ import {RegisterClientComponent} from './register-client/register-client.compone
 import {RegisterComponent} from './register/register.component';
 import {IndexComponent} from './index/index.component';
 
-
 const routes: Routes = [
   {
     path : '',

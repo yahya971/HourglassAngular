@@ -54,12 +54,12 @@ import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.componen
     NavbarComponent,
     FooterComponent,
 
-    IndexComponent
+    IndexComponent,
 
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
-    PricingPlanComponent
+    PricingPlanComponent,
 
   ],
   imports: [
