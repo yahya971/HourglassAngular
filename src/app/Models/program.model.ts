@@ -9,9 +9,10 @@ export class Program {
   audianceid: number;
   coachid: number;
   clientid: number;
+  name: string;
 
   constructor(id: number, photo: any, description: string, duration: number, objectifs: string,
-              rating: number, startingdate: any, audianceid: number, coachid: number, clientid: number) {
+              rating: number, startingdate: any, audianceid: number, coachid: number, clientid: number, name: string) {
     this.id = id;
     this.backgroundImage = photo;
     this.description = description;
@@ -22,5 +23,6 @@ export class Program {
     this.audianceid = audianceid;
     this.coachid = coachid;
     this.clientid = clientid;
+    this.name = name;
   }
 }

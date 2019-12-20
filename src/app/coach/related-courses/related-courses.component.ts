@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Program} from "../../Models/program.model";
-import {ProgramService} from "../../services/program.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {Program} from '../../Models/program.model';
+import {ProgramService} from '../../services/program.service';
+import {Coach} from '../../Models/coach.Model';
 
 @Component({
   selector: 'app-related-courses',
@@ -9,14 +10,13 @@ import {ProgramService} from "../../services/program.service";
 })
 export class RelatedCoursesComponent implements OnInit {
   programs: Array<Program>;
-
+  @Input()id: number;
   constructor(private programservice: ProgramService) {
   }
-
   ngOnInit() {
-    this.programservice.getProgramByCoachId(1).subscribe(value => {
+    this.programservice.getProgramByCoachId(this.id).subscribe(value => {
       this.programs = value;
-      console.log(this.programs)
+      console.log(this.programs);
     });
 
   }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Coach} from '../../Models/coach.Model';
 import {CoachService} from '../../services/coach.service';
 
@@ -8,15 +8,11 @@ import {CoachService} from '../../services/coach.service';
   styleUrls: ['./description.component.css']
 })
 export class DescriptionComponent implements OnInit {
-  coach: Coach;
+  @Input() coach: Coach;
 
   constructor(private coachService: CoachService) {
   }
 
   ngOnInit() {
-    this.coachService.getCoachById(1).subscribe(value => {
-      this.coach = value;
-      console.log(this.coach)
-    });
   }
 }

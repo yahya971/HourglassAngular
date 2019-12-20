@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-daily-program-item-workout',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-program-item-workout.component.css']
 })
 export class DailyProgramItemWorkoutComponent implements OnInit {
-
+  @Input() workout: any;
   constructor() { }
 
   ngOnInit() {

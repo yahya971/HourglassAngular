@@ -1,0 +1,28 @@
+<div class="row no-gutters box-shadow1" style="margin-bottom:25px">
+  <div class="col-md-6">
+    <!-- col-img-bg-img-fourteen-->
+    <div class="col-bg-img-fourteen ttm-col-bgimage-yes ttm-bg res-767-pb-300">
+      <div class=" ttm-bg-layer">
+        <img class="img-fluid" src="data:image/jpg;base64,{{workout.photo}}" style="height: 100%;
+    width: 100%;">
+        <div class="ttm-bg-layer-inner"></div>
+      </div>
+      <div class="layer-content">
+        <h5 class="text-center tab-inner-heading">{{workout.startingHour}} <br > To : {{workout.endingHour}}</h5>
+      </div>
+    </div><!-- col-img-bg-img-fourteen end-->
+  </div>
+  <div class="col-md-6">
+    <div class="ttm-bg ttm-bgcolor-white ttm-col-bgcolor-yes spacing-10">
+      <div class="ttm-col-wrapper-bg-layer ttm-bg-layer">
+        <div class="ttm-bg-layer-inner"></div>
+      </div>
+      <div class="layer-content">
+        <h5>{{workout.name}}</h5>
+        <p>{{workout.description}}</p>
+        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-black mt-10 mb-20" href="javascript:void(0);">{{workout.equipment}}</a>
+        <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round  ttm-btn-style-fill ttm-btn-bgcolor-skincolor mt-10 ml-15 mb-20" href="javascript:void(0);">Burned Calories: {{workout.burnedCalories}}</a>
+      </div>
+    </div>
+  </div>
+</div>

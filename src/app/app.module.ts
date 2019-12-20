@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeeklyProgramComponent } from './WeeklyPrograms/weekly-program/weekly-program.component';
-import { DailyProgramListComponent } from './WeeklyPrograms/daily-program-list/daily-program-list.component';
+import { WeeklyProgramComponent } from './programmeDuJour/WeeklyPrograms/weekly-program/weekly-program.component';
+import { DailyProgramListComponent } from './programmeDuJour/WeeklyPrograms/daily-program-list/daily-program-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DailyProgramItemWorkoutComponent } from './WeeklyPrograms/daily-program-item-workout/daily-program-item-workout.component';
-import { DailyProgramItemMealComponent } from './WeeklyPrograms/daily-program-item-meal/daily-program-item-meal.component';
+import { DailyProgramItemWorkoutComponent } from './programmeDuJour/WeeklyPrograms/daily-program-item-workout/daily-program-item-workout.component';
+import { DailyProgramItemMealComponent } from './programmeDuJour/WeeklyPrograms/daily-program-item-meal/daily-program-item-meal.component';
 import { TestComponent } from './test/test.component';
 import { SidebarComponent } from './coach/sidebar/sidebar.component';
 import { DescriptionComponent } from './coach/description/description.component';
@@ -32,6 +32,10 @@ import { CoursComponent } from './cours/cours/cours.component';
 import { CoursActivesComponent } from './cours/cours-actives/cours-actives.component';
 import { AboutCoursComponent } from './cours/about-cours/about-cours.component';
 import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.component';
+import { AboutProgramComponent } from './programmeDuJour/about-program/about-program.component';
+import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
+import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
+import { ListCoachsComponent } from './coach/list-coachs/list-coachs.component';
 
 
 @NgModule({
@@ -53,14 +57,16 @@ import { PricingPlanComponent } from './cours/pricing-plan/pricing-plan.componen
     RegisterClientComponent,
     NavbarComponent,
     FooterComponent,
-
     IndexComponent,
-
     CoursComponent,
     CoursActivesComponent,
     AboutCoursComponent,
     PricingPlanComponent,
 
+    AboutProgramComponent,
+    ProgrammeDuJourComponent,
+    ContactCoachComponent,
+    ListCoachsComponent,
   ],
   imports: [
     BrowserModule,
