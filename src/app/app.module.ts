@@ -62,6 +62,7 @@ import { ListCoachsComponent } from './coach/list-coachs/list-coachs.component';
     CoursActivesComponent,
     AboutCoursComponent,
     PricingPlanComponent,
+
     AboutProgramComponent,
     ProgrammeDuJourComponent,
     ContactCoachComponent,

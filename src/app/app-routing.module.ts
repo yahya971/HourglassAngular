@@ -10,7 +10,6 @@ import {ProgrammeDuJourComponent} from './programmeDuJour/programme-du-jour/prog
 import {CoursComponent} from './cours/cours/cours.component';
 import {ListCoachsComponent} from './coach/list-coachs/list-coachs.component';
 
-
 const routes: Routes = [
   {
     path: '',
