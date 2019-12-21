@@ -11,8 +11,8 @@ export class SideBarComponent implements OnInit {
   constructor(private  aroute: ActivatedRoute ) { }
 
   ngOnInit() {
-    this.aroute.params.subscribe(value => {
-      this.id = value['id'];
+    this.aroute.paramMap.subscribe(value => {
+      this.id = Number( value.get('id'));
       console.log(this.id);
     })
   }

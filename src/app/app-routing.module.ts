@@ -57,57 +57,57 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'espace/coach/:id', component: EspaceCoachComponent,
+    path: 'espace/coach', component: EspaceCoachComponent,
     children: [
       {
-        path: 'informations', component: CoachInformationsComponent
+        path: 'informations/:id', component: CoachInformationsComponent
 
       },
       {
-        path: 'clients', component: MyClientsComponent
+        path: 'clients/:id', component: MyClientsComponent
       },
       {
-        path: 'programs', component: EspaceCoachProgramsComponent
+        path: 'programs/:id', component: EspaceCoachProgramsComponent
       },
       {
-        path: 'workouts', component: EspaceCoachWorkoutsComponent
+        path: 'workouts/:id', component: EspaceCoachWorkoutsComponent
       },
       {
-        path: 'meals', component: EspaceCoachMealsComponent
+        path: 'meals/:id', component: EspaceCoachMealsComponent
       },
       {
-        path: 'update/informations', component: CoachUpdateInformationsComponent
+        path: 'update/informations/:id', component: CoachUpdateInformationsComponent
       },
       {
-        path: 'create/program', component: CoachCreateProgramComponent
+        path: 'create/program/:id', component: CoachCreateProgramComponent
       },
       {
-        path: 'create/workout' , component: CoachCreateWorkoutComponent
+        path: 'create/workout/:id' , component: CoachCreateWorkoutComponent
       },
       {
-        path: 'create/meal', component: CoachCreateMealComponent
+        path: 'create/meal/:id', component: CoachCreateMealComponent
       },
       {
-        path: 'courses', component: EspaceCoachCoursesComponent
+        path: 'courses/:id', component: EspaceCoachCoursesComponent
       },
       {
-        path: 'create/course', component: CoachCreateCourseComponent
+        path: 'create/course/:id', component: CoachCreateCourseComponent
       }
     ]
 
   },
   {
-    path: 'espace/client/:id', component: EspaceClientComponent,
+    path: 'espace/client', component: EspaceClientComponent,
     children: [
-      { path: 'informations', component: ClientInformationsComponent },
+      { path: 'informations/:id', component: ClientInformationsComponent },
       {
-        path: 'update/informations', component: ClientUpdateInformationsComponent
+        path: 'update/informations/:id', component: ClientUpdateInformationsComponent
       },
       {
-        path: 'courses', component: ClientCoursesComponent
+        path: 'courses/:id', component: ClientCoursesComponent
       },
       {
-        path: 'programs', component: ClientProgramsComponent
+        path: 'programs/:id', component: ClientProgramsComponent
       },
       {
         path: '**', component: ClientInformationsComponent
