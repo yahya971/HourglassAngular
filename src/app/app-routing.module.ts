@@ -19,6 +19,12 @@ import { CoachCreateProgramComponent } from './escpaceCoach/coach-create-program
 import { CoachCreateWorkoutComponent } from './escpaceCoach/coach-create-workout/coach-create-workout.component';
 import { CoachCreateMealComponent } from './escpaceCoach/coach-create-meal/coach-create-meal.component';
 import { EspaceClientComponent } from './espaceClient/espace-client/espace-client.component';
+import { ClientInformationsComponent } from './espaceClient/client-informations/client-informations.component';
+import { CoachCreateCourseComponent } from './escpaceCoach/coach-create-course/coach-create-course.component';
+import { EspaceCoachCoursesComponent } from './escpaceCoach/espace-coach-courses/espace-coach-courses.component';
+import { ClientProgramsComponent } from './espaceClient/client-programs/client-programs.component';
+import { ClientCoursesComponent } from './espaceClient/client-courses/client-courses.component';
+import { ClientUpdateInformationsComponent } from './espaceClient/client-update-informations/client-update-informations.component';
 
 const routes: Routes = [
   {
@@ -75,6 +81,14 @@ const routes: Routes = [
       },
       {
         path: 'create/meal', component: CoachCreateMealComponent
+      },
+      {
+        path: 'create/course', component: CoachCreateCourseComponent
+      },
+      {
+        path:'courses',component:EspaceCoachCoursesComponent
+      }, {
+        path: '**', component: CoachInformationsComponent
       }
 
 
@@ -82,7 +96,24 @@ const routes: Routes = [
 
   },
   {
-    path: 'espace/client/:id' , component: EspaceClientComponent
+    path: 'espace/client/:id', component: EspaceClientComponent,
+    children: [
+      {
+        path: 'informations', component: ClientInformationsComponent
+      },
+      {
+        path: 'programs', component: ClientProgramsComponent
+      },
+      {
+        path: 'courses', component: ClientCoursesComponent
+      },
+      {
+        path: 'update/informations', component: ClientUpdateInformationsComponent
+      },
+      {
+        path: '**', component:ClientInformationsComponent
+      }
+    ]
   }
 ];
 
