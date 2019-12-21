@@ -13,17 +13,16 @@ import {Coach} from '../../Models/coach.Model';
 export class MyClientsComponent implements OnInit {
   coach: Coach;
   clients: Array<Client>;
-  id: any;
-  constructor(private clientService: ClientService, private coachService: CoachService, private router: ActivatedRoute) {
-    router.params.subscribe(params => {this.id = params.id; });
+  id: number;
+  constructor(private clientService: ClientService, private router: ActivatedRoute) {
+    this.router.params.subscribe(params => {this.id = params['id']; });
+    console.log(this.id);
   }
 
   ngOnInit() {
-    this.coachService.getCoachById(this.id).subscribe(value => {
-      this.coach = value;
-    });
     this.clientService.getClientByCoachId(this.id).subscribe(value => {
       this.clients = value;
+      console.log(this.clients);
     });
   }
 
