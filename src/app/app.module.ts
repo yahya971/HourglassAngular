@@ -36,6 +36,11 @@ import { AboutProgramComponent } from './programmeDuJour/about-program/about-pro
 import { ProgrammeDuJourComponent } from './programmeDuJour/programme-du-jour/programme-du-jour.component';
 import { ContactCoachComponent } from './programmeDuJour/contact-coach/contact-coach.component';
 import { ListCoachsComponent } from './coach/list-coachs/list-coachs.component';
+import { EspaceCoachComponent } from './escpaceCoach/espace-coach/espace-coach.component';
+import { CoachInformationsComponent } from './escpaceCoach/coach-informations/coach-informations.component';
+import { CreateProgramComponent } from './escpaceCoach/create-program/create-program.component';
+import { MyClientsComponent } from './escpaceCoach/my-clients/my-clients.component';
+import { SideBarComponent } from './escpaceCoach/side-bar/side-bar.component';
 
 
 @NgModule({
@@ -67,6 +72,11 @@ import { ListCoachsComponent } from './coach/list-coachs/list-coachs.component';
     ProgrammeDuJourComponent,
     ContactCoachComponent,
     ListCoachsComponent,
+    EspaceCoachComponent,
+    CoachInformationsComponent,
+    CreateProgramComponent,
+    MyClientsComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
