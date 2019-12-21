@@ -9,6 +9,17 @@ import {CoachComponent} from './coach/coach/coach.component';
 import {ProgrammeDuJourComponent} from './programmeDuJour/programme-du-jour/programme-du-jour.component';
 import {CoursComponent} from './cours/cours/cours.component';
 import {ListCoachsComponent} from './coach/list-coachs/list-coachs.component';
+import { EspaceCoachComponent } from './escpaceCoach/espace-coach/espace-coach.component';
+import { CoachInformationsComponent } from './escpaceCoach/coach-informations/coach-informations.component';
+import { EspaceCoachProgramsComponent } from './escpaceCoach/espace-coach-programs/espace-coach-programs.component';
+import { EspaceCoachWorkoutsComponent } from './escpaceCoach/espace-coach-workouts/espace-coach-workouts.component';
+import { EspaceCoachMealsComponent } from './escpaceCoach/espace-coach-meals/espace-coach-meals.component';
+import { CoachUpdateInformationsComponent } from './escpaceCoach/coach-update-informations/coach-update-informations.component';
+import { CoachCreateProgramComponent } from './escpaceCoach/coach-create-program/coach-create-program.component';
+import { CoachCreateWorkoutComponent } from './escpaceCoach/coach-create-workout/coach-create-workout.component';
+import { CoachCreateMealComponent } from './escpaceCoach/coach-create-meal/coach-create-meal.component';
+import { EspaceClientComponent } from './espaceClient/espace-client/espace-client.component';
+import {MyClientsComponent} from './escpaceCoach/my-clients/my-clients.component';
 
 const routes: Routes = [
   {
@@ -38,6 +49,43 @@ const routes: Routes = [
       },
       {path: 'cours', component: CoursComponent}
     ]
+  },
+  {
+    path: 'espace/coach/:id', component: EspaceCoachComponent,
+    children: [
+      {
+        path: 'informations', component: CoachInformationsComponent
+
+      },
+      {
+        path: 'clients', component: MyClientsComponent
+      },
+      {
+        path: 'programs', component: EspaceCoachProgramsComponent
+      },
+      {
+        path: 'workouts', component: EspaceCoachWorkoutsComponent
+      },
+      {
+        path: 'meals', component: EspaceCoachMealsComponent
+      },
+      {
+        path: 'update/informations', component: CoachUpdateInformationsComponent
+      },
+      {
+        path: 'create/program', component: CoachCreateProgramComponent
+      },
+      {
+        path: 'create/workout' , component: CoachCreateWorkoutComponent
+      },
+      {
+        path: 'create/meal', component: CoachCreateMealComponent
+      }
+    ]
+
+  },
+  {
+    path: 'espace/client/:id' , component: EspaceClientComponent
   }
 ];
 

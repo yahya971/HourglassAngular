@@ -1,3 +1,5 @@
+import {Client} from './client.model';
+
 export class Program {
   id: number;
   backgroundImage: any;
@@ -8,11 +10,11 @@ export class Program {
   startingdate: Date;
   audianceid: number;
   coachid: number;
-  clientid: number;
+  client: Client;
   name: string;
 
   constructor(id: number, photo: any, description: string, duration: number, objectifs: string,
-              rating: number, startingdate: any, audianceid: number, coachid: number, clientid: number, name: string) {
+              rating: number, startingdate: any, audianceid: number, coachid: number, client: Client, name: string) {
     this.id = id;
     this.backgroundImage = photo;
     this.description = description;
@@ -22,7 +24,7 @@ export class Program {
     this.startingdate = startingdate;
     this.audianceid = audianceid;
     this.coachid = coachid;
-    this.clientid = clientid;
+    this.client = client;
     this.name = name;
   }
 }

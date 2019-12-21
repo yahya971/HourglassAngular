@@ -1,0 +1,57 @@
+
+<div class="ttm-page-title-row">
+  <div class="ttm-page-title-row-bg-layer ttm-bg-layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="title-box ttm-textcolor-white" >
+          <div class="page-title-heading ttm-textcolor-white">
+            <h1 class="title">My Clients</h1>
+          </div><!-- /.page-title-captions -->
+          <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.html"><i class="ti ti-home"></i> Home </a>
+                                </span>
+            <span class="ttm-bread-sep"> &nbsp; : Espace coach : &nbsp; </span>
+            <span><span class="ttm-textcolor-skincolor">My Clients</span></span>
+          </div>
+        </div>
+      </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- page-title end-->
+<div class="site-main">
+
+<section class="ttm-row team-style2-section clearfix">
+  <div class="container">
+    <div class="row" ><!-- row -->
+      <div class="col-md-6 col-lg-3"*ngFor="let client of clients">
+        <!-- featured-imagebox -->
+        <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay-style2 mb-30">
+          <div class="ttm-box-view-overlay ttm-team-style2-box-view-overlay">
+            <div class="featured-thumbnail"><!-- team-member-image -->
+              <a routerLink="{{client.id}}"><img class="img-fluid" src="data:image/jpeg;base64,{{client.photo}}" alt=""></a>
+              <div class="ttm-social-links-wrapper">
+                <ul class="social-icons list-inline"><!-- team-member-social-links -->
+                  <li class="social-facebook"><a target="_blank" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="social-twitter"><a target="_blank" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
+                  <li class="social-linkedin"><a target="_blank" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="featured-content featured-content-team">
+            <div class="featured-title"><!-- team-member-name -->
+              <h5><a href="team-details.html">{{client.name}} {{client.lastname}}</a></h5>
+            </div>
+            <div class="ttm-team-position ttm-textcolor-white">Current Weight: {{client.currentWeight}}<br>Desired Weight: {{client.desiredWeight}}</div><!-- team-member-position -->
+          </div>
+        </div><!-- featured-imagebox END-->
+      </div>
+
+    </div><!-- row end -->
+  </div>
+</section>
+<!--team-style2-section end-->
+</div>
+
