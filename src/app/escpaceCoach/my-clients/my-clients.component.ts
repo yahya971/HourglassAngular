@@ -15,11 +15,11 @@ export class MyClientsComponent implements OnInit {
   clients: Array<Client>;
   id: number;
   constructor(private clientService: ClientService, private router: ActivatedRoute) {
-    this.router.params.subscribe(params => {this.id = params['id']; });
-    console.log(this.id);
   }
 
   ngOnInit() {
+    this.router.params.subscribe(params => {this.id = params.id; });
+    console.log(this.id);
     this.clientService.getClientByCoachId(this.id).subscribe(value => {
       this.clients = value;
       console.log(this.clients);
