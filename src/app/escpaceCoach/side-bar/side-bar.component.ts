@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
-  constructor() { }
+  id: number;
+  constructor(private  aroute: ActivatedRoute ) { }
 
   ngOnInit() {
+    this.aroute.params.subscribe(value => {
+      this.id = value['id'];
+      console.log(this.id);
+    })
   }
 
 }

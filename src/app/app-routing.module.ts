@@ -20,6 +20,12 @@ import { CoachCreateWorkoutComponent } from './escpaceCoach/coach-create-workout
 import { CoachCreateMealComponent } from './escpaceCoach/coach-create-meal/coach-create-meal.component';
 import { EspaceClientComponent } from './espaceClient/espace-client/espace-client.component';
 import {MyClientsComponent} from './escpaceCoach/my-clients/my-clients.component';
+import { EspaceCoachCoursesComponent } from './escpaceCoach/espace-coach-courses/espace-coach-courses.component';
+import { CoachCreateCourseComponent } from './escpaceCoach/coach-create-course/coach-create-course.component';
+import { ClientInformationsComponent } from './espaceClient/client-informations/client-informations.component';
+import { ClientUpdateInformationsComponent } from './espaceClient/client-update-informations/client-update-informations.component';
+import { ClientCoursesComponent } from './espaceClient/client-courses/client-courses.component';
+import { ClientProgramsComponent } from './espaceClient/client-programs/client-programs.component';
 
 const routes: Routes = [
   {
@@ -80,12 +86,34 @@ const routes: Routes = [
       },
       {
         path: 'create/meal', component: CoachCreateMealComponent
+      },
+      {
+        path: 'courses', component: EspaceCoachCoursesComponent
+      },
+      {
+        path: 'create/course', component: CoachCreateCourseComponent
       }
     ]
 
   },
   {
-    path: 'espace/client/:id' , component: EspaceClientComponent
+    path: 'espace/client/:id', component: EspaceClientComponent,
+    children: [
+      { path: 'informations', component: ClientInformationsComponent },
+      {
+        path: 'update/informations', component: ClientUpdateInformationsComponent
+      },
+      {
+        path: 'courses', component: ClientCoursesComponent
+      },
+      {
+        path: 'programs', component: ClientProgramsComponent
+      },
+      {
+        path: '**', component: ClientInformationsComponent
+      }
+
+    ]
   }
 ];
 
