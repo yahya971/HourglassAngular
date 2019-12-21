@@ -19,6 +19,7 @@ import { CoachCreateProgramComponent } from './escpaceCoach/coach-create-program
 import { CoachCreateWorkoutComponent } from './escpaceCoach/coach-create-workout/coach-create-workout.component';
 import { CoachCreateMealComponent } from './escpaceCoach/coach-create-meal/coach-create-meal.component';
 import { EspaceClientComponent } from './espaceClient/espace-client/espace-client.component';
+import {MyClientsComponent} from './escpaceCoach/my-clients/my-clients.component';
 
 const routes: Routes = [
   {
@@ -55,7 +56,11 @@ const routes: Routes = [
       {
         path: 'informations', component: CoachInformationsComponent
 
-      }, {
+      },
+      {
+        path: 'clients', component: MyClientsComponent
+      },
+      {
         path: 'programs', component: EspaceCoachProgramsComponent
       },
       {
@@ -65,19 +70,17 @@ const routes: Routes = [
         path: 'meals', component: EspaceCoachMealsComponent
       },
       {
-        path:'update/informations', component:CoachUpdateInformationsComponent
+        path: 'update/informations', component: CoachUpdateInformationsComponent
       },
       {
         path: 'create/program', component: CoachCreateProgramComponent
       },
       {
-        path: 'create/workout' ,component: CoachCreateWorkoutComponent
+        path: 'create/workout' , component: CoachCreateWorkoutComponent
       },
       {
         path: 'create/meal', component: CoachCreateMealComponent
       }
-
-
     ]
 
   },
