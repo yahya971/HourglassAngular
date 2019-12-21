@@ -41,6 +41,16 @@ import { CoachInformationsComponent } from './escpaceCoach/coach-informations/co
 import { CreateProgramComponent } from './escpaceCoach/create-program/create-program.component';
 import { MyClientsComponent } from './escpaceCoach/my-clients/my-clients.component';
 import { SideBarComponent } from './escpaceCoach/side-bar/side-bar.component';
+import { SidenavEspaceComponent } from './sidenav-espace/sidenav-espace.component';
+import { EspaceCoachProgramsComponent } from './escpaceCoach/espace-coach-programs/espace-coach-programs.component';
+import { EspaceCoachWorkoutsComponent } from './escpaceCoach/espace-coach-workouts/espace-coach-workouts.component';
+import { EspaceCoachMealsComponent } from './escpaceCoach/espace-coach-meals/espace-coach-meals.component';
+import { CoachUpdateInformationsComponent } from './escpaceCoach/coach-update-informations/coach-update-informations.component';
+import { CoachCreateProgramComponent } from './escpaceCoach/coach-create-program/coach-create-program.component';
+import { CoachCreateWorkoutComponent } from './escpaceCoach/coach-create-workout/coach-create-workout.component';
+import { CoachCreateMealComponent } from './escpaceCoach/coach-create-meal/coach-create-meal.component';
+import { EspaceClientComponent } from './espaceClient/espace-client/espace-client.component';
+
 
 
 @NgModule({
@@ -77,6 +87,16 @@ import { SideBarComponent } from './escpaceCoach/side-bar/side-bar.component';
     CreateProgramComponent,
     MyClientsComponent,
     SideBarComponent,
+    SidenavEspaceComponent,
+    EspaceCoachProgramsComponent,
+    EspaceCoachWorkoutsComponent,
+    EspaceCoachMealsComponent,
+    CoachUpdateInformationsComponent,
+    CoachCreateProgramComponent,
+    CoachCreateWorkoutComponent,
+    CoachCreateMealComponent,
+    EspaceClientComponent,
+
   ],
   imports: [
     BrowserModule,
