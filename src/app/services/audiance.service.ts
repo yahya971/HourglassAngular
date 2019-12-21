@@ -11,7 +11,7 @@ export class AudianceService {
   }
 
   saveAudiance(audiance: Audiance) {
-    this.http.post<Audiance>('http://localhost:8080/coach/addCoach', audiance).subscribe(res => {
+    this.http.post<Audiance>('http://localhost:8080/audiance/addAudiance', audiance).subscribe(res => {
       console.log(res);
     });
   }
