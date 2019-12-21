@@ -1,1 +1,18 @@
-<p>my-clients works!</p>
+
+
+<div class="content" style="margin-bottom:60px ">
+  <div class="card">
+    <div class="firstinfo">
+      <img src="assets/images/{{person.path|defaultImage}}" />
+      <div class="profileinfo">
+        <h1>{{person.firstName}} {{person.lastName}}</h1>
+        <h3>{{person.job}}</h3>
+        <p class="bio">Age: {{person.age}} <br> Cin: {{person.cin}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="badgescard">
+    <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span>
+    <span class="devicons devicons-sass"> </span>
+  </div>
+</div>
