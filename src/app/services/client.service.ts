@@ -13,11 +13,14 @@ export class ClientService {
     return this.http.get<Array<Client>>('http://localhost:8080/client');
   }
 
-  getCoachById(id) {
+  getClientById(id) {
     return this.http.get<Client>('http://localhost:8080/client/' + id);
   }
 
-  saveCoach(client: Client) {
+  getClientByCoachId(id) {
+    return this.http.get<Array<Client>>('http://localhost:8080/coach/' + id + '/clients');
+  }
+  saveClient(client: Client) {
     this.http.post<Client>('http://localhost:8080/client/addClient', client).subscribe(res => {
 
     });

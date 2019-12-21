@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WeeklyProgramComponent } from './programmeDuJour/WeeklyPrograms/weekly-program/weekly-program.component';
 import { DailyProgramListComponent } from './programmeDuJour/WeeklyPrograms/daily-program-list/daily-program-list.component';
 import { HttpClientModule } from '@angular/common/http';
+// tslint:disable-next-line:max-line-length
 import { DailyProgramItemWorkoutComponent } from './programmeDuJour/WeeklyPrograms/daily-program-item-workout/daily-program-item-workout.component';
 import { DailyProgramItemMealComponent } from './programmeDuJour/WeeklyPrograms/daily-program-item-meal/daily-program-item-meal.component';
 import { TestComponent } from './test/test.component';
@@ -23,6 +24,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { RegisterClientComponent } from './register-client/register-client.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -119,7 +123,8 @@ import { ClientUpdateInformationsComponent } from './espaceClient/client-update-
     BrowserAnimationsModule,
      MatStepperModule,
     MatNativeDateModule,
-    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule, MatMenuModule, MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
