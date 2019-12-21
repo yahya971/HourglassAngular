@@ -4,7 +4,6 @@ import {Client} from '../../Models/client.model';
 import {ActivatedRoute} from '@angular/router';
 import {CoachService} from '../../services/coach.service';
 import {Coach} from '../../Models/coach.Model';
-import {ProgramService} from '../../services/program.service';
 
 @Component({
   selector: 'app-my-clients',
@@ -13,9 +12,9 @@ import {ProgramService} from '../../services/program.service';
 })
 export class MyClientsComponent implements OnInit {
   coach: Coach;
-  clients: any;
+  clients: Array<Client>;
   id: any;
-  constructor(private programService: ProgramService, private coachService: CoachService, private router: ActivatedRoute) {
+  constructor(private clientService: ClientService, private coachService: CoachService, private router: ActivatedRoute) {
     router.params.subscribe(params => {this.id = params.id; });
   }
 
@@ -23,9 +22,8 @@ export class MyClientsComponent implements OnInit {
     this.coachService.getCoachById(this.id).subscribe(value => {
       this.coach = value;
     });
-    this.programService.getProgramByCoachId(this.id).subscribe(value => {
-      this.clients = value[0].clientid;
-      console.log(this.clients);
+    this.clientService.getClientByCoachId(this.id).subscribe(value => {
+      this.clients = value;
     });
   }
 
