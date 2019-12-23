@@ -1,1 +1,115 @@
-<p>espace-coach-programs works!</p>
+<!--
+
+  <section class="ttm-row team-style2-section clearfix">
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-6 col-lg-3"*ngFor="let program of programs">
+
+          <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay-style2 mb-30">
+            <div class="ttm-box-view-overlay ttm-team-style2-box-view-overlay">
+              <div class="featured-thumbnail">
+                <a routerLink="{{program.id}}"><img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}" alt=""></a>
+                <div class="ttm-social-links-wrapper">
+                  <ul class="social-icons list-inline">
+                    <li class="social-facebook"><a target="_blank" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="social-twitter"><a target="_blank" href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
+                    <li class="social-linkedin"><a target="_blank" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="featured-content featured-content-team">
+              <div class="featured-title">
+                <h5><a href="team-details.html">{{program.name}}</a></h5>
+              </div>
+              <div class="ttm-team-position ttm-textcolor-white">Rating: {{program.rating}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</div>-->
+
+<div class="ttm-page-title-row">
+  <div class="ttm-page-title-row-bg-layer ttm-bg-layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="title-box ttm-textcolor-white">
+          <div class="page-title-heading ttm-textcolor-white">
+            <h1 class="title">My Programs</h1>
+          </div><!-- /.page-title-captions -->
+          <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="index.html"><i class="ti ti-home"></i> Home </a>
+                                </span>
+            <span class="ttm-bread-sep"> &nbsp; :&nbsp;Espace coach: &nbsp; </span>
+            <span><span class="ttm-textcolor-skincolor">My Programs</span></span>
+          </div>
+        </div>
+      </div><!-- /.col-md-12 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- page-title end-->
+
+
+<!--site-main start-->
+<div class="site-main">
+
+  <!-- portfolio-style-section -->
+  <section class="ttm-row portfolio-style-section clearfix">
+    <div class="container">
+      <div class="row"><!-- row -->
+        <div class="col-md-12">
+          <div class="ttm-tabs">
+            <ul class="tabs text-center mb-35">
+              <li class="tab active"><a href="#"> All </a></li>
+              <li class="tab"><a href="#">Fitness</a></li>
+              <li class="tab"><a href="#">Weight lose</a></li>
+              <li class="tab"><a href="#">Dite</a></li>
+              <li class="tab"><a href="#">Supplement</a></li>
+              <li class="tab"><a href="#">Health</a></li>
+            </ul>
+            <div class="content-tab">
+              <div class="content-inner active">
+                <!-- row -->
+                <div class="row">
+                  <div class="col-md-4" *ngFor="let program of programs">
+                    <!-- featured-imagebox -->
+                    <div class="featured-imagebox featured-imagebox-team  ttm-box-view-top-image ttm-team-box-view-overlay box-shadow1 mb-30">
+                      <div class="featured-imagebox-team-inner">
+                        <div class="featured-thumbnail"><!-- team-member-image -->
+                          <img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}" alt="">
+                        </div>
+                        <div class="ttm-box-view-overlay">
+                          <div class="featured-iconbox ttm-media-link">
+                            <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]" title="Pilates Exercises" href="images/portfolio/06.jpg" data-rel="prettyPhoto">
+                              <i class="ti ti-search"></i>
+                            </a>
+                            <a href="portfolio-style-3.html" class="ttm_link"><i class="ti ti-link"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ttm-box-bottom-content">
+                        <p class="category">rating: {{program.rating}}</p><!-- team-member-category -->
+                        <div class="featured-title"><!-- team-member-name -->
+                          <h5><a href="portfolio-style-3.html">{{program.name}}</a></h5>
+                        </div>
+                      </div>
+                    </div><!-- featured-imagebox end-->
+                  </div>
+                </div><!-- row end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--portfolio-style-section end -->
+
+</div><!--site-main end-->

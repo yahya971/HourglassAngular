@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-coach-create-program',
@@ -7,15 +6,8 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./coach-create-program.component.css']
 })
 export class CoachCreateProgramComponent implements OnInit {
+  constructor() {}
 
-  id: any;
-  constructor(private router: ActivatedRoute) {
-    this.router.params.subscribe(value => {
-      this.id = value.id;
-      });
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
