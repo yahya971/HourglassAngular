@@ -18,8 +18,8 @@ export class MyClientsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.params.subscribe(params => {this.id = params.id; });
-    console.log(this.id);
+    this.router.params.subscribe(params => { this.id = params.id; });
+    localStorage.setItem('coachId', this.id.toString());
     this.clientService.getClientByCoachId(this.id).subscribe(value => {
       this.clients = value;
       console.log(this.clients);

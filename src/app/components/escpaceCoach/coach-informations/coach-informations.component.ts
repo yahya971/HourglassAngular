@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coach-informations.component.css']
 })
 export class CoachInformationsComponent implements OnInit {
-
+  id: string;
   constructor() { }
 
   ngOnInit() {
+    this.id = localStorage.getItem('coachId');
+    console.log(this.id);
   }
 
 }

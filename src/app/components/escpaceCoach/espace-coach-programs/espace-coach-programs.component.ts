@@ -13,13 +13,12 @@ export class EspaceCoachProgramsComponent implements OnInit {
   id: any;
   programs: Array<Program>;
   constructor(private router: ActivatedRoute, private wlprogramService: ProgramService ) {
-    this.router.params.subscribe(value => {
-      this.id = value.id;
-    });
-    console.log(this.id);
+
   }
 
   ngOnInit() {
+    this.id = localStorage.getItem('coachId');
+    console.log(this.id);
     this.wlprogramService.getProgramByCoachId(this.id).subscribe(
       value => {
         this.programs = value;

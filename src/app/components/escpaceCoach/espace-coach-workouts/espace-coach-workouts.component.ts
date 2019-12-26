@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./espace-coach-workouts.component.css']
 })
 export class EspaceCoachWorkoutsComponent implements OnInit {
-
+  id: string;
   constructor() { }
 
   ngOnInit() {
+    this.id = localStorage.getItem('coachId');
+    console.log(this.id);
   }
 
 }
