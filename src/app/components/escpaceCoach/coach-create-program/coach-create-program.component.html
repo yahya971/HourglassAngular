@@ -1,1 +1,106 @@
-<p>coach-create-program works!</p>
+<div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+  <form [formGroup]="form">
+      <div class="row">
+        <div class="col-8 col-md-8">
+          <label for="name" class="myLabel">Name:  </label>
+          <input type="text" id="name" class="form-control" formControlName="name" required/>
+        </div>
+        <div class="col-4 col-md-4">
+          <label for="BackgroundImage" class="myLabel">Background Image: </label>
+          <input type="file" id="BackgroundImage" class="form-control" formControlName="backgroundImage" />
+        </div>
+      </div>
+      <hr class="myHr">
+      <div class="row">
+        <div class="col-9 col-md-9">
+          <label class="myLabel">Description: </label>
+          <textarea cols="20" rows="4" formControlName="description" required></textarea>
+        </div>
+      </div>
+      <hr class="myHr">
+      <div class="row">
+        <div class="col-6 col-md-6">
+          <div formArrayName="objectives">
+            <label class="myLabel">Objectives</label>
+            <div *ngFor="let objective of getObjectifsForm().controls; let i=index"
+                 [formGroupName]="i" style="border-right:1px solid grey;height:100%">
+              <label class="myLabel2">{{i}}-</label>
+              <input type="text" class="form-control" formControlName="objective" style="display:inline-block;width:70%;margin-bottom:1em;margin-right:1em;margin-left:1em" />
+              <button class="btn btn-danger btn-sm" (click)="deleteObjectif(i)" style="display:inline-block;margin-bottom:1em">Delete</button>
+            </div>
+            <button class="btn btn-success" (click)="addObjectif()">Add Ingredient</button>
+          </div>
+
+        </div>
+
+        <div class="col-6 col-md-6">
+          <label for="duration" class="myLabel">Duration</label>
+          <input type="text" id="duration" class="form-control" formControlName="duration" required/>
+        </div>
+      </div>
+        <hr class="myHr">
+        <div class="row">
+          <div class="col-4 col-md-4">
+            <label for="sex" class="myLabel">Sex  </label>
+            <select class="custom-select mr-sm-2" formControlName="sex" id="sex">
+              <option value="Both" selected>All</option>
+              <option value="Homme">Male</option>
+              <option value="Femme">Female</option>
+            </select>
+          </div>
+          <div class="col-4 col-md-4">
+            <label for="tailleMax" class="myLabel1">Max Height</label>
+            <input type="number" id="tailleMax" class="form-control" formControlName="tailleMax" style="width:60%;" />
+          </div>
+          <div class="col-4 col-md-4">
+            <label for="tailleMin" class="myLabel1">Min Height</label>
+            <input type="number" id="tailleMin" class="form-control" formControlName="tailleMin" style="width:60%;" />
+          </div>
+      </div>
+      <hr class="myHr">
+      <div class="row">
+        <div class="col-4 col-md-4">
+          <label for="frame" class="myLabel">Frame  </label>
+          <select class="custom-select mr-sm-2" formControlName="frame" id="frame">
+            <option value="Delicate" selected>Delicate</option>
+            <option value="Normal">Normal</option>
+            <option value="Thick">Thick</option>
+          </select>
+        </div>
+        <div class="col-4 col-md-4">
+          <label for="poidsMax" class="myLabel1">Max weight</label>
+          <input type="number" id="poidsMax" class="form-control" formControlName="poidsMax" style="width:60%;" />
+        </div>
+        <div class="col-4 col-md-4">
+          <label for="poidsMin" class="myLabel1">Min weight</label>
+          <input type="number" id="poidsMin" class="form-control" formControlName="poidsMin" style="width:60%;" />
+        </div>
+      </div>
+      <hr class="myHr">
+      <div class="row">
+        <div class="col-6 col-md-6">
+          <label for="fatStorage" class="myLabel">Fat Storage  </label>
+          <select class="custom-select mr-sm-2" formControlName="frame" id="fatStorage">
+            <option value="BellyAndHips" selected>Belly And Hips</option>
+            <option value="BellyAndUpperBody">Belly AndUpper Body</option>
+            <option value="HipsAndLowerBody">Hips And Lower Body</option>
+            <option value="AllOver">All Over</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-6">
+          <label for="silhouette" class="myLabel">Silhouette  </label>
+          <select class="custom-select mr-sm-2" formControlName="frame" id="silhouette">
+            <option value="Hourglass" selected>Hourglass</option>
+            <option value="Pyramid">Pyramid</option>
+            <option value="InvertedPyramid">Inverted Pyramid</option>
+            <option value="Rectangle">Rectangle</option>
+            <option value="Round">Round</option>
+            <option value="Eight">Eight</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3 offset-md-9">
+        <button class="btn btn-primary" (click)="nextForm()" style="margin-top:1em">Next</button>
+      </div>
+  </form>
+</div>

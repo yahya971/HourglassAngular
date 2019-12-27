@@ -1,0 +1,101 @@
+<div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+  <div class="row">
+    <p>
+      Please fill this survey to help us recommend this program to our clients
+      <br/>
+      We will show you a few clients and you can tell us if your program is compatible with them or not
+    </p>
+  </div>
+  <form [formGroup]="myForm">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Client</th>
+        <th scope="col">Sex</th>
+        <th scope="col">Frame</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Fat Storage</th>
+        <th scope="col">Silhouette</th>
+        <th scope="col">Result</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Male</td>
+        <td>Delicate</td>
+        <td>170</td>
+        <td>70</td>
+        <td>BellyAndHips</td>
+        <td>Hourglass</td>
+        <td><input class="form-check-input"  formControlName="client1" type="checkbox"   id="client1">
+          <label class="form-check-label" for="client1">
+            Compatible
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Male</td>
+        <td>Delicate</td>
+        <td>170</td>
+        <td>70</td>
+        <td>BellyAndHips</td>
+        <td>Hourglass</td>
+        <td><input class="form-check-input"  formControlName="client2" type="checkbox"  id="client2">
+          <label class="form-check-label" for="client2">
+            Compatible
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Male</td>
+        <td>Delicate</td>
+        <td>170</td>
+        <td>70</td>
+        <td>BellyAndHips</td>
+        <td>Hourglass</td>
+        <td><input class="form-check-input"  formControlName="client3" type="checkbox"  id="client3">
+          <label class="form-check-label" for="client3">
+            Compatible
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Male</td>
+        <td>Delicate</td>
+        <td>170</td>
+        <td>70</td>
+        <td>BellyAndHips</td>
+        <td>Hourglass</td>
+        <td><input class="form-check-input"  formControlName="client4" type="checkbox"  id="client4">
+          <label class="form-check-label" for="client4">
+            Compatible
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Male</td>
+        <td>Delicate</td>
+        <td>170</td>
+        <td>70</td>
+        <td>BellyAndHips</td>
+        <td>Hourglass</td>
+        <td><input class="form-check-input"  formControlName="client5" type="checkbox"  id="client5">
+          <label class="form-check-label" for="client5">
+            Compatible
+          </label>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="col-md-3 offset-md-9">
+      <button class="btn btn-primary" (click)="nextForm()" style="margin-top:1em">Next</button>
+    </div>
+  </form>
+</div>
+

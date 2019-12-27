@@ -26,6 +26,8 @@ import { ClientInformationsComponent } from './components/espaceClient/client-in
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
+import {Form2Component} from "./components/escpaceCoach/coach-create-program/form2/form2.component";
+import {Form3Component} from "./components/escpaceCoach/coach-create-program/form3/form3.component";
 
 const routes: Routes = [
   {
@@ -80,6 +82,12 @@ const routes: Routes = [
       },
       {
         path: 'create/program/:id', component: CoachCreateProgramComponent
+      },
+      {
+        path: 'create/program/form2/:id', component: Form2Component
+      },
+      {
+        path: 'create/program/form3/:id', component: Form3Component
       },
       {
         path: 'create/workout/:id' , component: CoachCreateWorkoutComponent

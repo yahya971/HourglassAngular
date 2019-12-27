@@ -60,6 +60,8 @@ import { EspaceCoachCoursesComponent } from './components/escpaceCoach/espace-co
 import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
+import { Form2Component } from './components/escpaceCoach/coach-create-program/form2/form2.component';
+import { Form3Component } from './components/escpaceCoach/coach-create-program/form3/form3.component';
 
 
 
@@ -112,6 +114,8 @@ import { ClientUpdateInformationsComponent } from './components/espaceClient/cli
     ClientProgramsComponent,
     ClientCoursesComponent,
     ClientUpdateInformationsComponent,
+    Form2Component,
+    Form3Component,
 
   ],
   imports: [
