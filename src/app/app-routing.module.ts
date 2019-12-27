@@ -26,6 +26,8 @@ import { ClientInformationsComponent } from './components/espaceClient/client-in
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
+import { MealComponent } from './components/escpaceCoach/meal/meal.component';
+import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
 
 const routes: Routes = [
   {
@@ -79,6 +81,9 @@ const routes: Routes = [
         path: 'update/informations/:id', component: CoachUpdateInformationsComponent
       },
       {
+        path: 'update/meal/:id/:mealId', component: CoachUpdateMealComponent
+      },
+      {
         path: 'create/program/:id', component: CoachCreateProgramComponent
       },
       {
@@ -92,6 +97,9 @@ const routes: Routes = [
       },
       {
         path: 'create/course/:id', component: CoachCreateCourseComponent
+      },
+      {
+        path: 'meal/:id/:mealId', component: MealComponent
       }
     ]
 
