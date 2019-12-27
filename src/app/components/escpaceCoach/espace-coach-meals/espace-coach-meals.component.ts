@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import $ from '../../../../assets/js/jquery.min.js';
+import {MealService} from '../../../services/meal.service';
+import {Meal} from '../../../Models/meal.model';
 
 @Component({
   selector: 'app-espace-coach-meals',
@@ -8,12 +10,38 @@ import $ from '../../../../assets/js/jquery.min.js';
 })
 export class EspaceCoachMealsComponent implements OnInit {
   id: string;
-  constructor() { }
+  meals: Array<Meal>;
+  breakfasts: Array<Meal> = [];
+  lunchs: Array<Meal> = [];
+  dinners: Array<Meal> = [];
+  snacks: Array<Meal> = [];
+  constructor(private mealService: MealService) { }
 
   ngOnInit() {
     this.tabs();
     this.id = localStorage.getItem('coachId');
     console.log(this.id);
+    this.mealService.getMealByCoachId(this.id).subscribe(
+      value => {
+        this.meals = value;
+        console.log(this.meals);
+        this.meals.forEach(meal => {
+          if (meal.type === 'breakfast') {
+            this.breakfasts.push(meal);
+          } else if (meal.type === 'lunch') {
+            this.lunchs.push(meal);
+          } else if (meal.type === 'dinner') {
+            this.dinners.push(meal);
+          } else {
+            this.snacks.push(meal);
+          }
+        });
+        console.log(this.breakfasts);
+        console.log(this.lunchs);
+        console.log(this.dinners);
+        console.log(this.snacks);
+      }
+    );
   }
 
   tabs() {

@@ -25,6 +25,9 @@ export class MealService {
 
   getMealById(id) {
 
+  }
 
+  getMealByCoachId(id) {
+    return this.http.get<Array<Meal>>('http://localhost:8080/meal/byCoach/' + id);
   }
 }

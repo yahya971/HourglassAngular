@@ -2,7 +2,7 @@ export class Meal {
   id: number;
   caloricValue: number;
   photo: Array<any>;
-  taken: Boolean;
+  isTaken: boolean;
   recipe: string;
   ingredients: string;
   coach: any;
