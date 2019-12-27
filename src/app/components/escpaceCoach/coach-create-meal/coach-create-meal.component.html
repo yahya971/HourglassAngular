@@ -1,1 +1,67 @@
-<p>coach-create-meal works!</p>
+<div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+  <form [formGroup]="myForm">
+    <div class="row">
+      <div class="col-9 col-md-9">
+        <label for="name">Name: </label>
+        <input type="text" id="name" class="form-control" formControlName="name" />
+      </div>
+      <div class="col-3 col-md-3">
+        <label for="type">Type:  </label>
+        <select class="custom-select mr-sm-2" formControlName="type" id="type">
+          <option selected>BreakFast</option>
+          <option value="1">Lunch</option>
+          <option value="2">Dinner</option>
+          <option value="3">Snack</option>
+        </select>
+      </div>
+    </div>
+   <hr />
+    <div class="row">
+      <div class="col-9 col-md-9">
+        <label for="description">Description: </label>
+        <input type="text" id="description" class="form-control" formControlName="description" />
+      </div>
+      <div class="col-3 col-md-3">
+        <label for="photo">Photo</label>
+        <input type="file" class="form-control-file" id="photo" formControlName="photo">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-4 col-md-4">
+        <label for="caloricValue">Caloric Value: </label>
+        <input type="number" id="caloricValue" class="form-control" formControlName="caloricValue" />
+      </div>
+      <div class="col-4 col-md-4">
+        <label for="time">Time: </label>
+        <input type="number" id="time" class="form-control" formControlName="time" />
+      </div>
+      <div class="col-4 col-md-4">
+        <label for="preparationTime">Preparation Time: </label>
+        <input type="number" id="preparationTime" class="form-control" formControlName="preparationTime" />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-6 col-md-6">
+        <div formArrayName="ingredients">
+          <label>Ingredients</label>
+          <div *ngFor="let ingredient of ingredientForms.controls; let i=index"
+               [formGroupName]="i" style="border-right:1px solid grey;height:100%">
+            <label>{{i}}-</label>
+            <input type="text" class="form-control" formControlName="ingredient" style="display:inline-block;width:70%;margin-bottom:1em;margin-right:1em;margin-left:1em" />
+            <button class="btn btn-danger btn-sm" (click)="deleteIngredient(i)" style="display:inline-block;margin-bottom:1em">Delete</button>
+          </div>
+          <button class="btn btn-success" (click)="addIngredient()">Add Ingredient</button>
+        </div>
+       
+      </div>
+      
+      <div class="col-6 col-md-6">
+        <label>Directions</label>
+        <textarea cols="20" rows="4" formControlName="recipe"></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="submitFormMeal()" style="margin-top:1em">Submit</button>
+  </form>
+</div>

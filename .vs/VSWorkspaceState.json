@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\escpaceCoach",
+    "\\src\\app\\components\\escpaceCoach\\coach-informations",
+    "\\src\\app\\components\\escpaceCoach\\espace-coach-meals",
+    "\\src\\app\\components\\escpaceCoach\\espace-coach-programs",
+    "\\src\\app\\components\\escpaceCoach\\espace-coach-workouts",
+    "\\src\\app\\components\\sidenav-espace"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\espace-coach-programs\\espace-coach-programs.component.html",
   "PreviewInSolutionExplorer": false
 }

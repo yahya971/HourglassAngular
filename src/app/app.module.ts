@@ -124,7 +124,8 @@ import { ClientUpdateInformationsComponent } from './components/espaceClient/cli
      MatStepperModule,
     MatNativeDateModule,
     MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule, MatMenuModule, MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
