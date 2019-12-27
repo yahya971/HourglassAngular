@@ -41,15 +41,15 @@ export class CoachCreateMealComponent implements OnInit {
   addIngredient() {
 
     const ingredient = this.fb.group({
-      ingredient:[]
-    })
+      ingredient: []
+    });
 
     this.ingredientForms.push(ingredient);
     console.log(this.myForm.value);
   }
 
   deleteIngredient(i) {
-    this.ingredientForms.removeAt(i)
+    this.ingredientForms.removeAt(i);
   }
 
 }
