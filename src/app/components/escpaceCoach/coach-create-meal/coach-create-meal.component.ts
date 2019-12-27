@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { MealService } from '../../../services/meal.service';
 
 @Component({
   selector: 'app-coach-create-meal',
@@ -10,7 +11,8 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 export class CoachCreateMealComponent implements OnInit {
   id: string;
   myForm: FormGroup;
-  constructor(private router: ActivatedRoute, private fb: FormBuilder) { }
+  imageString: any;
+  constructor(private router: ActivatedRoute, private fb: FormBuilder, private mealService: MealService,private rrouter:Router) { }
 
   ngOnInit() {
     this.router.params.subscribe(params => { this.id = params.id; });
@@ -51,5 +53,41 @@ export class CoachCreateMealComponent implements OnInit {
   deleteIngredient(i) {
     this.ingredientForms.removeAt(i);
   }
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.imageString = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+
+
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
+  }
+
+  submitFormMeal() {
+    let formResult = this.myForm.value;
+    var ingredientString = "";
+
+    for (let ingredient of this.myForm.value.ingredients)
+      if (ingredient)
+        ingredientString += ingredient.ingredient + ',';
+    formResult.ingredients = ingredientString;
+    formResult.photo = this.imageString;
+    console.log(formResult);
+    this.mealService.saveMeal(formResult, this.id).subscribe(value => {
+      console.log(value);
+      this.rrouter.navigate(['/espace/coach/meals', this.id]);
+
+    })
+  }
+
 
 }

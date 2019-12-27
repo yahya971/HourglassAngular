@@ -1,0 +1,511 @@
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #d7d9db;
+  color: #3d414a;
+  font-family: effra,Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 .75em;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  line-height: 0.5em;
+}
+
+img, picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 225%;
+}
+
+a {
+  -webkit-transition: color .1s linear;
+  -moz-transition: color .1s linear;
+  transition: color .1s linear;
+  color: #ff3600;
+  text-decoration: none;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h2 {
+  font-size: 200%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h6 {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: #efefef;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.below-all-entries-inner article, .entry-container article {
+  margin-bottom: 2em;
+  background: #fff;
+}
+/* @media screen */
+.printer-page .entry-container > article {
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+/* @media screen and (min-width:972px) */
+.below-all-entries-inner, .entry-container {
+  float: left;
+  display: block;
+  margin-right: 0.81%;
+  width: 66.39%;
+}
+/* @media screen and (min-width:1464px) */
+.below-all-entries-inner, .entry-container {
+  float: left;
+  display: block;
+  margin-right: 0.81%;
+  width: 69.19%;
+}
+
+.below-all-entries, .content-main {
+  max-width: 91.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  margin-top: 3em;
+  position: relative;
+}
+
+.template-recipe .below-all-entries, .template-recipe .content-main {
+  max-width: 91.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+}
+/* @media screen */
+.printer-page .content-main {
+  margin-top: 30px;
+}
+
+.template-recipe .below-all-entries::after, .template-recipe .content-main::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+body::after {
+  display: none;
+}
+/* @media screen and (min-width:320px) */
+body::after {
+  content: "screen-tiny";
+}
+/* @media screen and (min-width:480px) */
+body::after {
+  content: "screen-xs";
+}
+/* @media screen and (min-width:768px) */
+body::after {
+  content: "screen-sm";
+}
+/* @media screen and (min-width:972px) */
+body::after {
+  content: "screen-md";
+}
+/* @media screen and (min-width:1464px) */
+body::after {
+  content: "screen-lg";
+}
+/* @media screen and (min-width:1500px) */
+body::after {
+  content: "screen-xlg";
+}
+
+html {
+  font-family: mobile;
+}
+/* @media screen and (min-width:320px) */
+html {
+  font-family: screen-tiny;
+}
+/* @media screen and (min-width:480px) */
+html {
+  font-family: screen-xs;
+}
+/* @media screen and (min-width:768px) */
+html {
+  font-family: screen-sm;
+}
+/* @media screen and (min-width:972px) */
+html {
+  font-family: screen-md;
+}
+/* @media screen and (min-width:1464px) */
+html {
+  font-family: screen-lg;
+}
+/* @media screen and (min-width:1500px) */
+html {
+  font-family: screen-xlg;
+}
+
+.entry-header {
+  text-align: left;
+}
+
+.recipe-bottom, .recipe-footer, .recipe-introduction, .recipe-wrapper {
+  margin: 0 5% 1.5em;
+  padding: 0;
+}
+/* @media screen and (min-width:480px) */
+.recipe-introduction {
+  font-size: 1.12em;
+}
+/* @media screen and (min-width:972px) */
+.recipe-bottom, .recipe-footer, .recipe-introduction {
+  margin: 0 12% 1.5em;
+}
+/* @media screen and (min-width:1464px) */
+.recipe-bottom, .recipe-footer, .recipe-introduction {
+  margin: 0 18% 1.5em;
+}
+
+.recipe-wrapper::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.breakoutbox + .breakoutbox, .breakoutbox + .callout, .callout + .breakoutbox, .callout + .callout {
+  border-top: 0;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
+
+.recipe-bottom .callout-bottom {
+  padding: 0;
+  margin: 2em 0;
+  border: 0 none transparent;
+}
+
+.printer-page .callout-bottom-recipe, .printer-page .recipe-bottom, .printer-page .recipe-introduction, .printer-page .recipe-introduction-body, .printer-page .recipe-why, .printer-page .recipe-wrapper {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.recipe-wrapper {
+  clear: both;
+  padding-bottom: 1.5em;
+  border-top: 1px solid #d7d9db;
+  border-bottom: 1px solid #d7d9db;
+}
+
+.breakoutbox, .callout {
+  padding: 1.25em;
+  margin: 1.25em 0;
+  border-top: 2px solid #edbf36;
+  border-bottom: 2px solid #edbf36;
+  clear: both;
+}
+
+  .body-basic h2, .body-basic h3, .body-basic h4, .body-basic h5, .body-basic h6, .breakoutbox .callout-title, .breakoutbox h4, .callout .callout-title, .callout h4, .entry-body table h2, .entry-body table h3, .entry-body table h4, .entry-body table h5, .entry-body table h6, .entry-body > h2, .entry-body > h3, .entry-body > h4, .entry-body > h5, .entry-body > h6, .entry-tags h6, .index-block .index-title, .slide > h2, .slide > h3, .slide > h4, .slide > h5, .slide > h6, .title-section, .venue-tip .label {
+    font-family: adelle,effra,Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    text-align: left;
+    color: #30a2cc;
+  }
+
+  .breakoutbox .callout-title, .breakoutbox h4, .callout .callout-title, .callout h4 {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+
+.recipe-bottom .callout-title {
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+.breakoutbox .info, .callout .info {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+.breakoutbox li:last-child, .breakoutbox p:last-child, .callout li:last-child, .callout p:last-child {
+  margin-bottom: 0px;
+}
+
+.recipe-about {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 1em 0 1.25em;
+  margin: 0 auto 2em;
+  line-height: 1.25em;
+  border-bottom: 1px solid #d7d9db;
+}
+/* @media screen and (min-width:972px) */
+.recipe-about {
+  font-size: 1.12em;
+}
+/* @media screen and (min-width:972px) */
+.recipe-ingredients {
+  float: left;
+  width: 26%;
+  margin-right: 2%;
+}
+
+.recipe-procedures {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid #d7d9db;
+}
+/* @media screen and (min-width:972px) */
+.recipe-procedures {
+  margin-left: 28%;
+  padding-top: 0px;
+  margin-top: 0px;
+  border-top: 0;
+}
+
+.recipe-bottom .title-section, .recipe-footer .title-section, .recipe-introduction .title-section, .recipe-wrapper .title-section {
+  margin-bottom: 0.4em;
+  font-size: 1.5rem;
+}
+
+.recipe-procedures-list {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.recipe-procedure {
+  display: table-row;
+}
+
+.recipe-procedure-number {
+  display: table-cell;
+  width: 1.9em;
+  vertical-align: top;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1.6875;
+}
+
+.recipe-procedure-text {
+  vertical-align: top;
+  font-size: 1.12em;
+}
+
+  .recipe-procedure-text p:empty {
+    display: none;
+  }
+/* @media screen and (min-width:480px) */
+.recipe-ingredients ul {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+}
+/* @media screen and (min-width:972px) */
+.recipe-ingredients ul {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0px;
+}
+
+.recipe-ingredients li {
+  padding-bottom: 0.85em;
+}
+/* @media screen and (min-width:480px) */
+.recipe-ingredients ul li {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.recipe-about li {
+  position: relative;
+  text-align: center;
+  display: table-cell;
+  padding: 0 1.375em;
+}
+
+  .recipe-about li::before {
+    content: "/";
+    position: absolute;
+    top: 0.3em;
+    right: -0.23em;
+    font-size: 1.75em;
+    font-weight: 400;
+    color: #d7d9db;
+    padding: 0;
+  }
+
+  .recipe-about li:last-child::before {
+    content: "";
+  }
+
+.recipe-about .label {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+
+.recipe-about .info {
+  display: block;
+}
+
+.printer-page .recipe-introduction .recipe-introduction-body {
+  margin-bottom: 1.25em;
+}
+
+.recipe-introduction p:not(.caption):first-of-type {
+  margin-top: 1.25em;
+}
+
+.printer-page .recipe-introduction p:not(.caption):first-of-type {
+  margin-top: 0px;
+}
+
+.entry-header-inner {
+  padding: .25em 1em;
+}
+
+.printer-page .entry-header-inner {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.recipe-main-photo {
+  margin: 1em 0 0;
+  background: #f2f3f3;
+  position: relative;
+}
+
+.entry-header > figure {
+  padding: 0;
+}
+
+.printer-page .recipe-main-photo {
+  float: right;
+  width: 20%;
+  margin: 0 0 12pt 12pt;
+}
+
+.ad-wrapper {
+  text-align: center;
+}
+
+.entry-body :not(.body-inline).ad-wrapper, .recipe-main-photo .ad-wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 3%;
+  padding: 0;
+  min-height: 0px;
+}
+
+.se-pinit-image-container {
+  position: relative;
+  clear: both;
+}
+
+.recipe-main-photo .se-pinit-image-container, .recipe-main-photo img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.ad-wrapper .auto-ad {
+  min-height: 50px;
+}
+/* @media screen and (min-width:972px) */
+.ad-wrapper .auto-ad {
+  min-height: 90px;
+}
+
+.ad-wrapper #entry-sponsor-logo {
+  min-height: 100px;
+  width: 120px;
+}
+
+.breakoutbox li a, .form-search button[type=submit] .label, .nav-filters .dropdown-display-text, .nav-filters .nav-title, .title {
+  font-family: adelle,effra,Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+
+.entry-header-inner > * {
+  padding: .25em 0;
+}
+
+.entry-header h1 {
+  font-size: 187.5%;
+}
+/* @media screen and (min-width:768px) */
+.entry-header h1 {
+  font-size: 275%;
+}
+
+.author-byline {
+  font-size: 0.87em;
+}
+
+  .author-byline.brief {
+    font-size: 0.87em;
+    line-height: 1.3;
+  }
+
+  .author-byline .name-contact {
+    margin-bottom: 1em;
+  }
+
+  .author-byline .author-name {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+    .author-byline .author-name a {
+      color: #3d414a;
+    }
