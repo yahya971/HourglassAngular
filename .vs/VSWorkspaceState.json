@@ -5,12 +5,10 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\escpaceCoach",
-    "\\src\\app\\components\\escpaceCoach\\coach-informations",
-    "\\src\\app\\components\\escpaceCoach\\espace-coach-meals",
-    "\\src\\app\\components\\escpaceCoach\\espace-coach-programs",
-    "\\src\\app\\components\\escpaceCoach\\espace-coach-workouts",
+    "\\src\\app\\components\\escpaceCoach\\coach-create-meal",
+    "\\src\\app\\components\\escpaceCoach\\my-clients",
     "\\src\\app\\components\\sidenav-espace"
   ],
-  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\espace-coach-programs\\espace-coach-programs.component.html",
+  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\my-clients\\my-clients.component.ts",
   "PreviewInSolutionExplorer": false
 }

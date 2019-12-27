@@ -1,0 +1,27 @@
+.myLabel {
+  font-family: "adelle";
+  color: #30a2cc;
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.myLabel1 {
+  font-family: "effra";
+  color: #30a2cc;
+  font-size: 20px;
+  font-weight: bold
+}
+
+
+.myHr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  color: darkslategrey;
+  //background-color: darkslategrey;
+  border-color: darkslategrey
+}
+
+.myLabel2{
+  color:darkgray;
+  font-size:16px;
+}
