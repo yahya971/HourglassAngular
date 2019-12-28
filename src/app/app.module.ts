@@ -64,6 +64,7 @@ import { Form2Component } from './components/escpaceCoach/coach-create-program/f
 import { Form3Component } from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
+import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/meal-card/meal-card.component';
 
 
 
@@ -120,6 +121,7 @@ import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update
     Form3Component,
     MealComponent,
     CoachUpdateMealComponent,
+    MealCardComponent,
 
   ],
   imports: [

@@ -41,31 +41,8 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of breakfasts">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            {{meal.caloricValue}} calories
-                          </div>
-                          <img src="data:image/jpeg;base64,{{meal.photo}}"  class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">{{meal.name}}</h3>
-                          <div class="coords">
-                            <span>Program Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>{{meal.time}}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">{{meal.name}}</h3>
-                        <p style="margin-left: 50px">{{meal.description}}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                                 [photo]="meal.photo" [time]="meal.time"></app-meal-card>
                 </div>
                 <div class="w-100"></div>
               </div>
@@ -74,31 +51,8 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of lunchs">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            {{meal.caloricValue}} Calories
-                          </div>
-                          <img src="data:image/jpeg;base64,{{meal.photo}}"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">{{meal.name}}</h3>
-                          <div class="coords">
-                            <span>Program Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>{{meal.time}}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">{{meal.name}}</h3>
-                        <p style="margin-left: 50px">{{meal.description}}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                                 [photo]="meal.photo" [time]="meal.time"></app-meal-card>
                 </div>
               </div>
               <mat-divider></mat-divider>
@@ -106,31 +60,8 @@
             <div class="content-inner">
             <div class="row">
               <div class="col" *ngFor="let meal of dinners">
-                <div>
-                  <div class="card" style="height: 150px; width: 400px">
-                    <div class="additional">
-                      <div class="user-card">
-                        <div class="points center" style="margin-top: 0px">
-                          {{meal.caloricValue}} Calories
-                        </div>
-                        <img src="data:image/jpeg;base64,{{meal.photo}}"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                      </div>
-                      <div class="more-info">
-                        <h3 style="font-family: Lato; margin-left: 23px">{{meal.name}}</h3>
-                        <div class="coords">
-                          <span>Program Name</span>
-                        </div>
-                        <div class="coords">
-                          <span>{{meal.time}}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="general" style="padding-bottom: -20px">
-                      <h3 style="font-family: Lato; margin-left: 60px">{{meal.name}}</h3>
-                      <p style="margin-left: 50px">{{meal.description}}</p>
-                    </div>
-                  </div>
-                </div>
+                <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                               [photo]="meal.photo" [time]="meal.time"></app-meal-card>
               </div>
             </div>
             <mat-divider></mat-divider>
@@ -138,31 +69,8 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of snacks">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            {{meal.caloricValue}} Calories
-                          </div>
-                          <img src="data:image/jpeg;base64,{{meal.photo}}"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">{{meal.name}}</h3>
-                          <div class="coords">
-                            <span>Program Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>{{meal.time}}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">{{meal.name}}</h3>
-                        <p style="margin-left: 50px">{{meal.description}}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                                 [photo]="meal.photo" [time]="meal.time"></app-meal-card>
                 </div>
               </div>
               <mat-divider></mat-divider>
