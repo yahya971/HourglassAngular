@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -42,7 +43,6 @@ import { ContactCoachComponent } from './components/programmeDuJour/contact-coac
 import { ListCoachsComponent } from './components/coach/list-coachs/list-coachs.component';
 import { EspaceCoachComponent } from './components/escpaceCoach/espace-coach/espace-coach.component';
 import { CoachInformationsComponent } from './components/escpaceCoach/coach-informations/coach-informations.component';
-import { CreateProgramComponent } from './components/escpaceCoach/create-program/create-program.component';
 import { MyClientsComponent } from './components/escpaceCoach/my-clients/my-clients.component';
 import { SideBarComponent } from './components/escpaceCoach/side-bar/side-bar.component';
 import { SidenavEspaceComponent } from './components/sidenav-espace/sidenav-espace.component';
@@ -99,7 +99,6 @@ import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/
     ListCoachsComponent,
     EspaceCoachComponent,
     CoachInformationsComponent,
-    CreateProgramComponent,
     MyClientsComponent,
     SideBarComponent,
     SidenavEspaceComponent,
@@ -135,7 +134,8 @@ import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/
     MatNativeDateModule,
     MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule, MatMenuModule, MatIconModule,
     MatDividerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
