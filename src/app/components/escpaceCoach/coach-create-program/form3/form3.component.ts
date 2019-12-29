@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import $ from '../../../../../assets/js/jquery.min';
 
 @Component({
   selector: 'app-form3',
@@ -28,6 +29,7 @@ export class Form3Component implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.tabs();
   }
   toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
@@ -43,6 +45,21 @@ export class Form3Component implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+  }
+
+  tabs() {
+    $('.ttm-tabs').each(function() {
+      $(this).children('.content-tab').children().hide();
+      $(this).children('.content-tab').children().first().show();
+      $(this).find('.tabs').children('li').on('click', function(e) {
+        var liActive = $(this).index(),
+          contentActive = $(this).siblings().removeClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive);
+        contentActive.addClass('active').fadeIn('slow');
+        contentActive.siblings().removeClass('active');
+        $(this).addClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive).siblings().hide();
+        e.preventDefault();
+      });
+    });
   }
 
 }
