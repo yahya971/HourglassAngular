@@ -40,180 +40,33 @@
           <div class="content-tab">
             <div class="content-inner">
               <div class="row">
-                <div class="col">
+                <div class="col" *ngFor="let workout of workouts">
                   <div>
                     <div class="card" style="height: 150px; width: 400px">
                       <div class="additional">
                         <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            1000 calories
+                          <div class="points center" style="margin-top: 0px"> {{workout.burnedCalories}}
                           </div>
-                          <img src="../../../../assets/images/avartar.png"  class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
+                          <img src="{{workout.photo}}"  class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
                         </div>
                         <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Workout Name</h3>
+                          <h3 style="font-family: Lato; margin-left: 23px">{{workout.name}}</h3>
                           <div class="coords">
-                            <span>Program Name</span>
+                            <span>Workout Program</span>
                           </div>
                           <div class="coords">
-                            <span>Duration</span>
+                            <span>{{workout.duration}}</span>
                           </div>
                         </div>
                       </div>
                       <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Workout Name</h3>
-                        <p style="margin-left: 50px">Description</p>
+                        <h3 style="font-family: Lato; margin-left: 60px">{{workout.name}}</h3>
+                        <p style="margin-left: 50px">{{workout.description}}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div>
-                    <div class="card green" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png" class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col"></div>
-              </div>
-              <mat-divider></mat-divider>
-            </div>
-            <div class="content-inner">
-              <div class="row">
-                <div class="col">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="w-100"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-              </div>
-              <mat-divider></mat-divider>
-            </div>
-            <div class="content-inner">
-              <div class="row">
-                <div class="col">
-                  <div>
-                    <div class="card" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -224,47 +77,9 @@
               </div>
               <mat-divider></mat-divider>
             </div>
-            <div class="content-inner">
-              <div class="row">
-                <div class="col">
-                  <div>
-                    <div class="card green" style="height: 150px; width: 400px">
-                      <div class="additional">
-                        <div class="user-card">
-                          <div class="points center" style="margin-top: 0px">
-                            5,312 Points
-                          </div>
-                          <img src="../../../../assets/images/avartar.png"   class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
-                        </div>
-                        <div class="more-info">
-                          <h3 style="font-family: Lato; margin-left: 23px">Jane Doe</h3>
-                          <div class="coords">
-                            <span>Group Name</span>
-                          </div>
-                          <div class="coords">
-                            <span>Position/Role</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="general" style="padding-bottom: -20px">
-                        <h3 style="font-family: Lato; margin-left: 60px">Jane Doe</h3>
-                        <p style="margin-left: 50px">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col"></div>
-                <div class="w-100"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-              </div>
-              <mat-divider></mat-divider>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </section>
 
 
