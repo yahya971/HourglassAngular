@@ -1,6 +1,8 @@
 export class Workout {
+  name: string;
+  photo: string;
   startingHour: Date;
-  endingHour: Date;
+  duration: number;
   description: string;
   equipement: string;
   burnedCalories: number;

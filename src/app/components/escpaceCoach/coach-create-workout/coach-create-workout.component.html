@@ -7,7 +7,7 @@
       </div>
       <div class="col-3 col-md-3">
         <label for="photo" class="myLabel">Photo</label>
-        <input type="file" class="form-control-file" id="photo" formControlName="photo">
+        <input type="file" class="form-control-file" accept="image/*" (change)="onChangeFile($event)" id="photo" formControlName="photo">
       </div>
     </div>
     <hr class="myHr">
@@ -53,6 +53,6 @@
         <textarea cols="20" rows="4" formControlName="directions"></textarea>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="submitFormMeal()" style="margin-top:1em">Submit</button>
+    <button class="btn btn-primary" (click)="submitFormWorkout()" style="margin-top:1em">Submit</button>
   </form>
 </div>

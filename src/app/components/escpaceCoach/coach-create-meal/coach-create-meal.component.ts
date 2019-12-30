@@ -64,8 +64,6 @@ export class CoachCreateMealComponent implements OnInit {
 
     }
     myReader.readAsDataURL(file);
-
-
   }
 
   onChangeFile($event) {
