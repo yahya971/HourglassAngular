@@ -17,6 +17,7 @@
               </ul>
               <div class="content-tab">
                 <form [formGroup]="sevenDayForm">
+                  <!-- Day 1 Form-->
                   <div class="content-inner" formGroupName="Day1" *ngIf="selectedDay==1">
 
                     <h2>Nutritional Program :</h2>
@@ -115,7 +116,7 @@
 
 
 
-                 
+                 <!-- Day 2 Form-->
                     <div class="content-inner" formGroupName="Day2" *ngIf="selectedDay==2">
 
                       <h2>Nutritional Program :</h2>
@@ -213,6 +214,8 @@
                     </div>
 
 
+
+                  <!-- Day 3 Form-->
                   <div class="content-inner" formGroupName="Day3" *ngIf="selectedDay==3">
 
                     <h2>Nutritional Program :</h2>
@@ -310,6 +313,9 @@
                   </div>
 
 
+
+
+                  <!-- Day 4 Form-->
                   <div class="content-inner" formGroupName="Day4" *ngIf="selectedDay==4">
 
                     <h2>Nutritional Program :</h2>
@@ -407,6 +413,8 @@
                   </div>
 
 
+
+                  <!--Day 5 Form-->
                   <div class="content-inner" formGroupName="Day5" *ngIf="selectedDay==5">
 
                     <h2>Nutritional Program :</h2>
@@ -503,7 +511,7 @@
                     <mat-divider></mat-divider>
                   </div>
 
-
+                  <!-- Day 6 Form-->
                   <div class="content-inner" formGroupName="Day6" *ngIf="selectedDay==6">
 
                     <h2>Nutritional Program :</h2>
@@ -600,6 +608,8 @@
                     <mat-divider></mat-divider>
                   </div>
 
+
+                  <!-- Day 7 Form-->
                   <div class="content-inner" formGroupName="Day7" *ngIf="selectedDay==7">
 
                     <h2>Nutritional Program :</h2>
@@ -703,6 +713,7 @@
         </div>
       </div>
       <div class="row">
+        <!-- Day 1 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==1">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -740,6 +751,8 @@
         </div>
 
 
+
+        <!-- Day 2 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==2">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -778,6 +791,7 @@
 
 
 
+        <!-- Day 3 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==3">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -815,6 +829,8 @@
         </div>
 
 
+
+        <!-- Day 4 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==4">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -852,6 +868,8 @@
         </div>
 
 
+
+        <!-- Day 5 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==5">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -889,6 +907,8 @@
         </div>
 
 
+
+        <!-- Day 6 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==6">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
@@ -926,6 +946,8 @@
         </div>
 
 
+
+        <!-- Day 7 Side Nav Drag and Drop-->
         <div id="sidebar" class="toggle-block" *ngIf="selectedDay==7">
           <div class="toggle-btn" (click)="toggleSidebar()">
             <span><i class="fa fa-bars"></i></span>
