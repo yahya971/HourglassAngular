@@ -27,9 +27,8 @@ export class Form3Component implements OnInit {
   day7 = new DayMealsAndPrograms();
 
   sevenDayForm: any;
- 
-
-  constructor(private mealService: MealService, private workoutService: WorkoutService, private route: ActivatedRoute, private fb: FormBuilder) {
+  constructor(private mealService: MealService, private workoutService: WorkoutService, private route: ActivatedRoute,
+              private fb: FormBuilder) {
     this.sevenDayForm = this.fb.group([]);
     for (let i = 1; i <= 7; i++) {
       this.addDayForm(i);
@@ -45,9 +44,11 @@ export class Form3Component implements OnInit {
       console.log(this.coachId);
 
 
-      this.mealService.getMealByCoachId(this.coachId).subscribe(value => {
-        this.mealsTab = value; console.log(this.mealsTab);
-        this.mealsTab.map(value => {
+      this.mealService.getMealByCoachId(this.coachId).subscribe(
+        value => {
+        this.mealsTab = value;
+        console.log(this.mealsTab);
+        this.mealsTab.map( value => {
           this.day1.allMeals.push(value.name);
           this.day2.allMeals.push(value.name);
           this.day3.allMeals.push(value.name);
@@ -69,18 +70,14 @@ export class Form3Component implements OnInit {
           this.day5.allWorkouts.push(value.name);
           this.day6.allWorkouts.push(value.name);
           this.day7.allWorkouts.push(value.name);
-          
+
         });
-        console.log(this.day1)
+        console.log(this.day1);
       });
     });
 
 
-    this.day1.snacks.push("Hello")
-    
-    
-    
-    
+    this.day1.snacks.push('Hello');
 
   }
   toggleSidebar() {
@@ -88,7 +85,7 @@ export class Form3Component implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -123,7 +120,7 @@ export class Form3Component implements OnInit {
   }
 
   addDayForm(i) {
-    const a=this.fb.group({
+    const a= this.fb.group({
       nutritionalProgramName: [''],
       nutritionalProgramDescription: [''],
       sportsProgramName: [''],
@@ -131,7 +128,7 @@ export class Form3Component implements OnInit {
 
 
     });
-    this.sevenDayForm.addControl('Day' +i,a);
+    this.sevenDayForm.addControl('Day' + i, a);
 
   }
 
