@@ -17,6 +17,7 @@ export class RegisterClientComponent implements OnInit {
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
+  photo: any;
 
   /** Returns a FormArray with the name 'formArray' */
   get appraisalForm(): AbstractControl | null { return this.appraisalFormGroup.get('appraisalForm'); }
@@ -59,7 +60,7 @@ export class RegisterClientComponent implements OnInit {
       'None',
       'None',
       this.appraisalForm.get([1]).get('height').value,
-      this.appraisalForm.get([1]).get('photo').value,
+      this.photo,
       this.appraisalForm.get([1]).get('sex').value,
       'None'
     );
@@ -77,6 +78,22 @@ export class RegisterClientComponent implements OnInit {
         this.isSignUpFailed = true;
       }
     );
+  }
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.photo = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
   }
 
 }

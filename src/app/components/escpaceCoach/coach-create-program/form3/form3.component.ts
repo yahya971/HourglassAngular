@@ -82,6 +82,7 @@ export class Form3Component implements OnInit {
   }
   toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('main-grid').classList.toggle('col-lg-12');
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -120,7 +121,7 @@ export class Form3Component implements OnInit {
   }
 
   addDayForm(i) {
-    const a= this.fb.group({
+    const a = this.fb.group({
       nutritionalProgramName: [''],
       nutritionalProgramDescription: [''],
       sportsProgramName: [''],
