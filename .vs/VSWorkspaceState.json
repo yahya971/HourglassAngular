@@ -6,9 +6,9 @@
     "\\src\\app\\components",
     "\\src\\app\\components\\escpaceCoach",
     "\\src\\app\\components\\escpaceCoach\\coach-create-meal",
-    "\\src\\app\\components\\escpaceCoach\\my-clients",
-    "\\src\\app\\components\\sidenav-espace"
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\my-clients\\my-clients.component.ts",
+  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\coach-create-meal\\coach-create-meal.component.ts",
   "PreviewInSolutionExplorer": false
 }

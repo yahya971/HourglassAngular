@@ -1,167 +1,743 @@
+
+
+
 <section class="element-row element-style clearfix mt_40">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-9">
-        <div class="row" style="padding-top: 80px">
-          <div class="col-lg-12 col-md-12">
-            <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
+    <div class="container">
+      <div class="row">
+        <div id="main-grid" class="col ">
+          <div class="row" style="padding-top: 80px">
+            <div class="col-lg-12 col-md-12">
+              <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
 
-              <ul class="tabs clearfix">
-                <li class="tab active"><a href="#">Jour1</a></li>
-                <li class="tab"><a href="#">Jour2</a></li>
-                <li class="tab"><a href="#">Jour3</a></li>
-                <li class="tab"><a href="#">Jour4</a></li>
-                <li class="tab"><a href="#">Jour5</a></li>
-                <li class="tab"><a href="#">Jour6</a></li>
-                <li class="tab"><a href="#">Jour7</a></li>
-              </ul>
-              <div class="content-tab">
-                <div class="content-inner">
-                  <div class="row">
-                    <div class="col-3 col-md-3">
-                      <label for="name" class="myLabel">Name:  </label>
-                      <input type="text" id="name" class="form-control"  required/>
-                      <label for="numberMeals" class="myLabel">Number of meals:  </label>
-                      <input type="number" id="numberMeals" class="form-control"  required/>
+                <div style="margin: auto; width: 75%">
+                  <ul class="tabs clearfix" >
+                    <li class="tab active"><a href="#" >Jour1</a></li>
+                    <li class="tab"><a href="#" >Jour2</a></li>
+                    <li class="tab"><a href="#" >Jour3</a></li>
+                    <li class="tab"><a href="#" >Jour4</a></li>
+                    <li class="tab"><a href="#" >Jour5</a></li>
+                    <li class="tab"><a href="#" >Jour6</a></li>
+                    <li class="tab"><a href="#" >Jour7</a></li>
+                  </ul>
+                </div>
+
+                <form [formGroup]="sevenDayForm" class="content-tab">
+                  <!-- day 1 form -->
+                  <div class="content-inner" formGroupName="Day1">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" id="name" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
                     </div>
-                    <div class="col-9 col-md-9">
+                    <div class="row">
                       <label class="myLabel">Description: </label>
-                      <textarea cols="20" rows="4"  required></textarea>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
                     </div>
-                  </div>
-                  <mat-divider></mat-divider>
-                  <h3>Day Meals</h3>
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <h4 cdkDrag>Breakfast</h4>
-                      <div
-                        class="dragList"
-                        cdkDropList
-                        #breakfastList="cdkDropList"
-                        [cdkDropListData]="breakfasts"
-                        [cdkDropListConnectedTo]="[mealList]"
-                        (cdkDropListDropped)="drop($event)">
-                        <div class="alert alert-danger" *ngFor="let item of breakfasts" cdkDrag>{{item}}</div>
-                    </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <h4>Lunch</h4>
-                      <div
-                        class="dragList"
-                        cdkDropList
-                        #lunchList="cdkDropList"
-                        [cdkDropListData]="lunchs"
-                        [cdkDropListConnectedTo]="[mealList]"
-                        (cdkDropListDropped)="drop($event)">
-                        <div class="alert alert-danger" *ngFor="let item of lunchs" cdkDrag>{{item}}</div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList1="cdkDropList"
+                             [cdkDropListData]="day1.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day1.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList1="cdkDropList"
+                             [cdkDropListData]="day1.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day1.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList1="cdkDropList"
+                             [cdkDropListData]="day1.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day1.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList1="cdkDropList"
+                             [cdkDropListData]="day1.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day1.snacks" cdkDrag>{{item}}</div>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-lg-3">
-                      <h4>Dinner</h4>
-                      <div
-                        class="dragList"
-                        cdkDropList
-                        #dinnerList="cdkDropList"
-                        [cdkDropListData]="dinners"
-                        [cdkDropListConnectedTo]="[mealList]"
-                        (cdkDropListDropped)="drop($event)">
-                        <div class="alert alert-danger" *ngFor="let item of dinners" cdkDrag>{{item}}</div>
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <h4>Snack</h4>
-                      <div
-                        class="dragList"
-                        cdkDropList
-                        #snackList="cdkDropList"
-                        [cdkDropListData]="snacks"
-                        [cdkDropListConnectedTo]="[mealList]"
-                        (cdkDropListDropped)="drop($event)">
-                        <div class="alert alert-danger" *ngFor="let item of snacks" cdkDrag>{{item}}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <mat-divider></mat-divider>
-                  <h3>Day Workouts</h3>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div
-                        class="dragList"
-                        cdkDropList
-                        #dayWorkoutList="cdkDropList"
-                        [cdkDropListData]="dayWorkouts"
-                        [cdkDropListConnectedTo]="[workoutList]"
-                        (cdkDropListDropped)="drop($event)">
-                        <div class="alert alert-danger" *ngFor="let item of dayWorkouts" cdkDrag>{{item}}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <mat-divider></mat-divider>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
 
-                </div>
-                <div class="content-inner">
-                  <p>jour 2</p>
-                </div>
-                <div class="content-inner">
-                  <p>jour 3</p>
-                </div>
-                <div class="content-inner">
-                  <p>jour 4</p>
-                </div>
-                <div class="content-inner">
-                  <p>jour 5</p>
-                </div>
-                <div class="content-inner">
-                  <p>jour 6</p>
-                </div>
-                <div class="content-inner">
-                  <p>jour 7</p>
-                </div>
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList1="cdkDropList"
+                             [cdkDropListData]="day1.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day1.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 2 form -->
+                  <div class="content-inner" formGroupName="Day2">
+                    <h2>Nutritional Program 2 :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList2="cdkDropList"
+                             [cdkDropListData]="day2.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day2.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList2="cdkDropList"
+                             [cdkDropListData]="day2.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day2.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList2="cdkDropList"
+                             [cdkDropListData]="day2.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day2.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList2="cdkDropList"
+                             [cdkDropListData]="day2.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day2.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList2="cdkDropList"
+                             [cdkDropListData]="day2.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day2.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 3 form -->
+                  <div class="content-inner" formGroupName="Day3">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList3="cdkDropList"
+                             [cdkDropListData]="day3.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day3.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList3="cdkDropList"
+                             [cdkDropListData]="day3.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day3.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList3="cdkDropList"
+                             [cdkDropListData]="day3.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day3.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList3="cdkDropList"
+                             [cdkDropListData]="day3.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day3.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList3="cdkDropList"
+                             [cdkDropListData]="day3.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day3.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 4 form-->
+                  <div class="content-inner" formGroupName="Day4">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList4="cdkDropList"
+                             [cdkDropListData]="day4.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day4.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList4="cdkDropList"
+                             [cdkDropListData]="day4.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day4.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList4="cdkDropList"
+                             [cdkDropListData]="day4.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day4.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList4="cdkDropList"
+                             [cdkDropListData]="day4.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day4.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList4="cdkDropList"
+                             [cdkDropListData]="day4.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day4.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 5 form-->
+                  <div class="content-inner" formGroupName="Day5">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList5="cdkDropList"
+                             [cdkDropListData]="day5.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day5.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList5="cdkDropList"
+                             [cdkDropListData]="day5.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day5.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList5="cdkDropList"
+                             [cdkDropListData]="day5.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day5.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList5="cdkDropList"
+                             [cdkDropListData]="day5.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day5.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList5="cdkDropList"
+                             [cdkDropListData]="day5.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day5.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 6 form-->
+                  <div class="content-inner" formGroupName="Day6">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList6="cdkDropList"
+                             [cdkDropListData]="day6.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day6.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList6="cdkDropList"
+                             [cdkDropListData]="day6.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day6.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList6="cdkDropList"
+                             [cdkDropListData]="day6.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day6.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList6="cdkDropList"
+                             [cdkDropListData]="day6.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day6.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList6="cdkDropList"
+                             [cdkDropListData]="day6.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day6.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                  <!-- day 7 form-->
+                  <div class="content-inner" formGroupName="Day7">
+                    <h2>Nutritional Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="nutritionalProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="nutritionalProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <h3>Day Meals</h3>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h4 cdkDrag>Breakfast</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #breakfastList7="cdkDropList"
+                             [cdkDropListData]="day7.breakfasts"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day7.breakfasts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Lunch</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #lunchList7="cdkDropList"
+                             [cdkDropListData]="day7.lunches"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day7.lunches" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Dinner</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #dinnerList7="cdkDropList"
+                             [cdkDropListData]="day7.dinners"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day7.dinners" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <h4>Snack</h4>
+                        <div class="dragList"
+                             cdkDropList
+                             #snackList7="cdkDropList"
+                             [cdkDropListData]="day7.snacks"
+                             [cdkDropListConnectedTo]="[mealList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day7.snacks" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr style="margin-bottom:1em;margin-top:3em; border:1px solid ">
+                    <h2>Sports Program :</h2>
+                    <div class="row">
+                      <div class="col">
+
+                        <label for="name" class="myLabel">Name:  </label>
+                        <input type="text" class="form-control" formControlName="sportsProgramName" />
+
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <label class="myLabel">Description: </label>
+                      <textarea cols="20" rows="4" formControlName="sportsProgramDescription"></textarea>
+                    </div>
+                    <hr style="margin-top:2em;margin-bottom:2em;">
+                    <div class="row">
+                      <h3>Day Workouts</h3>
+                      <div class="col-lg-12">
+                        <div class="dragList"
+                             cdkDropList
+                             #dayWorkoutList7="cdkDropList"
+                             [cdkDropListData]="day7.workouts"
+                             [cdkDropListConnectedTo]="[workoutList1]"
+                             (cdkDropListDropped)="drop($event)">
+                          <div class="alert alert-danger" *ngFor="let item of day7.workouts" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <div id="sidebar" class="toggle-block">
-          <div class="toggle-btn" (click)="toggleSidebar()">
-            <span><i class="fa fa-bars"></i></span>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h4>Meals</h4>
-              <div
-                class="dragList"
-                cdkDropList
-                #mealList="cdkDropList"
-                [cdkDropListData]="meals"
-                [cdkDropListConnectedTo]="[breakfastList, lunchList, dinnerList, snackList]"
-                (cdkDropListDropped)="drop($event)">
-                <ul>
-                  <li *ngFor="let item of meals" cdkDrag>{{item}}</li>
-                </ul>
+        <div class="col ">
+          <div id="sidebar" class="toggle-block" >
+            <div class="toggle-btn" (click)="toggleSidebar()">
+              <span><i class="fa fa-bars"></i></span>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>Meals</h4>
+                <div class="dragList"
+                     cdkDropList
+                     #mealList1="cdkDropList"
+                     [cdkDropListData]="day1.allMeals"
+                     [cdkDropListConnectedTo]="[breakfastList1, lunchList1, dinnerList1, snackList1,
+                                                breakfastList2, lunchList2, dinnerList2, snackList2,
+                                                breakfastList3, lunchList3, dinnerList3, snackList3,
+                                                breakfastList4, lunchList4, dinnerList4, snackList4,
+                                                breakfastList5, lunchList5, dinnerList5, snackList5,
+                                                breakfastList6, lunchList6, dinnerList6, snackList6,
+                                                breakfastList7, lunchList7, dinnerList7, snackList7
+                                                ]"
+                     (cdkDropListDropped)="drop($event)">
+                  <ul>
+                    <li *ngFor="let item of day1.allMeals" cdkDrag>{{item}}</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <h4>Workouts</h4>
-              <div
-                class="dragList"
-                cdkDropList
-                #workoutList="cdkDropList"
-                [cdkDropListData]="workouts"
-                [cdkDropListConnectedTo]="[dayWorkoutList]"
-                (cdkDropListDropped)="drop($event)">
-                <ul>
-                  <li *ngFor="let item of workouts" cdkDrag>{{item}}</li>
-                </ul>
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>Workouts</h4>
+                <div class="dragList"
+                     cdkDropList
+                     #workoutList1="cdkDropList"
+                     [cdkDropListData]="day1.allWorkouts"
+                     [cdkDropListConnectedTo]="[dayWorkoutList1, dayWorkoutList2,dayWorkoutList3, dayWorkoutList4,
+                                                dayWorkoutList5, dayWorkoutList6, dayWorkoutList7]"
+                     (cdkDropListDropped)="drop($event)">
+                  <ul>
+                    <li *ngFor="let item of day1.allWorkouts" cdkDrag>{{item}}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <button class="btn btn-primary" (click)="show()">OK</button>
 </section>
-

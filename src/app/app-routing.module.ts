@@ -26,8 +26,8 @@ import { ClientInformationsComponent } from './components/espaceClient/client-in
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
-import {Form2Component} from "./components/escpaceCoach/coach-create-program/form2/form2.component";
-import {Form3Component} from "./components/escpaceCoach/coach-create-program/form3/form3.component";
+import {Form2Component} from './components/escpaceCoach/coach-create-program/form2/form2.component';
+import {Form3Component} from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
 

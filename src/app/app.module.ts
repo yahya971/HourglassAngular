@@ -59,12 +59,14 @@ import { CoachCreateCourseComponent } from './components/escpaceCoach/coach-crea
 import { EspaceCoachCoursesComponent } from './components/escpaceCoach/espace-coach-courses/espace-coach-courses.component';
 import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
+// tslint:disable-next-line:max-line-length
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { Form2Component } from './components/escpaceCoach/coach-create-program/form2/form2.component';
 import { Form3Component } from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
 import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/meal-card/meal-card.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 
 
@@ -133,6 +135,7 @@ import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/
      MatStepperModule,
     MatNativeDateModule,
     MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatRadioModule, MatMenuModule, MatIconModule,
+    MaterialFileInputModule,
     MatDividerModule,
     ReactiveFormsModule,
     DragDropModule,

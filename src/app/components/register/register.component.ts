@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
+  photo: any;
 
   /** Returns a FormArray with the name 'formArray' */
   get appraisalForm(): AbstractControl | null { return this.appraisalFormGroup.get('appraisalForm'); }
@@ -66,7 +67,7 @@ export class RegisterComponent implements OnInit {
       5,
       5,
       this.appraisalForm.get([1]).get('age').value,
-      this.appraisalForm.get([1]).get('photo').value,
+      this.photo,
       this.appraisalForm.get([1]).get('experience').value,
       this.appraisalForm.get([1]).get('speciality').value,
       this.appraisalForm.get([1]).get('phone').value
@@ -89,6 +90,22 @@ export class RegisterComponent implements OnInit {
 
   check() {
     console.log(this.appraisalForm.get([0]).get('username').value);
+  }
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.photo = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
   }
 
 }
