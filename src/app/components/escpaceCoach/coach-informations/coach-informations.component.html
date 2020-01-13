@@ -1,1 +1,223 @@
-<p>coach-informations works!</p>
+
+    <div id="content" class="bg">
+      <div class="resume">
+        <div class="container">
+
+          <!-- TOP HEAD -->
+          <div class="top-head">
+            <div class="row">
+              <div class="col-sm-6">
+                <h4>Informations </h4>
+                <a class="ttm-btn ttm-btn-size-xs ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-right ttm-btn-bgcolor-skincolor" href="#" title="" style="color: white">EDIT <i class="fa fa-user"></i></a> </div>
+            </div>
+          </div>
+
+          <!-- Resume -->
+          <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+              <div class="side-bar">
+
+                <!-- Professional Details -->
+                <h5 class="tittle">Professional Details</h5>
+                <img src="../../../../assets/images/avatar2.jpg" class="img-responsive" alt="">
+                <ul class="personal-info">
+                  <li>
+                    <p> <span> Name</span> {{coach.name}} {{coach.lastname}} </p>
+                  </li>
+                  <li>
+                    <p> <span> Age</span> {{coach.age}} Years </p>
+                  </li>
+                  <li>
+                    <p> <span> Location</span> Rome, Italy </p>
+                  </li>
+                  <li>
+                    <p> <span> Experience</span> {{coach.experience}} Years </p>
+                  </li>
+                  <li>
+                    <p> <span> Degree</span> MBA </p>
+                  </li>
+                  <li>
+                    <p> <span> Career Level</span> Mid-Level </p>
+                  </li>
+                  <li>
+                    <p> <span> Phone</span> {{coach.phone}} </p>
+                  </li>
+                  <li>
+                    <p> <span> E-mail</span> <a href="#."> {{coach.email}}</a> </p>
+                  </li>
+                </ul>
+
+
+                <!-- Social Profiles -->
+                <h5 class="tittle">Social Profiles</h5>
+                <div class="social-icon bor-btm padding-25">
+                  <ul>
+                    <li> <a href="#."> <i class="fa fa-facebook"></i></a> </li>
+                    <li> <a href="#."> <i class="fa fa-google"></i></a> </li>
+                    <li> <a href="#."> <i class="fa fa-twitter"></i></a> </li>
+                    <li> <a href="#."> <i class="fa fa-linkedin"></i></a> </li>
+                    <li> <a href="#."> <i class="fa fa-skype"></i></a> </li>
+                  </ul>
+                </div>
+
+                <!-- Contact Me -->
+                <h5 class="tittle">Contact Me</h5>
+                <div class="contact padding-25">
+                  <!-- Success Msg -->
+                  <div id="contact_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>
+
+                  <!-- FORM -->
+                  <form role="form" id="contact_form" class="contact-form" method="post" onSubmit="return false">
+                    <ul class="row">
+                      <li class="col-sm-12">
+                        <label>
+                          <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                        </label>
+                      </li>
+                      <li class="col-sm-12">
+                        <label>
+                          <input type="text" class="form-control" name="company" id="company" placeholder="Subject">
+                        </label>
+                      </li>
+                      <li class="col-sm-12">
+                        <label>
+                          <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"></textarea>
+                        </label>
+                      </li>
+                      <li class="col-sm-12">
+                        <a class="ttm-btn ttm-btn-size-xs ttm-btn-shape-square ttm-btn-style-fill ttm-icon-btn-right ttm-btn-bgcolor-skincolor" href="#" title="" style="color: white">SEND MESSAGE <i class="ti ti-arrow-circle-right"></i></a>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8"style="padding-left:100px;" >
+              <div class="tab-content">
+
+                <!-- ABOUT ME -->
+                <div role="tabpanel" id="about-me">
+                  <div class="inside-sec">
+                    <!-- BIO AND SKILLS -->
+                    <h5 class="tittle">About Me</h5>
+
+                    <!-- Blog -->
+                    <section class="about-me padding-top-10">
+
+                      <!-- Personal Info -->
+                      <ul class="personal-info">
+                        <li>
+                          <p> <span> Name</span> {{coach.name}} {{coach.lastname}} </p>
+                        </li>
+                        <li>
+                          <p> <span> Age</span> {{coach.age}} Years </p>
+                        </li>
+                        <li>
+                          <p> <span> Location</span> Rome, Italy </p>
+                        </li>
+                        <li>
+                          <p> <span> Experience</span> {{coach.experience}} Years </p>
+                        </li>
+                        <li>
+                          <p> <span> Degree</span> MBA </p>
+                        </li>
+                        <li>
+                          <p> <span> Career Level</span> Mid-Level </p>
+                        </li>
+                        <li>
+                          <p> <span> Phone</span> {{coach.phone}} </p>
+                        </li>
+                        <li>
+                          <p> <span> E-mail</span> <a href="#."> {{coach.email}}</a> </p>
+                        </li>
+                      </ul>
+
+                      <!-- I’m Web Designer -->
+                      <h5 class="tittle">I’m {{coach.speciality}}</h5>
+                      <div class="padding-20">
+                       {{coach.resume}}
+                      </div>
+
+                      <!-- Services -->
+                      <h5 class="tittle">Programs</h5>
+                      <div class="row padding-20 margin-top-50">
+
+                          <div class="col-md-4" *ngFor="let program of programs">
+                            <!-- featured-imagebox -->
+                            <div class="featured-imagebox featured-imagebox-team  ttm-box-view-top-image ttm-team-box-view-overlay box-shadow1 mb-30">
+                              <div class="featured-imagebox-team-inner">
+                                <div class="featured-thumbnail"><!-- team-member-image -->
+                                  <img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}" alt="">
+                                </div>
+                                <div class="ttm-box-view-overlay">
+                                  <div class="featured-iconbox ttm-media-link">
+                                    <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]" title="Pilates Exercises" href="images/portfolio/06.jpg" data-rel="prettyPhoto">
+                                      <i class="ti ti-search"></i>
+                                    </a>
+                                    <a href="portfolio-style-3.html" class="ttm_link"><i class="ti ti-link"></i></a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ttm-box-bottom-content">
+                                <p class="category">rating: {{program.rating}}</p><!-- team-member-category -->
+                                <div class="featured-title"><!-- team-member-name -->
+                                  <h5><a href="portfolio-style-3.html">{{program.name}}</a></h5>
+                                </div>
+                              </div>
+                            </div><!-- featured-imagebox end-->
+                          </div>
+                      </div>
+                      <!-- Skills -->
+                      <h5 class="tittle">Coach Skills</h5>
+                      <div class="row pt-20">
+                        <div class="col-md-6">
+                      <div class="mt-15">
+                        <!-- ttm-progress-bar -->
+                        <div class="ttm-progress-bar">
+                          <h4>Private Coaching</h4>
+                          <div class="progress" [attr.data-value]="coach.score1*10">
+                            <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score1*10+'%'">
+                            </div>
+                          </div>
+                        </div><!-- ttm-progress-bar end -->
+                        <!-- ttm-progress-bar -->
+                        <div class="ttm-progress-bar">
+                          <h4>Weight Loss</h4>
+                          <div class="progress" [attr.data-value]="coach.score2*10">
+                            <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score2*10+'%'">
+                            </div>
+                          </div>
+                        </div><!-- ttm-progress-bar end -->
+                        <!-- ttm-progress-bar -->
+                        <div class="ttm-progress-bar">
+                          <h4>Nutrition</h4>
+                          <div class="progress" [attr.data-value]="coach.score3*10">
+                            <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score3*10+'%'">
+                            </div>
+                          </div>
+                        </div><!-- ttm-progress-bar end -->
+                        <!-- ttm-progress-bar -->
+                        <div class="ttm-progress-bar">
+                          <h4>Medical Issues</h4>
+                          <div class="progress" [attr.data-value]="coach.score4*10">
+                            <div class="progress-bar progress-bar-color-bar_skincolor" [style.width]="coach.score4*10+'%'">
+                            </div>
+                          </div>
+                        </div><!-- ttm-progress-bar end -->
+                      </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+
