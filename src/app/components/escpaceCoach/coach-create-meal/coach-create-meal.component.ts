@@ -120,27 +120,49 @@ export class CoachCreateMealComponent implements OnInit {
     this.nutritionAnalysisService.getNutritionAnalysis(this.nutritionalAlalysisRequest).subscribe(value => {
       // console.log(value);
       this.nutritionalAnalysisResponse = new NutritionAnalysisResponse(
+        // @ts-ignore
         value.calories,
+        // @ts-ignore
         value.totalNutrientsKCal.CHOCDF_KCAL.quantity + ' ' +  value.totalNutrientsKCal.CHOCDF_KCAL.unit,
+        // @ts-ignore
         value.totalNutrientsKCal.ENERC_KCAL.quantity + ' ' + value.totalNutrientsKCal.ENERC_KCAL.unit,
+        // @ts-ignore
         value.totalNutrientsKCal.FAT_KCAL.quantity + ' ' + value.totalNutrientsKCal.FAT_KCAL.unit,
+        // @ts-ignore
         value.totalNutrientsKCal.PROCNT_KCAL.quantity + ' ' + value.totalNutrientsKCal.FAT_KCAL.unit,
+        // @ts-ignore
         value.totalWeight,
+        // @ts-ignore
         value.dietLabels,
+        // @ts-ignore
         value.healthLabels,
+        // @ts-ignore
         value.totalNutrients.CA.quantity + ' ' + value.totalNutrients.CA.unit,
+        // @ts-ignore
         value.totalNutrients.CHOCDF.quantity + ' ' + value.totalNutrients.CHOCDF.unit,
+        // @ts-ignore
         value.totalNutrients.CHOLE.quantity + ' ' + value.totalNutrients.CHOLE.unit,
+        // @ts-ignore
         value.totalNutrients.FAT.quantity + ' ' + value.totalNutrients.FAT.unit,
+        // @ts-ignore
         value.totalNutrients.K.quantity + ' ' + value.totalNutrients.K.unit,
+        // @ts-ignore
         value.totalNutrients.MG.quantity + ' ' + value.totalNutrients.MG.unit,
+        // @ts-ignore
         value.totalNutrients.PROCNT.quantity + ' ' + value.totalNutrients.PROCNT.unit,
+        // @ts-ignore
         value.totalNutrients.SUGAR.quantity + ' ' + value.totalNutrients.SUGAR.unit,
+        // @ts-ignore
         value.totalNutrients.TOCPHA.quantity + ' ' + value.totalNutrients.TOCPHA.unit,
+        // @ts-ignore
         value.totalNutrients.VITA_RAE.quantity  + ' ' + value.totalNutrients.VITA_RAE.unit,
+        // @ts-ignore
         value.totalNutrients.VITB6A.quantity + ' ' + value.totalNutrients.VITB6A.unit,
+        // @ts-ignore
         value.totalNutrients.VITD.quantity + ' ' + value.totalNutrients.VITD.unit,
+        // @ts-ignore
         value.totalNutrients.VITK1.quantity + ' ' + value.totalNutrients.VITK1.unit,
+        // @ts-ignore
         value.totalNutrients.WATER.quantity + ' ' + value.totalNutrients.WATER.unit
       );
       console.log(this.nutritionalAnalysisResponse);

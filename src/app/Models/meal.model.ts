@@ -14,6 +14,7 @@ export class Meal {
   carbKcal: string;
   energKcal: string;
   fatKcal: string;
+  protKcal: string;
   totalWeight: string;
   dietLabels: string;
   healthLabels: string;
@@ -24,6 +25,7 @@ export class Meal {
   potassium: string;
   magnesium: string;
   protein: string;
+  sugar: string;
   vitE: string;
   vitA: string;
   vitB6: string;
