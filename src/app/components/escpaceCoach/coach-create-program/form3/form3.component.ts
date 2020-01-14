@@ -166,7 +166,17 @@ export class Form3Component implements OnInit {
     let audiance: Audiance = new Audiance(form1.sex, form1.tailleMax / 2 + form1.tailleMin / 2, form1.poidsMax / 2 + form1.poidsMin / 2, form1.frame, form1.fatStorage, form1.silhouette, form1.overWeightCause);
     let nutritionalPrograms : NutritionalProgram[] = [];
     let sportsPrograms: SportsProgram[] = [];
-    this.sevenDayForm.forEach((day, i) => {
+    let formValue: Array<any> = [];
+    formValue.push(this.sevenDayForm.value.Day1);
+    formValue.push(this.sevenDayForm.value.Day2);
+    formValue.push(this.sevenDayForm.value.Day3);
+    formValue.push(this.sevenDayForm.value.Day4);
+    formValue.push(this.sevenDayForm.value.Day5);
+    formValue.push(this.sevenDayForm.value.Day6);
+    formValue.push(this.sevenDayForm.value.Day7);
+    
+    formValue.forEach((day, i) => {
+      console.log(i);
       let snacks = [];
       let breakFasts = [];
       let dinners = [];
@@ -179,6 +189,7 @@ export class Form3Component implements OnInit {
           lunches = this.day1.lunches;
           dinners = this.day1.dinners;
           workouts = this.day1.workouts;
+          break;
         }
         case 1: {
           snacks = this.day2.snacks;
@@ -186,6 +197,7 @@ export class Form3Component implements OnInit {
           lunches = this.day2.lunches;
           dinners = this.day2.dinners;
           workouts = this.day2.workouts;
+          break;
         }
         case 2: {
           snacks = this.day3.snacks;
@@ -193,6 +205,7 @@ export class Form3Component implements OnInit {
           lunches = this.day3.lunches;
           dinners = this.day3.dinners;
           workouts = this.day3.workouts;
+          break;
         }
         case 3: {
           snacks = this.day4.snacks;
@@ -200,6 +213,7 @@ export class Form3Component implements OnInit {
           lunches = this.day4.lunches;
           dinners = this.day4.dinners;
           workouts = this.day4.workouts;
+          break;
         }
         case 4: {
           snacks = this.day5.snacks;
@@ -207,6 +221,7 @@ export class Form3Component implements OnInit {
           lunches = this.day5.lunches;
           dinners = this.day5.dinners;
           workouts = this.day5.workouts;
+          break;
         }
         case 5: {
           snacks = this.day6.snacks;
@@ -214,6 +229,7 @@ export class Form3Component implements OnInit {
           lunches = this.day6.lunches;
           dinners = this.day6.dinners;
           workouts = this.day6.workouts;
+          break;
         }
         case 6: {
           snacks = this.day7.snacks;
@@ -221,22 +237,28 @@ export class Form3Component implements OnInit {
           lunches = this.day7.lunches;
           dinners = this.day7.dinners;
           workouts = this.day7.workouts;
+          break;
         }
 
       }
-      for (let meal of snacks) {
-        for (let m of this.mealsTab)
-          if (m.name == meal) {
+      let meals = [];
+     
+        meals.push(...breakFasts);
+     
+        meals.push(...lunches);
+    
+        meals.push(...dinners);
 
-          }
-      }
+      meals.push(...snacks);
 
-      nutritionalPrograms.push(new NutritionalProgram(day.day, day.nutritionalProgramDescription, mealsNumber, meals));
-      
-    })
+      nutritionalPrograms.push(new NutritionalProgram(day.day, day.nutritionalProgramDescription, meals.length, meals, day.nutritionalProgramName));
+      sportsPrograms.push(new SportsProgram(day.day, day.sportsProgramDescription, workouts, day.sportsProgramName));
+
+    });
 
 
-    let wlProgram: WeightLossProgramPogo = new WeightLossProgramPogo(form1.backgroundImage, form1.description, form1.duration, objectives,2.5,null,form1.name,)
+    let wlProgram: WeightLossProgramPogo = new WeightLossProgramPogo(form1.backgroundImage, form1.description, form1.duration, objectives, 2.5, null, form1.name, nutritionalPrograms, sportsPrograms, audiance);
+    console.log(wlProgram);
   }
       
 

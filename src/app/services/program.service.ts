@@ -17,8 +17,8 @@ export class ProgramService {
   getProgramById(id) {
     return this.http.get<Program>('http://localhost:8080/WeightLossProgram/' + id);
   }
-  saveProgram(program: Program) {
-    this.http.post<Program>('http://localhost:8080/coach/addCoach', program).subscribe(res => {
+  saveProgram(program: any) {
+    this.http.post<any>('http://localhost:8080/coach/addCoach', program).subscribe(res => {
       console.log(res);
     });
   }
