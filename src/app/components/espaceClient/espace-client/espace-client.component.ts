@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./espace-client.component.css']
 })
 export class EspaceClientComponent implements OnInit {
-
+  id: number;
   constructor() { }
 
   ngOnInit() {
+   this.id = 1;
   }
 
 }
