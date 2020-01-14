@@ -14,6 +14,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./form3.component.css']
 })
 export class Form3Component implements OnInit {
+  prevIndex = 1;
+  allMeals = [];
+  allWorkouts = [];
   mealsTab = [];
   workoutsTab = [];
   selectedDay: number = 1;
@@ -57,6 +60,7 @@ export class Form3Component implements OnInit {
           this.day6.allMeals.push(value.name);
           this.day7.allMeals.push(value.name);
         });
+          this.allMeals = this.day1.allMeals;
       });
 
 
@@ -72,12 +76,12 @@ export class Form3Component implements OnInit {
           this.day7.allWorkouts.push(value.name);
 
         });
-        console.log(this.day1);
+        this.allWorkouts = this.day1.allWorkouts;
       });
     });
 
 
-    this.day1.snacks.push('Hello');
+ 
 
   }
   toggleSidebar() {
@@ -98,27 +102,27 @@ export class Form3Component implements OnInit {
   }
 
   tabs() {
-    $('.ttm-tabs').each(function() {
+    $('.ttm-tabs').each(function () {
       $(this).children('.content-tab').children().hide();
       $(this).children('.content-tab').children().first().show();
       $(this).find('.tabs').children('li').on('click', function(e) {
         var liActive = $(this).index(),
+          
           contentActive = $(this).siblings().removeClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive);
         contentActive.addClass('active').fadeIn('slow');
         contentActive.siblings().removeClass('active');
         $(this).addClass('active').parents('.ttm-tabs').children('.content-tab').children().eq(liActive).siblings().hide();
         e.preventDefault();
+
+    
       });
+
     });
+
   }
 
-  showDayForm(i) {
-    //console.log(i)
-    this.selectedDay = i;
-  }
-  show() {
-    console.log(this.sevenDayForm);
-  }
+ 
+ 
 
   addDayForm(i) {
     const a = this.fb.group({
@@ -132,5 +136,77 @@ export class Form3Component implements OnInit {
     this.sevenDayForm.addControl('Day' + i, a);
 
   }
+  changeMealTab(i) {
 
+    switch (this.prevIndex) {
+      case 1: {
+        this.day1.allMeals = this.allMeals;
+        this.day1.allWorkouts = this.allWorkouts;
+      }
+      case 2: {
+        this.day2.allMeals = this.allMeals;
+        this.day2.allWorkouts = this.allWorkouts;
+      }
+      case 3: {
+        this.day3.allMeals = this.allMeals;
+        this.day3.allWorkouts = this.allWorkouts;
+      }
+      case 4: {
+        this.day4.allMeals = this.allMeals;
+        this.day4.allWorkouts = this.allWorkouts;
+      }
+      case 5: {
+        this.day5.allMeals = this.allMeals;
+        this.day5.allWorkouts = this.allWorkouts;
+      }
+      case 6: {
+        this.day6.allMeals = this.allMeals;
+        this.day6.allWorkouts = this.allWorkouts;
+      }
+      case 7: {
+        this.day7.allMeals = this.allMeals;
+        this.day7.allWorkouts = this.allWorkouts;
+      }
+    }
+
+
+    switch (i) {
+      case 1: {
+        this.allMeals = this.day1.allMeals;
+        this.allWorkouts = this.day1.allWorkouts;
+      }
+      case 2: {
+        this.allMeals = this.day2.allMeals;
+        this.allWorkouts = this.day2.allWorkouts;
+      }
+      case 3: {
+        this.allMeals = this.day3.allMeals;
+        this.allWorkouts = this.day3.allWorkouts;
+      }
+      case 4: {
+        this.allMeals = this.day4.allMeals;
+        this.allWorkouts = this.day4.allWorkouts;
+      }
+      case 5: {
+        this.allMeals = this.day5.allMeals;
+        this.allWorkouts = this.day5.allWorkouts;
+      }
+      case 6: {
+        this.allMeals = this.day6.allMeals;
+        this.allWorkouts = this.day6.allWorkouts;
+      }
+      case 7: {
+        this.allMeals = this.day7.allMeals;
+        this.allWorkouts = this.day7.allWorkouts;
+      }
+        this.prevIndex = i;
+        console.log(this.day1.allMeals);
+        console.log(this.allMeals);
+
+
+
+
+    }
+ 
+  }
 }

@@ -5,10 +5,9 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\escpaceCoach",
-    "\\src\\app\\components\\escpaceCoach\\coach-create-meal",
-    "\\src\\app\\services",
-    "\\src\\assets"
+    "\\src\\app\\components\\escpaceCoach\\coach-create-program",
+    "\\src\\app\\components\\escpaceCoach\\coach-create-program\\form3"
   ],
-  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\coach-create-meal\\coach-create-meal.component.ts",
+  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\coach-create-program\\form3\\form3.component.ts",
   "PreviewInSolutionExplorer": false
 }

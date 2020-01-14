@@ -11,13 +11,13 @@
 
                 <div style="margin: auto; width: 75%">
                   <ul class="tabs clearfix" >
-                    <li class="tab active"><a href="#" >Jour1</a></li>
-                    <li class="tab"><a href="#" >Jour2</a></li>
-                    <li class="tab"><a href="#" >Jour3</a></li>
-                    <li class="tab"><a href="#" >Jour4</a></li>
-                    <li class="tab"><a href="#" >Jour5</a></li>
-                    <li class="tab"><a href="#" >Jour6</a></li>
-                    <li class="tab"><a href="#" >Jour7</a></li>
+                    <li class="tab active"><a href="#" (click)="changeMealTab(1)">Jour1</a></li>
+                    <li class="tab"><a href="#" (click)="changeMealTab(2)">Jour2</a></li>
+                    <li class="tab"><a href="#"(click)="changeMealTab(3)" >Jour3</a></li>
+                    <li class="tab"><a href="#" (click)="changeMealTab(4)">Jour4</a></li>
+                    <li class="tab"><a href="#" (click)="changeMealTab(5)">Jour5</a></li>
+                    <li class="tab"><a href="#" (click)="changeMealTab(6)">Jour6</a></li>
+                    <li class="tab"><a href="#" (click)="changeMealTab(7)">Jour7</a></li>
                   </ul>
                 </div>
 
@@ -703,7 +703,7 @@
                 <div class="dragList"
                      cdkDropList
                      #mealList1="cdkDropList"
-                     [cdkDropListData]="day1.allMeals"
+                     [cdkDropListData]="allMeals"
                      [cdkDropListConnectedTo]="[breakfastList1, lunchList1, dinnerList1, snackList1,
                                                 breakfastList2, lunchList2, dinnerList2, snackList2,
                                                 breakfastList3, lunchList3, dinnerList3, snackList3,
@@ -714,7 +714,7 @@
                                                 ]"
                      (cdkDropListDropped)="drop($event)">
                   <ul>
-                    <li *ngFor="let item of day1.allMeals" cdkDrag>{{item}}</li>
+                    <li *ngFor="let item of allMeals" cdkDrag>{{item}}</li>
                   </ul>
                 </div>
               </div>
@@ -725,12 +725,12 @@
                 <div class="dragList"
                      cdkDropList
                      #workoutList1="cdkDropList"
-                     [cdkDropListData]="day1.allWorkouts"
+                     [cdkDropListData]="allWorkouts"
                      [cdkDropListConnectedTo]="[dayWorkoutList1, dayWorkoutList2,dayWorkoutList3, dayWorkoutList4,
                                                 dayWorkoutList5, dayWorkoutList6, dayWorkoutList7]"
                      (cdkDropListDropped)="drop($event)">
                   <ul>
-                    <li *ngFor="let item of day1.allWorkouts" cdkDrag>{{item}}</li>
+                    <li *ngFor="let item of allWorkouts" cdkDrag>{{item}}</li>
                   </ul>
                 </div>
               </div>
@@ -739,5 +739,5 @@
         </div>
       </div>
     </div>
-  <button class="btn btn-primary" (click)="show()">OK</button>
+
 </section>
