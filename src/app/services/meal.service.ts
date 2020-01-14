@@ -18,8 +18,8 @@ export class MealService {
     let url="http://localhost:8080/meal/updateMeal/"+coachId
     return this.http.put<Meal>(url,meal);
   }
-  saveMeal(meal,coachId) {
-    let myurl = "http://localhost:8080/meal/addMeal/" + coachId;
+  saveMeal(meal, coachId) {
+    let myurl = 'http://localhost:8080/meal/addMeal/' + coachId;
     return this.http.post<Meal>(myurl, meal);
   }
 
