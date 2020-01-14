@@ -2,10 +2,14 @@ import { Meal } from './meal.model';
 
 
 export class NutritionalProgram {
-  id: number;
-  day: string; //should be date though
+  day: any;
   description: string;
   mealsNumber: number;
   meals: Meal[];
-  
+  constructor(day, description, mealsNumber, meals) {
+    this.day = day;
+    this.description = description;
+    this.mealsNumber = mealsNumber;
+    this.meals = meals;
+  }
 }

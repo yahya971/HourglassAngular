@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 import $ from '../../../../../assets/js/jquery.min';
 import { MealService } from '../../../../services/meal.service';
 import { WorkoutService } from '../../../../services/workout.service';
@@ -7,6 +7,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DayMealsAndPrograms } from '../../../../Models/day-meals-and-programs';
 import { of } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { WeightLossProgramPogo } from '../../../../Models/weight-loss-program-pogo.class';
+import { Audiance } from '../../../../Models/audiance.class';
+import { NutritionalProgram } from '../../../../Models/nutritional-program.model';
+import { SportsProgram } from '../../../../Models/sports-program.model';
+
 
 @Component({
   selector: 'app-form3',
@@ -60,7 +65,7 @@ export class Form3Component implements OnInit {
           this.day6.allMeals.push(value.name);
           this.day7.allMeals.push(value.name);
         });
-          this.allMeals = this.day1.allMeals;
+          this.allMeals = Object.assign([], this.day1.allMeals)
       });
 
 
@@ -76,7 +81,7 @@ export class Form3Component implements OnInit {
           this.day7.allWorkouts.push(value.name);
 
         });
-        this.allWorkouts = this.day1.allWorkouts;
+        this.allWorkouts = Object.assign([],this.day1.allWorkouts);
       });
     });
 
@@ -90,16 +95,20 @@ export class Form3Component implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(event.previousContainer.data,
+      let idx = event.container.data.indexOf(event.previousContainer.data[event.previousIndex]);
+      if (idx != -1) {
+        return;
+      }
+      copyArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
     }
   }
+  
 
   tabs() {
     $('.ttm-tabs').each(function () {
@@ -129,84 +138,106 @@ export class Form3Component implements OnInit {
       nutritionalProgramName: [''],
       nutritionalProgramDescription: [''],
       sportsProgramName: [''],
-      sportsProgramDescription:['']
+      sportsProgramDescription: [''],
+      day:['']
 
 
     });
     this.sevenDayForm.addControl('Day' + i, a);
 
   }
-  changeMealTab(i) {
+  
 
-    switch (this.prevIndex) {
-      case 1: {
-        this.day1.allMeals = this.allMeals;
-        this.day1.allWorkouts = this.allWorkouts;
-      }
-      case 2: {
-        this.day2.allMeals = this.allMeals;
-        this.day2.allWorkouts = this.allWorkouts;
-      }
-      case 3: {
-        this.day3.allMeals = this.allMeals;
-        this.day3.allWorkouts = this.allWorkouts;
-      }
-      case 4: {
-        this.day4.allMeals = this.allMeals;
-        this.day4.allWorkouts = this.allWorkouts;
-      }
-      case 5: {
-        this.day5.allMeals = this.allMeals;
-        this.day5.allWorkouts = this.allWorkouts;
-      }
-      case 6: {
-        this.day6.allMeals = this.allMeals;
-        this.day6.allWorkouts = this.allWorkouts;
-      }
-      case 7: {
-        this.day7.allMeals = this.allMeals;
-        this.day7.allWorkouts = this.allWorkouts;
-      }
-    }
-
-
-    switch (i) {
-      case 1: {
-        this.allMeals = this.day1.allMeals;
-        this.allWorkouts = this.day1.allWorkouts;
-      }
-      case 2: {
-        this.allMeals = this.day2.allMeals;
-        this.allWorkouts = this.day2.allWorkouts;
-      }
-      case 3: {
-        this.allMeals = this.day3.allMeals;
-        this.allWorkouts = this.day3.allWorkouts;
-      }
-      case 4: {
-        this.allMeals = this.day4.allMeals;
-        this.allWorkouts = this.day4.allWorkouts;
-      }
-      case 5: {
-        this.allMeals = this.day5.allMeals;
-        this.allWorkouts = this.day5.allWorkouts;
-      }
-      case 6: {
-        this.allMeals = this.day6.allMeals;
-        this.allWorkouts = this.day6.allWorkouts;
-      }
-      case 7: {
-        this.allMeals = this.day7.allMeals;
-        this.allWorkouts = this.day7.allWorkouts;
-      }
-        this.prevIndex = i;
-        console.log(this.day1.allMeals);
-        console.log(this.allMeals);
+      
 
 
 
 
-    }
- 
+  save() {
+    console.log(this.sevenDayForm.value);
+    console.log(JSON.parse(localStorage.getItem('form1')));
+    console.log(JSON.parse(localStorage.getItem('form2')));
+    let form1 = JSON.parse(localStorage.getItem('form1'));
+    let form2 = JSON.parse(localStorage.getItem('form2'));
+    let objectives = "";
+    for (let objective of form1.objectives)
+      if (objective)
+        objectives += objective + " , ";
+    let audiance: Audiance = new Audiance(form1.sex, form1.tailleMax / 2 + form1.tailleMin / 2, form1.poidsMax / 2 + form1.poidsMin / 2, form1.frame, form1.fatStorage, form1.silhouette, form1.overWeightCause);
+    let nutritionalPrograms : NutritionalProgram[] = [];
+    let sportsPrograms: SportsProgram[] = [];
+    this.sevenDayForm.forEach((day, i) => {
+      let snacks = [];
+      let breakFasts = [];
+      let dinners = [];
+      let lunches = [];
+      let workouts = [];
+      switch (i) {
+        case 0: {
+          snacks = this.day1.snacks;
+          breakFasts = this.day1.breakfasts;
+          lunches = this.day1.lunches;
+          dinners = this.day1.dinners;
+          workouts = this.day1.workouts;
+        }
+        case 1: {
+          snacks = this.day2.snacks;
+          breakFasts = this.day2.breakfasts;
+          lunches = this.day2.lunches;
+          dinners = this.day2.dinners;
+          workouts = this.day2.workouts;
+        }
+        case 2: {
+          snacks = this.day3.snacks;
+          breakFasts = this.day3.breakfasts;
+          lunches = this.day3.lunches;
+          dinners = this.day3.dinners;
+          workouts = this.day3.workouts;
+        }
+        case 3: {
+          snacks = this.day4.snacks;
+          breakFasts = this.day4.breakfasts;
+          lunches = this.day4.lunches;
+          dinners = this.day4.dinners;
+          workouts = this.day4.workouts;
+        }
+        case 4: {
+          snacks = this.day5.snacks;
+          breakFasts = this.day5.breakfasts;
+          lunches = this.day5.lunches;
+          dinners = this.day5.dinners;
+          workouts = this.day5.workouts;
+        }
+        case 5: {
+          snacks = this.day6.snacks;
+          breakFasts = this.day6.breakfasts;
+          lunches = this.day6.lunches;
+          dinners = this.day6.dinners;
+          workouts = this.day6.workouts;
+        }
+        case 6: {
+          snacks = this.day7.snacks;
+          breakFasts = this.day7.breakfasts;
+          lunches = this.day7.lunches;
+          dinners = this.day7.dinners;
+          workouts = this.day7.workouts;
+        }
+
+      }
+      for (let meal of snacks) {
+        for (let m of this.mealsTab)
+          if (m.name == meal) {
+
+          }
+      }
+
+      nutritionalPrograms.push(new NutritionalProgram(day.day, day.nutritionalProgramDescription, mealsNumber, meals));
+      
+    })
+
+
+    let wlProgram: WeightLossProgramPogo = new WeightLossProgramPogo(form1.backgroundImage, form1.description, form1.duration, objectives,2.5,null,form1.name,)
   }
+      
+
 }

@@ -6,18 +6,18 @@
       <div class="row">
         <div id="main-grid" class="col ">
           <div class="row" style="padding-top: 80px">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12" style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:4em">
               <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
 
-                <div style="margin: auto; width: 75%">
-                  <ul class="tabs clearfix" >
-                    <li class="tab active"><a href="#" (click)="changeMealTab(1)">Jour1</a></li>
-                    <li class="tab"><a href="#" (click)="changeMealTab(2)">Jour2</a></li>
-                    <li class="tab"><a href="#"(click)="changeMealTab(3)" >Jour3</a></li>
-                    <li class="tab"><a href="#" (click)="changeMealTab(4)">Jour4</a></li>
-                    <li class="tab"><a href="#" (click)="changeMealTab(5)">Jour5</a></li>
-                    <li class="tab"><a href="#" (click)="changeMealTab(6)">Jour6</a></li>
-                    <li class="tab"><a href="#" (click)="changeMealTab(7)">Jour7</a></li>
+                <div>
+                  <ul class="tabs clearfix">
+                    <li class="tab active"><a href="#">Jour1</a></li>
+                    <li class="tab"><a href="#">Jour2</a></li>
+                    <li class="tab"><a href="#">Jour3</a></li>
+                    <li class="tab"><a href="#">Jour4</a></li>
+                    <li class="tab"><a href="#">Jour5</a></li>
+                    <li class="tab"><a href="#">Jour6</a></li>
+                    <li class="tab"><a href="#">Jour7</a></li>
                   </ul>
                 </div>
 
@@ -26,11 +26,23 @@
                   <div class="content-inner" formGroupName="Day1">
                     <h2>Nutritional Program :</h2>
                     <div class="row">
-                      <div class="col">
+                      <div class="col col-md-6">
 
                         <label for="name" class="myLabel">Name:  </label>
                         <input type="text" id="name" class="form-control" formControlName="nutritionalProgramName" />
 
+                      </div>
+                      <div class="col col-md-6">
+                        <label for="day" class="myLabel">Day:  </label>
+                        <select class="custom-select mr-sm-2" formControlName="day" id="day">
+                          <option value="Monday" selected>Monday</option>
+                          <option value="Tuesday">Tuesday</option>
+                          <option value="Wednesday">Wednesday</option>
+                          <option value="Thursday">Thursday</option>
+                          <option value="Friday">Friday</option>
+                          <option value="Saturday">Saturday</option>
+                          <option value="Sunday">Sunday</option>
+                        </select>
                       </div>
 
                     </div>
@@ -40,10 +52,10 @@
                     </div>
                     <hr style="margin-top:2em;margin-bottom:2em;">
                     <h3>Day Meals</h3>
-                    <div class="row">
+                    <div class="row ">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class=" dragList dragColor "
                              cdkDropList
                              #breakfastList1="cdkDropList"
                              [cdkDropListData]="day1.breakfasts"
@@ -54,7 +66,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList1="cdkDropList"
                              [cdkDropListData]="day1.lunches"
@@ -65,7 +77,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList1="cdkDropList"
                              [cdkDropListData]="day1.dinners"
@@ -76,7 +88,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList1="cdkDropList"
                              [cdkDropListData]="day1.snacks"
@@ -105,7 +117,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList1="cdkDropList"
                              [cdkDropListData]="day1.workouts"
@@ -138,7 +150,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList2="cdkDropList"
                              [cdkDropListData]="day2.breakfasts"
@@ -149,7 +161,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList2="cdkDropList"
                              [cdkDropListData]="day2.lunches"
@@ -160,7 +172,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList2="cdkDropList"
                              [cdkDropListData]="day2.dinners"
@@ -171,7 +183,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList2="cdkDropList"
                              [cdkDropListData]="day2.snacks"
@@ -200,7 +212,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList2="cdkDropList"
                              [cdkDropListData]="day2.workouts"
@@ -233,7 +245,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList3="cdkDropList"
                              [cdkDropListData]="day3.breakfasts"
@@ -244,7 +256,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList3="cdkDropList"
                              [cdkDropListData]="day3.lunches"
@@ -255,7 +267,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList3="cdkDropList"
                              [cdkDropListData]="day3.dinners"
@@ -266,7 +278,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList3="cdkDropList"
                              [cdkDropListData]="day3.snacks"
@@ -295,7 +307,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList3="cdkDropList"
                              [cdkDropListData]="day3.workouts"
@@ -328,7 +340,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList4="cdkDropList"
                              [cdkDropListData]="day4.breakfasts"
@@ -339,7 +351,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList4="cdkDropList"
                              [cdkDropListData]="day4.lunches"
@@ -350,7 +362,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList4="cdkDropList"
                              [cdkDropListData]="day4.dinners"
@@ -361,7 +373,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList4="cdkDropList"
                              [cdkDropListData]="day4.snacks"
@@ -390,7 +402,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList4="cdkDropList"
                              [cdkDropListData]="day4.workouts"
@@ -423,7 +435,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList5="cdkDropList"
                              [cdkDropListData]="day5.breakfasts"
@@ -434,7 +446,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList5="cdkDropList"
                              [cdkDropListData]="day5.lunches"
@@ -445,7 +457,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList5="cdkDropList"
                              [cdkDropListData]="day5.dinners"
@@ -456,7 +468,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList5="cdkDropList"
                              [cdkDropListData]="day5.snacks"
@@ -485,7 +497,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList5="cdkDropList"
                              [cdkDropListData]="day5.workouts"
@@ -518,7 +530,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList6="cdkDropList"
                              [cdkDropListData]="day6.breakfasts"
@@ -529,7 +541,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList6="cdkDropList"
                              [cdkDropListData]="day6.lunches"
@@ -540,7 +552,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList6="cdkDropList"
                              [cdkDropListData]="day6.dinners"
@@ -551,7 +563,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList6="cdkDropList"
                              [cdkDropListData]="day6.snacks"
@@ -580,7 +592,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList6="cdkDropList"
                              [cdkDropListData]="day6.workouts"
@@ -613,7 +625,7 @@
                     <div class="row">
                       <div class="col-lg-3">
                         <h4 cdkDrag>Breakfast</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #breakfastList7="cdkDropList"
                              [cdkDropListData]="day7.breakfasts"
@@ -624,7 +636,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Lunch</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #lunchList7="cdkDropList"
                              [cdkDropListData]="day7.lunches"
@@ -635,7 +647,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Dinner</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dinnerList7="cdkDropList"
                              [cdkDropListData]="day7.dinners"
@@ -646,7 +658,7 @@
                       </div>
                       <div class="col-lg-3">
                         <h4>Snack</h4>
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #snackList7="cdkDropList"
                              [cdkDropListData]="day7.snacks"
@@ -675,7 +687,7 @@
                     <div class="row">
                       <h3>Day Workouts</h3>
                       <div class="col-lg-12">
-                        <div class="dragList"
+                        <div class="dragList dragColor"
                              cdkDropList
                              #dayWorkoutList7="cdkDropList"
                              [cdkDropListData]="day7.workouts"
@@ -693,7 +705,7 @@
           </div>
         </div>
         <div class="col ">
-          <div id="sidebar" class="toggle-block" >
+          <div id="sidebar" class="toggle-block">
             <div class="toggle-btn" (click)="toggleSidebar()">
               <span><i class="fa fa-bars"></i></span>
             </div>
@@ -737,7 +749,9 @@
             </div>
           </div>
         </div>
+        
       </div>
+      <button class="btn btn-primary btn-lg" (click)="save()" style="margin-bottom:15px;width:200px;height:70px">Save Program</button>
     </div>
 
 </section>
