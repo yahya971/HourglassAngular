@@ -25,11 +25,13 @@ import { CoachCreateCourseComponent } from './components/escpaceCoach/coach-crea
 import { ClientInformationsComponent } from './components/espaceClient/client-informations/client-informations.component';
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
-import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
 import {Form2Component} from './components/escpaceCoach/coach-create-program/form2/form2.component';
 import {Form3Component} from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
+import {ClientDayComponent} from "./components/espaceClient/client-day/client-day.component";
+import {ClientSurveyComponent} from "./components/espaceClient/client-survey/client-survey.component";
+import {ClientCalendarComponent} from "./components/espaceClient/client-calendar/client-calendar.component";
 
 
 const routes: Routes = [
@@ -116,15 +118,22 @@ const routes: Routes = [
   {
     path: 'espace/client', component: EspaceClientComponent,
     children: [
-      { path: 'informations/:id', component: ClientInformationsComponent },
+      {
+        path: 'informations/:id', component: ClientInformationsComponent},
       {
         path: 'update/informations/:id', component: ClientUpdateInformationsComponent
+      },
+      {
+        path: 'survey/:id', component: ClientSurveyComponent
+      },
+      {
+        path: 'calendar/:id', component: ClientCalendarComponent
       },
       {
         path: 'courses/:id', component: ClientCoursesComponent
       },
       {
-        path: 'programs/:id', component: ClientProgramsComponent
+        path: 'day/:id', component: ClientDayComponent
       },
       {
         path: '**', component: ClientInformationsComponent
