@@ -57,7 +57,6 @@ import { EspaceClientComponent } from './components/espaceClient/espace-client/e
 import { ClientInformationsComponent } from './components/espaceClient/client-informations/client-informations.component';
 import { CoachCreateCourseComponent } from './components/escpaceCoach/coach-create-course/coach-create-course.component';
 import { EspaceCoachCoursesComponent } from './components/escpaceCoach/espace-coach-courses/espace-coach-courses.component';
-import { ClientProgramsComponent } from './components/espaceClient/client-programs/client-programs.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 // tslint:disable-next-line:max-line-length
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
@@ -67,6 +66,10 @@ import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
 import { MealCardComponent } from './components/escpaceCoach/espace-coach-meals/meal-card/meal-card.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { ClientSurveyComponent } from './components/espaceClient/client-survey/client-survey.component';
+import { ClientDayComponent } from './components/espaceClient/client-day/client-day.component';
+import { ClientCalendarComponent } from './components/espaceClient/client-calendar/client-calendar.component';
+import { ClientComponent } from './components/escpaceCoach/client/client.component';
 
 
 
@@ -115,7 +118,6 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     ClientInformationsComponent,
     CoachCreateCourseComponent,
     EspaceCoachCoursesComponent,
-    ClientProgramsComponent,
     ClientCoursesComponent,
     ClientUpdateInformationsComponent,
     Form2Component,
@@ -123,6 +125,10 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MealComponent,
     CoachUpdateMealComponent,
     MealCardComponent,
+    ClientSurveyComponent,
+    ClientDayComponent,
+    ClientCalendarComponent,
+    ClientComponent,
 
   ],
   imports: [

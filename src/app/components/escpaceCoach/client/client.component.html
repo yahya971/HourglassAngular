@@ -1,0 +1,153 @@
+<div
+  style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+
+
+  <section class="element-row element-style clearfix mt_40">
+    <div class="container">
+      <div class="row" style="padding-top: 80px">
+        <div class="col-lg-12 col-md-12">
+          <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
+
+            <div class="row">
+              <div class="col-lg-6 offset-lg-4">
+                <ul class="tabs clearfix">
+                  <li class="tab active"><a href="#"><i class="fa fa-user"></i>Client Info</a></li>
+                  <li class="tab"><a href="#"><i class="fa fa-sticky-note"></i>Survey</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content-tab">
+              <div class="content-inner">
+                <article class="hrecipe">
+
+                  <header class="entry-header container">
+                    <div class="row">
+                      <div class="entry-header-inner col-lg-6">
+                        <h1 class="title recipe-title fn" style="font-family:prata" itemprop="name">{{client?.name}} {{client?.lastname}}</h1>
+
+
+                        <div class="author-byline brief">
+                          <div class="name-contact">
+            <span class="author-name" style="font-size:20px">
+              Age:  {{client?.age}}
+            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 offset-lg-3">
+                        <img class="img-fluid" style="width:250px;height:250px; padding-bottom: 50px "
+                             alt="Soft-Scrambled Eggs Recipe" src="../../../../assets/images/artist-bg.jpg"
+                             itemprop="image" data-pin-no-hover="true">
+                      </div>
+                    </div>
+
+
+
+
+
+                  </header>
+                  <div class="recipe-body summary">
+
+                    <div class="recipe-wrapper">
+
+                      <ul class="recipe-about" style="margin-top: 20px; margin-bottom: 20px; padding-bottom: 20px">
+                        <li><span class="label">Current Weight: </span><span class="info yield"
+                                                                             itemprop="recipeYield">{{client?.currentWeight}}</span></li>
+                        <li>
+                          <span class="label">desired weight</span>
+                          <span class="info">{{client?.desiredWeight}}</span>
+                        </li>
+                        <li><span class="label">height: </span><span class="info">{{client?.height}}</span></li>
+
+                      </ul>
+
+                      <div class="recipe-ingredients">
+                        <h2 class="title-section">Frame</h2>
+                        <ul >
+                          <li class="ingredient" itemprop="ingredients" >{{client?.frame}}</li>
+
+
+                        </ul>
+                      </div>
+
+                      <div class="recipe-ingredients">
+                        <h2 class="title-section">Fat distribution</h2>
+                        <ul >
+                          <li class="ingredient" itemprop="ingredients" >{{client?.fatDistribution}}</li>
+
+                        </ul>
+                      </div>
+
+                      <div class="recipe-ingredients">
+                        <h2 class="title-section">silhouette</h2>
+                        <ul >
+                          <li class="ingredient" itemprop="ingredients" >{{client?.silhouete}}</li>
+                        </ul>
+                      </div>
+
+                      <div class="recipe-procedures" style="margin-left: -2px">
+                        <h2 class="title-section">sex</h2>
+                        <ul >
+                          <li class="ingredient" itemprop="ingredients" >{{client?.sex}}</li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+
+                    <button class="btn btn-primary btn-lg" routerLink="">Create Day Program
+                    </button>
+
+                  </div>
+
+                </article>
+              </div>
+              <div class="content-inner">
+                <div class="container">
+                  <div class="row">
+                    <div class="entry-header-inner col-lg-6">
+                      <h1 class="title recipe-title fn" style="font-family:prata" itemprop="name">Client Survey</h1>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Weight</th>
+                          <th scope="col">diet</th>
+                          <th scope="col">Meal</th>
+                          <th scope="col">Meal Satisfaction</th>
+                          <th scope="col">Workout</th>
+                          <th scope="col">Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let follow of follows">
+                          <th scope="row">{{follow.day}}</th>
+                          <td>{{follow.question1}}</td>
+                          <td>{{follow.question2}}</td>
+                          <td>{{follow.question3}}</td>
+                          <td>{{follow.question4}}</td>
+                          <td>{{follow.comment}}</td>
+                          <td></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button class="btn btn-primary btn-lg" routerLink="">Create Day Program
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<button class="btn btn-secondary btn-lg" routerLink="/espace/coach/clients/{{coachId}}">Back</button>

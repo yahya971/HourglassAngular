@@ -27,8 +27,9 @@ export class CoachCreateProgramComponent implements OnInit {
       poidsMax: [],
       poidsMin: [],
       frame: [],
-      fatSorage: [],
-      silhouette: []
+      fatStorage: [],
+      silhouette: [],
+      overWeightCause:[]
           });
     this.addObjectif();
     console.log(this.form.value);
@@ -51,7 +52,7 @@ export class CoachCreateProgramComponent implements OnInit {
   }
 
   nextForm() {
-      window.localStorage.setItem('form1', this.form);
+    window.localStorage.setItem('form1', JSON.stringify(this.form.value));
       this.route.navigate(['/espace/coach/create/program/form2/', this.id]);
 
   }

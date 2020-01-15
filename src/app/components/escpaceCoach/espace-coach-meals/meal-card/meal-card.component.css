@@ -179,3 +179,7 @@ html, body {
 .card-image {
 
 }
+
+#popup.popupActive {
+  display: none;
+}

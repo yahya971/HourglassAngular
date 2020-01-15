@@ -23,7 +23,7 @@ export class Form2Component implements OnInit {
     });
   }
   nextForm() {
-    window.localStorage.setItem('form2', this.myForm);
+    window.localStorage.setItem('form2', JSON.stringify(this.myForm.value));
     this.router.navigate(['/espace/coach/create/program/form3/', this.id]);
 
   }

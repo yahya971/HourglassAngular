@@ -11,4 +11,25 @@ export class Meal {
   preparationTime: string;
   name: string;
   description: string;
+  carbKcal: string;
+  energKcal: string;
+  fatKcal: string;
+  protKcal: string;
+  totalWeight: string;
+  dietLabels: string;
+  healthLabels: string;
+  calcium: string;
+  carbs: string;
+  cholesterol: string;
+  fat: string;
+  potassium: string;
+  magnesium: string;
+  protein: string;
+  sugar: string;
+  vitE: string;
+  vitA: string;
+  vitB6: string;
+  vitD: string;
+  vitK: string;
+  water: string;
 }

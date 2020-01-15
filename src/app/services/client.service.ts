@@ -25,4 +25,8 @@ export class ClientService {
 
     });
   }
+
+  updateClient(client: Client, id) {
+    return this.http.put<Client>('http://localhost:8080/client/updateclient/' + id, client);
+  }
 }

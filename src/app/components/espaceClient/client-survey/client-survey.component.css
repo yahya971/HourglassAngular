@@ -1,8 +1,12 @@
+
 .myLabel {
   font-family: "adelle";
   color: #30a2cc;
   font-size: 20px;
   font-weight: bold;
+  margin-right:50px;
+  text-align:center;
+  margin-left:70px;
 }
 
 .myLabel1 {
@@ -25,5 +29,3 @@
   color: darkgray;
   font-size: 16px;
 }
-
-

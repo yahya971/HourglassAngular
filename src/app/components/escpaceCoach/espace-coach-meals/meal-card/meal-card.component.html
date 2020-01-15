@@ -1,4 +1,4 @@
-<div>
+<div (click)="popup()">
   <div class="card" style="height: 150px; width: 400px">
     <div class="additional">
       <div class="user-card">
@@ -20,6 +20,66 @@
     <div class="general" style="padding-bottom: -20px">
       <h3 style="font-family: Lato; margin-left: 60px">{{name}}</h3>
       <p style="margin-left: 50px">{{description}}</p>
+    </div>
+  </div>
+</div>
+<div class="container popupActive" id="popup" style="
+                                            position: fixed;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                            border: 1px solid black;
+                                            border-radius: 10px;
+                                            z-index: 100;
+                                            background-color: #0a0a0a;
+                                            width: 400px;
+
+
+">
+  <div class="row" id="popupHeader" style="padding: 20px 15px; border-bottom: 1px solid white;">
+    <div class="col-lg-9 title" style="font-size: 1rem; font-weight: bold">
+      {{name}}
+    </div>
+    <div class="col-lg-3">
+      <button class="close-button" id="close-button" style="cursor: pointer;
+                                          border: none;
+                                          outline: none;
+                                          background: none;
+                                          font-size: 1.25rem;"
+              (click)="hidePopup()"
+
+      >&times;</button>
+    </div>
+  </div>
+  <div class="row" id="popupSection1" style="padding: 10px 15px; border-bottom: 1px solid white;">
+    <div class="row">
+      {{dietLabels}}
+    </div>
+    <div class="row">
+      {{healthLabels}}
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row" id="popupSection2" style="padding: 10px 15px; border-bottom: 1px solid white;">
+    <div class="col-lg-6">
+      <p>Calories from carbohydrates: {{carbKcal}}</p>
+      <p>Energy :{{energKcal}}</p>
+    </div>
+    <div class="col-lg-6">
+      <p>Calories from fat: {{fatKcal}}</p>
+      <p>Calories from protein: {{proteinKcal}}</p>
+    </div>
+  </div>
+  <div class="row" id="popupSection3" style="padding: 10px 15px">
+    <div class="col-lg-6">
+      <p>Calcium: {{calcium}}</p>
+      <p>Cholesterol: {{cholesterol}}</p>
+      <p>Magnesium: {{magnesium}}</p>
+    </div>
+    <div class="col-lg-6">
+      <p>Water: {{water}}</p>
+      <p>Sugars: {{sugar}}</p>
+      <p>"Vitamin E: {{vitE}}</p>
     </div>
   </div>
 </div>
