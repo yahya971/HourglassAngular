@@ -15,4 +15,8 @@ export class FollowService {
   saveFollow(follow: Follow) {
     return this.http.post<Follow>('http://localhost:8080/follow/addFollow', follow);
   }
+
+  getFollowByDay(programId: number, day: string) {
+    return this.http.get<Follow>('http://localhost:8080/follow/byProgramIdAndDay/' + programId + '/' + day);
+  }
 }

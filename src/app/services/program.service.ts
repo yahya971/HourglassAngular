@@ -12,7 +12,7 @@ export class ProgramService {
     return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/byCoach/' + id );
   }
   getProgramByClientId(id) {
-    return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/byClient/' + id);
+    return this.http.get<Program>('http://localhost:8080/WeightLossProgram/byClient/' + id);
   }
   getProgramById(id) {
     return this.http.get<Program>('http://localhost:8080/WeightLossProgram/' + id);
