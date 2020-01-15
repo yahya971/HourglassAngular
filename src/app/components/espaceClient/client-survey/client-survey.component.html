@@ -1,4 +1,4 @@
-<div class="container" style="margin: 0; padding: 0;">
+<div class="container" style="margin: 0; padding: 0;" *ngIf="!hasSentSurvey">
   <div class="row" style="position: absolute; top: 50% ; left: 50%; transform: translate(-50%, -50%);
                            width: 500px ; padding: 20px; background: #fff; color: #000; text-align: center;
                            box-shadow: 0 10px 30px rgba(0,0,0,1); border-radius: 5px;width:60%;padding-left:200px
@@ -10,6 +10,13 @@
             <div class="col-lg-12">
               <p id="example-radio-group-label" style="font-size: 20px">please fill out this form</p>
             </div>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <mat-form-field  style="width: 100%">
+              <mat-label>your actual Weight:</mat-label>
+              <input type="number" matInput formControlName="weight" style="border: none" required>
+            </mat-form-field>
           </div>
           <mat-divider style="width: 100%"></mat-divider>
           <div class="row">
@@ -54,4 +61,14 @@
       </div>
     </form>
   </div>
+</div>
+<div class="container" *ngIf="hasSentSurvey">
+  <section class="error-404 bg-img3">
+    <div class="ttm-big-icon ttm-textcolor-skincolor">
+      <i class="fa fa-thumbs-o-up"></i>
+    </div>
+    <header class="page-header"><h1 class="page-title">Survey Submitted</h1></header>
+    <div class="page-content"> <p>This day's survey has been successfully submitted and sent to your coach.</p></div>
+    <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-black mb-15" href="index.html">Back To Home</a>
+  </section>
 </div>

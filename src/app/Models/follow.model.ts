@@ -2,17 +2,17 @@ import {Program} from './program.model';
 
 export class Follow {
   id: number;
-  day: Date;
+  day: string;
   question1: string;
   question2: string;
   question3: string;
   question4: string;
+  weight: number;
   comment: string;
   consulted: boolean;
   weightLossProgram: Program;
-  constructor(id: number, day: Date, question1: string, question2: string, question3: string, question4: string,
-              comment: string, consulted: boolean, weightLossProgram: Program) {
-    this.id = id;
+  constructor(day: string, question1: string, question2: string, question3: string, question4: string,
+              comment: string, consulted: boolean, weightLossProgram: Program, weight:number) {
     this.day = day;
     this.question1 = question1;
     this.question2 = question2;
@@ -21,5 +21,6 @@ export class Follow {
     this.comment = comment;
     this.consulted = consulted;
     this.weightLossProgram = weightLossProgram;
+    this.weight = weight;
   }
 }
