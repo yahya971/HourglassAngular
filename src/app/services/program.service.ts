@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Program} from '../Models/program.model';
+import { WeightLossProgramPogo } from '../Models/weight-loss-program-pogo.class';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class ProgramService {
   getProgramById(id) {
     return this.http.get<Program>('http://localhost:8080/WeightLossProgram/' + id);
   }
-  saveProgram(program: any) {
-    this.http.post<any>('http://localhost:8080/coach/addCoach', program).subscribe(res => {
+  saveProgram(program: WeightLossProgramPogo, coachId) {
+    this.http.post<WeightLossProgramPogo>('http://localhost:8080/WeightLossProgram/'+coachId, program).subscribe(res => {
       console.log(res);
     });
   }

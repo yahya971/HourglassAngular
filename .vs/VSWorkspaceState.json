@@ -5,9 +5,8 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\escpaceCoach",
-    "\\src\\app\\components\\escpaceCoach\\coach-create-program",
-    "\\src\\app\\components\\escpaceCoach\\coach-create-program\\form3"
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\coach-create-program\\form3\\form3.component.ts",
+  "SelectedNode": "\\src\\app\\services\\program.service.ts",
   "PreviewInSolutionExplorer": false
 }

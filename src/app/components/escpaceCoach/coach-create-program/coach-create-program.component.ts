@@ -27,7 +27,7 @@ export class CoachCreateProgramComponent implements OnInit {
       poidsMax: [],
       poidsMin: [],
       frame: [],
-      fatSorage: [],
+      fatStorage: [],
       silhouette: [],
       overWeightCause:[]
           });

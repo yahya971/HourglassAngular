@@ -11,6 +11,7 @@ import { WeightLossProgramPogo } from '../../../../Models/weight-loss-program-po
 import { Audiance } from '../../../../Models/audiance.class';
 import { NutritionalProgram } from '../../../../Models/nutritional-program.model';
 import { SportsProgram } from '../../../../Models/sports-program.model';
+import { ProgramService } from '../../../../services/program.service';
 
 
 @Component({
@@ -36,12 +37,12 @@ export class Form3Component implements OnInit {
 
   sevenDayForm: any;
   constructor(private mealService: MealService, private workoutService: WorkoutService, private route: ActivatedRoute,
-              private fb: FormBuilder) {
+    private fb: FormBuilder, private programService: ProgramService) {
     this.sevenDayForm = this.fb.group([]);
     for (let i = 1; i <= 7; i++) {
       this.addDayForm(i);
     }
-    console.log(this.sevenDayForm);
+
 
   }
 
@@ -49,13 +50,11 @@ export class Form3Component implements OnInit {
     this.tabs();
     this.route.params.subscribe(value => {
       this.coachId = +value['id'];
-      console.log(this.coachId);
 
 
       this.mealService.getMealByCoachId(this.coachId).subscribe(
         value => {
         this.mealsTab = value;
-        console.log(this.mealsTab);
         this.mealsTab.map( value => {
           this.day1.allMeals.push(value.name);
           this.day2.allMeals.push(value.name);
@@ -70,7 +69,7 @@ export class Form3Component implements OnInit {
 
 
       this.workoutService.getWorkoutByCoachId(this.coachId).subscribe(value => {
-        this.workoutsTab = value; console.log(this.workoutsTab);
+        this.workoutsTab = value;
         this.workoutsTab.map(value => {
           this.day1.allWorkouts.push(value.name);
           this.day2.allWorkouts.push(value.name);
@@ -154,15 +153,14 @@ export class Form3Component implements OnInit {
 
 
   save() {
-    console.log(this.sevenDayForm.value);
-    console.log(JSON.parse(localStorage.getItem('form1')));
-    console.log(JSON.parse(localStorage.getItem('form2')));
     let form1 = JSON.parse(localStorage.getItem('form1'));
     let form2 = JSON.parse(localStorage.getItem('form2'));
     let objectives = "";
-    for (let objective of form1.objectives)
-      if (objective)
-        objectives += objective + " , ";
+    for (let objective of form1.objectives) {
+      
+    if (objective)
+      objectives += objective.objective + " , ";
+  }
     let audiance: Audiance = new Audiance(form1.sex, form1.tailleMax / 2 + form1.tailleMin / 2, form1.poidsMax / 2 + form1.poidsMin / 2, form1.frame, form1.fatStorage, form1.silhouette, form1.overWeightCause);
     let nutritionalPrograms : NutritionalProgram[] = [];
     let sportsPrograms: SportsProgram[] = [];
@@ -176,7 +174,7 @@ export class Form3Component implements OnInit {
     formValue.push(this.sevenDayForm.value.Day7);
     
     formValue.forEach((day, i) => {
-      console.log(i);
+      
       let snacks = [];
       let breakFasts = [];
       let dinners = [];
@@ -259,6 +257,7 @@ export class Form3Component implements OnInit {
 
     let wlProgram: WeightLossProgramPogo = new WeightLossProgramPogo(form1.backgroundImage, form1.description, form1.duration, objectives, 2.5, null, form1.name, nutritionalPrograms, sportsPrograms, audiance);
     console.log(wlProgram);
+    this.programService.saveProgram(wlProgram, this.coachId);
   }
       
 
