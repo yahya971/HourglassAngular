@@ -1,1 +1,57 @@
-<p>client-survey works!</p>
+<div class="container" style="margin: 0; padding: 0;">
+  <div class="row" style="position: absolute; top: 50% ; left: 50%; transform: translate(-50%, -50%);
+                           width: 500px ; padding: 20px; background: #fff; color: #000; text-align: center;
+                           box-shadow: 0 10px 30px rgba(0,0,0,1); border-radius: 5px;
+">
+    <form [formGroup]="surveyForm">
+      <div class="row">
+        <div class="col-lg-12" >
+          <div class="row" >
+            <div class="col-lg-12">
+              <p id="example-radio-group-label" style="font-size: 20px">please fill out this form</p>
+            </div>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <label>Did you eat all your meals ? </label>
+            <mat-radio-group formControlName="question1">
+              <mat-radio-button value="yes">Yes</mat-radio-button>
+              <mat-radio-button value="no" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <label>Did you stick to your diet ? </label>
+            <mat-radio-group formControlName="question2">
+              <mat-radio-button  value="yes">Yes</mat-radio-button>
+              <mat-radio-button  value="no" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <label>Did you like the meals ? </label>
+            <mat-radio-group formControlName="question3">
+              <mat-radio-button  value="yes">Yes</mat-radio-button>
+              <mat-radio-button  value="no" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <label>Did you complete your workout ? </label>
+            <mat-radio-group formControlName="question4">
+              <mat-radio-button  value="yes">Yes</mat-radio-button>
+              <mat-radio-button  value="no" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <div class="row">
+            <label class="myLabel">Do you have any comments ?</label>
+            <textarea formControlName="comment" cols="20" rows="4" ></textarea>
+          </div>
+          <mat-divider style="width: 100%"></mat-divider>
+          <button class="btn btn-primary" (click)="submitForm()" style="margin-top:1em">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
