@@ -130,7 +130,9 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
     ClientSurveyComponent,
     ClientDayComponent,
     ClientCalendarComponent,
-
+    ClientComponent,
+    WorkoutComponent,
+    CoachUpdateWorkoutComponent
   ],
   imports: [
     BrowserModule,
