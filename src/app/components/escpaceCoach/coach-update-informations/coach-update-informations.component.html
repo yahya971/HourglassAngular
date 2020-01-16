@@ -1,0 +1,108 @@
+<div id="content" class="resune-edit">
+  <div class="resume">
+    <div class="container">
+
+      <!-- TOP HEAD -->
+      <div class="top-head">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4  >Resume </h4>
+            <a href="#." style="color: #9dca00">Edit Resume</a> </div>
+        </div>
+      </div>
+
+      <!-- Resume -->
+      <form (ngSubmit)="onSubmit(formulaire)" #formulaire= "ngForm">
+      <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-4">
+          <div class="side-bar">
+
+            <!-- Professional Details -->
+            <h5 class="tittle">Professional Details</h5>
+            <label class="btn-file"> <i class="fa fa-camera"></i> Click to add picture
+              <input type="file" style="display: none;">
+            </label>
+
+              <ul class="personal-info">
+                <li>
+                  <p> <span>
+                      <input class="form-control" type="text" placeholder="Name" ngModel name="name">
+                      </span>
+                    <input class="form-control" type="text" placeholder="LASTNAME" ngModel name="lastname">
+                  </p>
+                </li>
+                <li>
+                  <p> <span>
+                      <input class="form-control" type="text" placeholder="AGE" ngModel name="age">
+                      </span>
+                    <input class="form-control" type="text" placeholder="EXPERIENCE" ngModel name="experience">
+                  </p>
+                </li>
+                <li>
+                  <p> <span>
+                      <input class="form-control" type="text" placeholder="PHONE" ngModel name="phone">
+                      </span>
+                    <input class="form-control" type="text" placeholder="EMAIL" ngModel name="email">
+                  </p>
+                </li>
+              </ul>
+
+
+            <!-- Social Profiles -->
+            <h5 class="tittle">Credentials</h5>
+            <div class="social-icon bor-btm padding-25">
+              <ul>
+                <li> <i class="fa fa-user" style="background: #9dca00"></i>
+                  <input class="form-control" type="text" placeholder="username" ngModel name="username">
+                </li>
+                <li> <i class="fa fa-key" style="background: #9dca00"></i>
+                  <input class="form-control" type="text" placeholder="password" ngModel name="password">
+                </li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="col-md-8" style="padding-left: 80px">
+          <div class="inside-sec">
+            <!-- BIO AND SKILLS -->
+            <h5 class="tittle">Bio & Skills</h5>
+            <div class="bio-info padding-30">
+              <span>
+                      <input class="form-control" type="text" placeholder="SPECIALITY" ngModel name="speciality">
+                      </span>
+                <textarea class="form-control" placeholder="Write your description here" ngModel name="resume"></textarea>
+              <div class="skills margin-top-50">
+
+                <div class="skill-type-info">
+                  <label> Skill 1 Level
+                    <input type="text" class="form-control" placeholder="0" ngModel name="skill1">
+                  </label>
+                  <label> Skill 2 Level
+                    <input type="text" class="form-control" placeholder="0" ngModel name="skill2">
+                  </label>
+                  <label> Skill 3 Level
+                    <input type="text" class="form-control" placeholder="0" ngModel name="skill3">
+                  </label>
+                  <label> Skill 4 Level
+                    <input type="text" class="form-control" placeholder="0" ngModel name="skill4">
+                  </label>
+            </div>
+               </div>
+            </div>
+          </div>
+
+
+          <!-- Save Info -->
+          <div class="save-info"> <a routerLink="/espace/coach/informations/{{id}}" class="btn"style="background: #9dca00">Cancel</a> <button type="submit" class="btn"style="background: #9dca00">Save Info</button> </div>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

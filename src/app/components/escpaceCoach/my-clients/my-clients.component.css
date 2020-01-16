@@ -1,3 +1,14 @@
 .ttm-page-title-row{
   background: #0b2e13;
 }
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -0px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  z-index: 100;
+}

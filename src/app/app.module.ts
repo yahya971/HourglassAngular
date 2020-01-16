@@ -71,6 +71,7 @@ import { ClientDayComponent } from './components/espaceClient/client-day/client-
 import { ClientCalendarComponent } from './components/espaceClient/client-calendar/client-calendar.component';
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
+import { ClientComponent } from './components/escpaceCoach/client/client.component';
 
 
 
@@ -129,8 +130,6 @@ import { WorkoutComponent } from './components/escpaceCoach/workout/workout.comp
     ClientSurveyComponent,
     ClientDayComponent,
     ClientCalendarComponent,
-    CoachUpdateWorkoutComponent,
-    WorkoutComponent,
 
   ],
   imports: [

@@ -19,4 +19,8 @@ export class FollowService {
   getFollowByDay(programId: number, day: string) {
     return this.http.get<Follow>('http://localhost:8080/follow/byProgramIdAndDay/' + programId + '/' + day);
   }
+
+  updateFollow(followId: number, follow: Follow) {
+    return this.http.put<Follow>('http://localhost:8080/follow/updateFollow/' + followId, follow);
+  }
 }
