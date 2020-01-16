@@ -1,0 +1,59 @@
+<div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em" *ngIf="workout.description">
+  <form [formGroup]="myForm">
+    <div class="row">
+      <div class="col-9 col-md-9">
+        <label for="name" class="myLabel">Name: </label>
+        <input type="text" id="name" class="form-control" formControlName="name" />
+      </div>
+      <div class="col-3 col-md-3">
+        <label for="photo" class="myLabel">Photo</label>
+        <input type="file" class="form-control-file" accept="image/*" (change)="onChangeFile($event)" id="photo" formControlName="photo">
+      </div>
+    </div>
+    <hr class="myHr">
+    <div class="row">
+      <div class="col-12 col-md-12">
+        <label for="description" class="myLabel">Description: </label>
+        <input type="text" id="description" class="form-control" formControlName="description" />
+      </div>
+    </div>
+    <hr class="myHr">
+    <div class="row">
+      <div class="col-4 col-md-4">
+        <label for="burnedCalories" class="myLabel1">Burned Calories: </label>
+        <input type="number" id="burnedCalories" class="form-control" formControlName="burnedCalories" style="width:80%;display:inline-block" /><span class="myLabel1" style="display:inline-block">:  kCal</span>
+      </div>
+      <div class="col-4 col-md-4">
+        <label for="startingHour" class="myLabel1">Starting Hour: </label>
+        <input type="time" id="startingHour" class="form-control" formControlName="startingHour" style="width:80%" />
+      </div>
+      <div class="col-4 col-md-4">
+        <label for="duration" class="myLabel1">Workout Duration: </label>
+        <input type="number" id="duration" class="form-control" formControlName="duration" style="width:60%;display:inline-block" /> <span class="myLabel1" style="display:inline-block">:  Minutes</span>
+      </div>
+    </div>
+    <hr class="myHr">
+    <div class="row">
+      <div class="col-6 col-md-6">
+        <div formArrayName="equipements">
+          <label class="myLabel">Equipements</label>
+          <div *ngFor="let equipement of equipementForms.controls; let i=index"
+               [formGroupName]="i" style="border-right:1px solid grey;height:100%">
+            <label class="myLabel2">{{i}}-</label>
+            <input type="text" class="form-control" formControlName="equipement" style="display:inline-block;width:70%;margin-bottom:1em;margin-right:1em;margin-left:1em" />
+            <button class="btn btn-danger btn-sm" (click)="deleteEquipement(i)" style="display:inline-block;margin-bottom:1em">Delete</button>
+          </div>
+          <button class="btn btn-success" (click)="addEquipement('')">Add Equipement</button>
+        </div>
+
+      </div>
+
+      <div class="col-6 col-md-6">
+        <label class="myLabel">Directions</label>
+        <textarea cols="20" rows="4" formControlName="directions"></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="submitFormWorkout()" style="margin-top:1em">Update</button>
+  </form>
+</div>
+<a class="btn btn-secondary btn-lg" routerLink="/espace/coach/workout/{{id}}/{{workoutId}}">Back</a>

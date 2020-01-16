@@ -69,6 +69,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { ClientSurveyComponent } from './components/espaceClient/client-survey/client-survey.component';
 import { ClientDayComponent } from './components/espaceClient/client-day/client-day.component';
 import { ClientCalendarComponent } from './components/espaceClient/client-calendar/client-calendar.component';
+import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
+import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
 import { FullCalendarModule} from '@fullcalendar/angular';
 
@@ -129,7 +131,8 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     ClientDayComponent,
     ClientCalendarComponent,
     ClientComponent,
-
+    WorkoutComponent,
+    CoachUpdateWorkoutComponent
   ],
   imports: [
     BrowserModule,

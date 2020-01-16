@@ -22,4 +22,9 @@ export class CoachService {
       console.log(res);
     });
   }
+  updateCoach(coach: Coach, id) {
+    this.http.put<Coach>('http://localhost:8080/coach/updateCoach/' + id, coach).subscribe(res => {
+      console.log(res);
+    });
+  }
 }
