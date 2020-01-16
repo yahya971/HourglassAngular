@@ -70,7 +70,7 @@ import { ClientSurveyComponent } from './components/espaceClient/client-survey/c
 import { ClientDayComponent } from './components/espaceClient/client-day/client-day.component';
 import { ClientCalendarComponent } from './components/espaceClient/client-calendar/client-calendar.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
-
+import { FullCalendarModule} from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -145,6 +145,7 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
     MatDividerModule,
     ReactiveFormsModule,
     DragDropModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<div class="container"  *ngIf="!hasSentSurvey" style="width:70%">
+<div class="container"  *ngIf="program&&!hasSentSurvey" style="width:70%">
   <div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;text-align:center;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
 
       <form [formGroup]="surveyForm">
@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <div class="container" *ngIf="hasSentSurvey">
+  <div class="container" *ngIf="program&&hasSentSurvey">
     <section class="error-404 bg-img3">
       <div class="ttm-big-icon ttm-textcolor-skincolor">
         <i class="fa fa-thumbs-o-up"></i>
