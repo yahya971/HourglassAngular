@@ -1,6 +1,6 @@
-<div class="container"  *ngIf="!hasSentSurvey" style="width:60%">
+<div class="container"  *ngIf="!hasSentSurvey" style="width:70%">
   <div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;text-align:center;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
-    
+
       <form [formGroup]="surveyForm">
         <div class="row">
           <div class="col-lg-12">
@@ -10,57 +10,55 @@
               </div>
             </div>
             <mat-divider style="width: 100%"></mat-divider>
-            <div class="row">
-              <mat-form-field style="width: 100%">
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px">
                 <label class="myLabel">your actual Weight:</label>
-                <input type="number" matInput formControlName="weight" style="width:50%" required>
-              </mat-form-field>
+                <input type="number" matInput formControlName="weight" style="width:50%" >
             </div>
-            
-            <div class="row">
+            <mat-divider style="width: 100%"></mat-divider>
+            <div class="row" style="margin-top: 20px">
               <label class="myLabel">Did you eat all your meals ? </label>
               <mat-radio-group formControlName="question1">
                 <mat-radio-button value="yes">Yes</mat-radio-button>
-                <mat-radio-button value="no" checked>No</mat-radio-button>
+                <mat-radio-button value="no" >No</mat-radio-button>
               </mat-radio-group>
             </div>
-           
+
             <div class="row">
               <label class="myLabel">Did you stick to your diet ? </label>
               <mat-radio-group formControlName="question2">
                 <mat-radio-button value="yes">Yes</mat-radio-button>
-                <mat-radio-button value="no" checked>No</mat-radio-button>
+                <mat-radio-button value="no" >No</mat-radio-button>
               </mat-radio-group>
             </div>
-          
+
             <div class="row">
               <label class="myLabel">Did you like the meals ? </label>
               <mat-radio-group formControlName="question3">
                 <mat-radio-button value="yes">Yes</mat-radio-button>
-                <mat-radio-button value="no" checked>No</mat-radio-button>
+                <mat-radio-button value="no" >No</mat-radio-button>
               </mat-radio-group>
             </div>
-           
+
             <div class="row">
               <label class="myLabel">Did you complete your workout ? </label>
               <mat-radio-group formControlName="question4">
                 <mat-radio-button value="yes">Yes</mat-radio-button>
-                <mat-radio-button value="no" checked>No</mat-radio-button>
+                <mat-radio-button value="no" >No</mat-radio-button>
               </mat-radio-group>
             </div>
-          
-            <div class="row">
-              <label class="myLabel" style="margin-left:0px;">Do you have any comments ?</label>
+            <mat-divider></mat-divider>
+            <div class="row" style="margin-top: 20px; padding-bottom: 20px">
+              <label class="myLabel" style="margin-left:70px;">Do you have any comments ?</label>
               <textarea formControlName="comment" cols="20" rows="4"></textarea>
             </div>
-          
+
             <button class="btn btn-primary" (click)="submitForm()" style="margin-top:1em">Submit</button>
           </div>
         </div>
       </form>
     </div>
   </div>
-  
+
   <div class="container" *ngIf="hasSentSurvey">
     <section class="error-404 bg-img3">
       <div class="ttm-big-icon ttm-textcolor-skincolor">

@@ -7,21 +7,21 @@ export class Program {
   duration: number;
   objectifs: string;
   rating: number;
-  startingdate: Date;
+  endDate: Date;
   audianceid: number;
   coachid: number;
   client: Client;
   name: string;
 
   constructor(id: number, photo: any, description: string, duration: number, objectifs: string,
-              rating: number, startingdate: any, audianceid: number, coachid: number, client: Client, name: string) {
+              rating: number, endDate: any, audianceid: number, coachid: number, client: Client, name: string) {
     this.id = id;
     this.backgroundImage = photo;
     this.description = description;
     this.duration = duration;
     this.objectifs = objectifs;
     this.rating = rating;
-    this.startingdate = startingdate;
+    this.endDate = endDate;
     this.audianceid = audianceid;
     this.coachid = coachid;
     this.client = client;

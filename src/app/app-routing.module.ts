@@ -32,7 +32,7 @@ import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update
 import {ClientDayComponent} from './components/espaceClient/client-day/client-day.component';
 import {ClientSurveyComponent} from './components/espaceClient/client-survey/client-survey.component';
 import {ClientCalendarComponent} from './components/espaceClient/client-calendar/client-calendar.component';
-import {ClientComponent} from "./components/escpaceCoach/client/client.component";
+import {ClientComponent} from './components/escpaceCoach/client/client.component';
 
 
 const routes: Routes = [
