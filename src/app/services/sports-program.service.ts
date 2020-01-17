@@ -11,7 +11,12 @@ export class SportsProgramService {
   }
 
 
+  getDayProgramByWeightLossProgramAndDay(id, day) {
+    return this.http.get<any>('http://localhost:8080/sportsProgram/byWeightLossProgramAndDay/' + id + '/' + day);
+
+
   save(wlpId,program) {
     return this.http.post('http://localhost:8080/sportsProgram/addSports/' + wlpId, program);
+
   }
 }

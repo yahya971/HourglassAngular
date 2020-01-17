@@ -5,15 +5,30 @@
       <div class="ttm_single_image-wrapper mb-25">
         <img class="img-fluid" src="../../../../assets/images/portfolio/post-five.jpg" alt="">
       </div>
+      <div class="separator">
+        <div class="sep-line mt_5 mb-50"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-4">
+          <ul class="tabs clearfix">
+            <li class="tab active"><a href="#"><i class="fa fa-user"></i>Client Info</a></li>
+            <li class="tab"><a href="#"><i class="fa fa-sticky-note"></i>Survey</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-tab">
+        <div class="content-inner">
+
+        </div>
+        <div class="content-inner">
+
+        </div>
+      </div>
       <div class="ttm-service-description">
-        <h4 class="font-27 line-h40">Sport Nutrition Program</h4>
+        <h4 class="font-27 line-h40">{{sportProgram?.name}}</h4>
         <div class="mb-35">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p>{{sportProgram?.description}}</p>
         </div>
-      </div>
-      <div class="separator">
-        <div class="sep-line mt_5 mb-35"></div>
       </div>
       <div class="row">
         <div class="col-md-6">
@@ -23,21 +38,67 @@
         </div>
         <div class="col-md-6">
           <div class="ttm-service-description">
-            <h4 class="font-27 pb-10 line-h35">Planning and Prep</h4>
-            <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
+            <h4 class="font-27 pb-10 line-h35">{{sportProgram?.workouts[0]?.name}}</h4>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-timer"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5>{{sportProgram?.workouts[0]?.startingHour}} A.M</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-alarm-clock"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5>{{sportProgram?.workouts[0]?.duration}} minutes</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-medall-alt"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5>{{sportProgram?.workouts[0]?.burnedCalories}} calories</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+            </div>
+            <P>{{sportProgram?.workouts[0]?.description}}</P>
           </div>
-          <ul class="ttm-list ttm-list-style-icon mb-20">
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
+          <ul class="ttm-list ttm-list-style-icon mb-20" >
+            <li *ngFor="let equipment of sportProgram?.workouts[0]?.equipment, let last = last"><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
+              <span class="ttm-list-li-content"
+            >{{equipment}}</span></li>
           </ul>
         </div>
       </div>
       <div class="separator">
         <div class="sep-line mt_5 mb-35"></div>
       </div>
-      <div class="row">
+      <div class="ttm-service-description">
+        <h4 class="font-27 line-h40">{{nutritionalProgram?.name}}</h4>
+        <div class="mb-35">
+          <p>{{nutritionalProgram?.description}}</p>
+        </div>
+      </div>
+      <div class="row" *ngFor="let meal of nutritionalProgram?.meals">
         <div class="col-md-6">
           <div class="ttm_single_image-wrapper mb-35">
             <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
@@ -45,7 +106,48 @@
         </div>
         <div class="col-md-6">
           <div class="ttm-service-description">
-            <h4 class="font-27 pb-10 line-h35">Vitamins and Supplements</h4>
+            <h4 class="font-27 pb-10 line-h35">{{meal?.name}}</h4>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-timer"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5> A.M</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-alarm-clock"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5>{{sportProgram?.workouts[0]?.duration}} minutes</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <!--featured-icon-box-->
+                <div class="featured-icon-box style2 left-icon">
+                  <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
+                    <i class="ti ti-medall-alt"></i>
+                  </div>
+                  <div class="featured-content">
+                    <div class="featured-title">
+                      <h5>{{sportProgram?.workouts[0]?.burnedCalories}} calories</h5>
+                    </div>
+                  </div>
+                </div><!-- featured-icon-box end-->
+              </div>
+            </div>
             <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
           </div>
           <ul class="ttm-list ttm-list-style-icon mb-20">
@@ -58,25 +160,6 @@
       </div>
       <div class="separator">
         <div class="sep-line mt_5 mb-35"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="ttm_single_image-wrapper mb-35">
-            <img class="img-fluid" src="../../../../assets/images/portfolio/post-eight.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="ttm-service-description">
-            <h4 class="font-27 pb-10 line-h35">Resources</h4>
-            <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
-          </div>
-          <ul class="ttm-list ttm-list-style-icon mb-20">
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-            <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
-          </ul>
-        </div>
       </div>
     </div><!-- ttm-service-single-content-are end -->
   </div>
