@@ -13,7 +13,7 @@ export class Client {
   height: number;
   sex: string;
   photo: any;
-  silhouete: string;
+  silhouette: string;
 
   constructor(id: number, email: string, lastname: string, name: string, password: string, username: string, age: number,
               currentWeight: number, desiredWeight: number, fatDistribution: string, frame: string, height: number,
@@ -32,6 +32,6 @@ export class Client {
     this.height = height;
     this.sex = sex;
     this.photo = photo;
-    this.silhouete = silhouete;
+    this.silhouette = silhouete;
   }
 }

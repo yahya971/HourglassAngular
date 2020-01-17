@@ -14,6 +14,7 @@ export class ClientInformationsComponent implements OnInit {
   id: any;
   client: Client;
   program: Program;
+  olds: Array<Program>;
   constructor(private clientService: ClientService, private aroute: ActivatedRoute, private wlprogramService: ProgramService) {
 
   }
@@ -29,6 +30,9 @@ export class ClientInformationsComponent implements OnInit {
       value1 => {
         this.program = value1;
       });
+    this.wlprogramService.getOldProgramsByClientId(this.id).subscribe(value2 => {
+      this.olds = value2;
+    });
   }
 
 }

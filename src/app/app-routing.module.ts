@@ -37,6 +37,7 @@ import {ClientComponent} from './components/escpaceCoach/client/client.component
 import {ListprogramsComponent} from './components/programmeDuJour/listprograms/listprograms.component';
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
+import {CheckoutComponent} from './components/programmeDuJour/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -62,7 +63,8 @@ const routes: Routes = [
         path: 'wlprogram',
         children: [
           {path: '', component: ListprogramsComponent},
-          {path: ':id', component: ProgrammeDuJourComponent}
+          {path: ':id', component: ProgrammeDuJourComponent},
+          {path: 'checkout/:id', component: CheckoutComponent}
         ]
       },
       {path: 'cours', component: CoursComponent}

@@ -75,6 +75,7 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
 import { ListprogramsComponent } from './components/programmeDuJour/listprograms/listprograms.component';
 
 import { FullCalendarModule} from '@fullcalendar/angular';
+import { CheckoutComponent } from './components/programmeDuJour/checkout/checkout.component';
 
 
 @NgModule({
@@ -136,7 +137,8 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     ListprogramsComponent,
 
     WorkoutComponent,
-    CoachUpdateWorkoutComponent
+    CoachUpdateWorkoutComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
