@@ -22,7 +22,7 @@
               <!-- Professional Details -->
               <h5 class="tittle">Professional Details</h5>
               <label class="btn-file"> <i class="fa fa-camera"></i> Click to add picture
-                <input type="file" style="display: none;">
+                <input (change)="onChangeFile($event)" type="file" style="display: none;" ngModel name="photo">
               </label>
 
               <ul class="personal-info">

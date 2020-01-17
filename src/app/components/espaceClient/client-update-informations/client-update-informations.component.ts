@@ -12,6 +12,7 @@ import {NgForm} from "@angular/forms";
 export class ClientUpdateInformationsComponent implements OnInit {
   id: any;
   client: Client;
+  photo: any;
 
   constructor(private clientService: ClientService, private aroute: ActivatedRoute, private router: Router) {
     aroute.params.subscribe(params => {
@@ -63,6 +64,10 @@ export class ClientUpdateInformationsComponent implements OnInit {
     if (formulaire.value.fatDistribution !== '') {
       this.client.fatDistribution = formulaire.value.fatDistribution;
     }
+
+    if (this.photo !== '') {
+      this.client.photo = this.photo ;
+    }
     // console.log(this.client);
     this.clientService.updateClient(this.client, this.id).subscribe(value => {
       console.log(value);
@@ -71,4 +76,20 @@ export class ClientUpdateInformationsComponent implements OnInit {
     });
     this.router.navigate(['espace/client/informations/', this.id]);
  }
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.photo = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
+  }
 }

@@ -7,7 +7,7 @@
       </div>
       <div class="col-4 col-md-4">
         <label for="BackgroundImage" class="myLabel">Background Image: </label>
-        <input type="file" id="BackgroundImage" class="form-control" formControlName="backgroundImage" />
+        <input (click)="onChangeFile($event)" type="file" id="BackgroundImage" class="form-control" formControlName="backgroundImage" />
       </div>
     </div>
     <hr class="myHr">
