@@ -3,6 +3,7 @@ import {SignUpInfo} from '../../auth/signup-info';
 import {AuthService} from '../../auth/auth.service';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {SignUpCoachInfo} from '../../auth/signupcoach-info';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,11 +18,12 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   photo: any;
+  id: any;
 
   /** Returns a FormArray with the name 'formArray' */
   get appraisalForm(): AbstractControl | null { return this.appraisalFormGroup.get('appraisalForm'); }
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private route: Router) { }
 
   ngOnInit() {
     this.appraisalFormGroup = this.formBuilder.group({
@@ -79,6 +81,7 @@ export class RegisterComponent implements OnInit {
         this.isSignedUp = true;
         this.isSignUpFailed = false;
         this.isSubmitted = true;
+        this.route.navigate(['/login']);
       },
       error => {
         console.log(error);
