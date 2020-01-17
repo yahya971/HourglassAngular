@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../../../auth/token-storage.service';
+import { ClientService } from '../../../services/client.service';
+import { Client } from '../../../Models/client.model';
 
 @Component({
   selector: 'app-espace-client',
@@ -7,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EspaceClientComponent implements OnInit {
   id: number;
-  constructor() { }
+  client: Client;
+  constructor(private tokenService: TokenStorageService,private clientService:ClientService) {
+    this.id = +this.tokenService.getUserId();
+
+  }
 
   ngOnInit() {
-   this.id = 1;
+    this.clientService.getClientById(this.id).subscribe(value => this.client = value);
+
   }
 
 }
