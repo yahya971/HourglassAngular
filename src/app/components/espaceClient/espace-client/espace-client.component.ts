@@ -11,7 +11,7 @@ import { Client } from '../../../Models/client.model';
 export class EspaceClientComponent implements OnInit {
   id: number;
   client: Client;
-  constructor(private tokenService: TokenStorageService,private clientService:ClientService) {
+  constructor(private tokenService: TokenStorageService, private clientService:ClientService) {
     this.id = +this.tokenService.getUserId();
 
   }
