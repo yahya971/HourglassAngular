@@ -57,7 +57,6 @@
                 <div class="ttm-header-icons" *ngIf="islogged">
                   <span mat-button [matMenuTriggerFor]="menu" class="ttm-header-icon ttm-header-cart-link">
                                             <a href="#"><i class="fa fa-user"></i>
-                                              <span class="number-cart">{{notifications.length}}</span>
                                             </a>
                                         </span>
                   <mat-menu #menu="matMenu" xPosition="after">
@@ -75,9 +74,9 @@
                       <span >Logout</span>
                     </button>
                   </mat-menu>
-                  <span class="ttm-header-icon ttm-header-cart-link">
-                                            <a href="#"><i class="fa fa-shopping-cart"></i>
-                                                <span class="number-cart">0</span>
+                  <span class="ttm-header-icon ttm-header-cart-link" (click)="popupNotification()">
+                                            <a href="#"><i class="fa fa-bell"></i>
+                                                <span class="number-cart" *ngIf="newFollowsAndClients.length !=  0&& !notificationVerified">{{newFollowsAndClients.length}}</span>
                                             </a>
                                         </span>
                 </div><!-- header-icons end -->
@@ -154,6 +153,19 @@
 </div>
 
 <div class="info-widget">
+  <div class="alert alert-success" role="alert">
+    This is a success alert—check it out!
+  </div>
+  <div class="toast" data-autohide="false" id="toast">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Toast Header</strong>
+      <small class="text-muted">5 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+      Some text inside the toast body
+    </div>
+  </div>
     <div class="col-sm" *ngIf="islogged">
       <div class="ttm-btn-box pr-20 pb-20">
         <a

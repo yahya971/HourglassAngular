@@ -34,12 +34,8 @@ import {ClientSurveyComponent} from './components/espaceClient/client-survey/cli
 import {ClientCalendarComponent} from './components/espaceClient/client-calendar/client-calendar.component';
 import {ClientComponent} from './components/escpaceCoach/client/client.component';
 import {ListprogramsComponent} from './components/programmeDuJour/listprograms/listprograms.component';
-import {ClientDayComponent} from "./components/espaceClient/client-day/client-day.component";
-import {ClientSurveyComponent} from "./components/espaceClient/client-survey/client-survey.component";
-import {ClientCalendarComponent} from "./components/espaceClient/client-calendar/client-calendar.component";
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
-import { ClientComponent } from './components/escpaceCoach/client/client.component';
 
 const routes: Routes = [
   {

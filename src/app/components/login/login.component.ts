@@ -3,8 +3,8 @@ import {AuthLoginInfo} from '../../auth/login-info';
 import {AuthService} from '../../auth/auth.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {Router} from '@angular/router';
-import {ClientService} from "../../services/client.service";
-import {CoachService} from "../../services/coach.service";
+import {ClientService} from '../../services/client.service';
+import {CoachService} from '../../services/coach.service';
 
 @Component({
   selector: 'app-login',
@@ -66,7 +66,8 @@ export class LoginComponent implements OnInit {
     if (this.roles[0] === 'ROLE_USER') {
       this.clientService.getClientByUsername(this.tokenService.getUsername()).subscribe(client => {
         this.router.navigate(['/espace/client/informations/', client.id]).then(value => {
-          console.log(value); // true if navigation is successful
+          console.log(value);
+          // window.location.reload();
         }, reason => {
           console.log(reason); // when there's an error
         });
