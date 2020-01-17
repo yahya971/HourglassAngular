@@ -16,6 +16,10 @@ export class ClientService {
     return this.http.get<Client>('http://localhost:8080/client/' + id);
   }
 
+  getClientByUsername(username) {
+    return this.http.get<Client>('http://localhost:8080/client/byUsername/' + username);
+  }
+
   getClientByCoachId(id) {
     return this.http.get<Array<Client>>('http://localhost:8080/coach/' + id + '/clients');
   }

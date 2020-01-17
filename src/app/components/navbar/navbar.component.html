@@ -57,6 +57,7 @@
                 <div class="ttm-header-icons" *ngIf="islogged">
                   <span mat-button [matMenuTriggerFor]="menu" class="ttm-header-icon ttm-header-cart-link">
                                             <a href="#"><i class="fa fa-user"></i>
+                                              <span class="number-cart">{{notifications.length}}</span>
                                             </a>
                                         </span>
                   <mat-menu #menu="matMenu" xPosition="after">
