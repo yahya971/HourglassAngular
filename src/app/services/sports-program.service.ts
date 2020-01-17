@@ -9,4 +9,8 @@ export class SportsProgramService {
   getDayProgramByWeightLossProgram(id) {
     return this.http.get<Array<any>>('http://localhost:8080/sportsProgram/byWeightLossProgram/' + id);
   }
+
+  getDayProgramByWeightLossProgramAndDay(id, day) {
+    return this.http.get<any>('http://localhost:8080/sportsProgram/byWeightLossProgramAndDay/' + id + '/' + day);
+  }
 }

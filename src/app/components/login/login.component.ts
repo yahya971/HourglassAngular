@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    // console.log(this.form);
 
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
@@ -45,11 +45,22 @@ export class LoginComponent implements OnInit {
         this.tokenService.saveToken(data.accessToken);
         this.tokenService.saveUsername(data.username);
         this.tokenService.saveAuthorities(data.authorities);
-
+        if (this.tokenService.getAuthorities()[0] === 'ROLE_USER') {
+          this.clientService.getClientByUsername(this.tokenService.getUsername()).subscribe(client => {
+            this.tokenService.saveUserId(client.id.toString());
+            console.log(this.tokenService.getUserId());
+          });
+        } else {
+          this.coachService.getCoachByUsername(this.tokenService.getUsername()).subscribe(coach => {
+            this.tokenService.saveUserId(coach.id.toString());
+            console.log(this.tokenService.getUserId());
+          });
+        }
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenService.getAuthorities();
         // this.reloadPage();
+
         this.redirectUser();
 
       },
