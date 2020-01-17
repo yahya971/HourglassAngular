@@ -15,7 +15,7 @@ export class ClientInformationsComponent implements OnInit {
   client: Client;
   program: Program;
   constructor(private clientService: ClientService, aroute: ActivatedRoute, private wlprogramService: ProgramService) {
-    aroute.params.subscribe(params => {this.id = params.id; });
+
   }
 
   ngOnInit() {
