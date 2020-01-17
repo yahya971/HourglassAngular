@@ -85,7 +85,8 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
     AppComponent,
     WeeklyProgramComponent,
     DailyProgramListComponent,
-
+    CoachCreateDayProgram1Component,
+    CheckoutComponent,
     DailyProgramItemWorkoutComponent,
     DailyProgramItemMealComponent,
     TestComponent,
@@ -155,6 +156,7 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
     MatDividerModule,
     ReactiveFormsModule,
     DragDropModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
