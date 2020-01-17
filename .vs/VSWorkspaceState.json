@@ -4,12 +4,14 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\escpaceCoach",
+    "\\src\\app\\components\\escpaceCoach\\coach-create-day-program1",
+    "\\src\\app\\components\\escpaceCoach\\coach-create-program",
     "\\src\\app\\components\\escpaceCoach\\coach-create-program\\form3",
-    "\\src\\app\\components\\escpaceCoach\\espace-coach-meals\\meal-card",
-    "\\src\\app\\components\\espaceClient",
-    "\\src\\app\\components\\espaceClient\\client-survey",
+    "\\src\\app\\components\\register-client",
+    "\\src\\app\\Models",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\espaceClient\\client-survey\\client-survey.component.css",
+  "SelectedNode": "\\src\\app\\components\\escpaceCoach\\coach-create-day-program1\\coach-create-day-program1.component.ts",
   "PreviewInSolutionExplorer": false
 }

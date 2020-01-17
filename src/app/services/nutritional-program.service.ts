@@ -9,4 +9,12 @@ export class NutritionalProgramService {
   getDayProgramByWeightLossProgram(id) {
     return this.http.get<Array<any>>('http://localhost:8080/nutritionalProgram/byWeightLossProgram/' + id);
   }
+
+
+
+  save(wlpId, program) {
+    return this.http.post('http://localhost:8080/nutritionalProgram/addNutritional/' + wlpId, program);
+  }
+
+
 }

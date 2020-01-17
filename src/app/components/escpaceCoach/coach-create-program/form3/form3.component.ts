@@ -138,7 +138,7 @@ export class Form3Component implements OnInit {
       nutritionalProgramDescription: [''],
       sportsProgramName: [''],
       sportsProgramDescription: [''],
-      day:['']
+      day:[1]
 
 
     });

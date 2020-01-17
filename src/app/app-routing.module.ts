@@ -39,6 +39,9 @@ import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-upd
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import {CheckoutComponent} from './components/programmeDuJour/checkout/checkout.component';
 
+import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -127,6 +130,9 @@ const routes: Routes = [
       },
       {
         path: 'workout/:id/:workoutId', component: WorkoutComponent
+      },
+      {
+        path: 'create/dayProgram/:id', component: CoachCreateDayProgram1Component
       }
     ]
 
