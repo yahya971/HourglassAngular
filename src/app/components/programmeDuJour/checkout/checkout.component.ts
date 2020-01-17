@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Program} from '../../../Models/program.model';
 import {ProgramService} from '../../../services/program.service';
 import { TokenStorageService } from '../../../auth/token-storage.service';
@@ -14,7 +14,7 @@ export class CheckoutComponent implements OnInit {
   program: Program;
   userId: number=1;
 
-  constructor(private aroute: ActivatedRoute, private programService: ProgramService, private tokenService: TokenStorageService) {
+  constructor(private aroute: ActivatedRoute, private programService: ProgramService, private tokenService: TokenStorageService, private router: Router) {
     aroute.params.subscribe((param: any) => (this.programId = param.id));
     console.log(this.programId);
   }
@@ -31,6 +31,7 @@ export class CheckoutComponent implements OnInit {
   affecterProgramme() {
     this.programService.affecterProgramme(this.userId, this.programId).subscribe(value => {
       console.log(value);
+      this.router.navigate(['espace/client/informations', this.userId]);
     })
   }
 

@@ -22,7 +22,7 @@
 
             <!-- Professional Details -->
             <h5 class="tittle">Professional Details</h5>
-            <img src="data:image/jpeg;base64,{{client.photo}}" class="img-responsive" alt="">
+            <img src="{{client.photo}}" class="img-responsive" alt="">
             <ul class="personal-info">
               <li>
                 <p> <span> Name</span> {{client.name}} {{client.lastname}} </p>
@@ -107,14 +107,14 @@
                   </ul>
                   <!-- Services -->
                   <h5 class="tittle">My Cyrrent Program</h5>
-                  <div class="row padding-20 margin-top-50">
+                  <div class="row padding-20 margin-top-50" *ngIf="program">
 
                     <div class="col-md-4">
                       <!-- featured-imagebox -->
                       <div class="featured-imagebox featured-imagebox-team  ttm-box-view-top-image ttm-team-box-view-overlay box-shadow1 mb-30">
                         <div class="featured-imagebox-team-inner">
                           <div class="featured-thumbnail"><!-- team-member-image -->
-                            <img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}" alt="">
+                            <img class="img-fluid" src="data:image/jpeg;base64,{{program?.backgroundImage}}" alt="">
                           </div>
                           <div class="ttm-box-view-overlay">
                             <div class="featured-iconbox ttm-media-link">
@@ -125,23 +125,23 @@
                           </div>
                         </div>
                         <div class="ttm-box-bottom-content">
-                          <p class="category">rating: {{program.rating}}</p><!-- team-member-category -->
+                          <p class="category">rating: {{program?.rating}}</p><!-- team-member-category -->
                           <div class="featured-title"><!-- team-member-name -->
-                            <h5><a routerLink="/wlprogram/{{program.id}}">{{program.name}}</a></h5>
+                            <h5><a routerLink="/wlprogram/{{program?.id}}">{{program?.name}}</a></h5>
                           </div>
                         </div>
                       </div><!-- featured-imagebox end-->
                     </div>
                   </div>
                   <h5 class="tittle">My Old Programs</h5>
-                  <div class="row padding-20 margin-top-50">
+                  <div class="row padding-20 margin-top-50" *ngIf="olds">
 
                     <div class="col-md-4" *ngFor="let old of olds;let i = index">
                       <!-- featured-imagebox -->
                       <div class="featured-imagebox featured-imagebox-team  ttm-box-view-top-image ttm-team-box-view-overlay box-shadow1 mb-30">
                         <div class="featured-imagebox-team-inner">
                           <div class="featured-thumbnail"><!-- team-member-image -->
-                            <img class="img-fluid" src="data:image/jpeg;base64,{{old.backgroundImage}}" alt="">
+                            <img class="img-fluid" src="data:image/jpeg;base64,{{old?.backgroundImage}}" alt="">
                           </div>
                           <div class="ttm-box-view-overlay">
                             <div class="featured-iconbox ttm-media-link">
@@ -153,9 +153,9 @@
                           </div>
                         </div>
                         <div class="ttm-box-bottom-content">
-                          <p class="category">rating: {{old.rating}}</p><!-- team-member-category -->
+                          <p class="category">rating: {{old?.rating}}</p><!-- team-member-category -->
                           <div class="featured-title"><!-- team-member-name -->
-                            <h5><a routerLink="/wlprogram/{{old.id}}">{{old.name}}</a></h5>
+                            <h5><a routerLink="/wlprogram/{{old?.id}}">{{old?.name}}</a></h5>
                           </div>
                           <div *ngIf="this.olds2[i] == true" >
                           <ul class="list-inline rating-list" *ngFor="let star of stars" [style.display]=display >

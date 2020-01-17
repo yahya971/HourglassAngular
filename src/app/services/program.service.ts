@@ -34,7 +34,7 @@ export class ProgramService {
   }
 
   affecterProgramme(clientId, programId) {
-   return this.http.get<String>('localhost:8080/WeightLossProgram/affecter/' + clientId + "/" + programId);
+   return this.http.get<String>('http://localhost:8080/WeightLossProgram/affecter/' + clientId + "/" + programId);
   }
 
 

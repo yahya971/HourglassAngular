@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class CoachCreateProgramComponent implements OnInit {
   id: any;
   form: any;
-  photo: any;
+  imageString: any;
   constructor(private formBuilder: FormBuilder, private route: Router) {
   }
 
@@ -53,9 +53,27 @@ export class CoachCreateProgramComponent implements OnInit {
   }
 
   nextForm() {
+    this.form.value.backgroundImage = this.imageString;
     window.localStorage.setItem('form1', JSON.stringify(this.form.value));
       this.route.navigate(['/espace/coach/create/program/form2/', this.id]);
 
+  }
+
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.imageString = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
   }
 
   convertImage(imageUrl) {
