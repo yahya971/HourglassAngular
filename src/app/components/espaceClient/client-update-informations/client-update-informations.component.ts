@@ -55,7 +55,7 @@ export class ClientUpdateInformationsComponent implements OnInit {
     if (formulaire.value.password !== '') {
       this.client.password = formulaire.value.password;
     }
-    if (formulaire.value.frame !== '') {
+    if (formulaire.value.frame !== undefined) {
       this.client.frame = formulaire.value.frame;
     }
     if (formulaire.value.silouhette !== '') {
@@ -71,5 +71,5 @@ export class ClientUpdateInformationsComponent implements OnInit {
       console.log(error);
     });
     this.router.navigate(['espace/client/informations/', this.id]);
-  }
+ }
 }
