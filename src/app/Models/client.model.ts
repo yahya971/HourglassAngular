@@ -13,12 +13,11 @@ export class Client {
   height: number;
   sex: string;
   photo: any;
-  silhouete: string;
+  silhouette: string;
 
-  constructor(id: number, email: string, lastname: string, name: string, password: string, username: string, age: number,
-              currentWeight: number, desiredWeight: number, fatDistribution: string, frame: string, height: number,
-              sex: string, photo: any, silhouete: string) {
-    this.id = id;
+  constructor( email: string, lastname: string, name: string, password: string, username: string, age: number,
+               currentWeight: number, desiredWeight: number, fatDistribution: string, frame: string, height: number,
+               sex: string, photo: any, silhouete: string) {
     this.email = email;
     this.lastname = lastname;
     this.name = name;
@@ -32,6 +31,6 @@ export class Client {
     this.height = height;
     this.sex = sex;
     this.photo = photo;
-    this.silhouete = silhouete;
+    this.silhouette = silhouete;
   }
 }

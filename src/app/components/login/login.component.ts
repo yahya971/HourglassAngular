@@ -3,6 +3,8 @@ import {AuthLoginInfo} from '../../auth/login-info';
 import {AuthService} from '../../auth/auth.service';
 import {TokenStorageService} from '../../auth/token-storage.service';
 import {Router} from '@angular/router';
+import {ClientService} from '../../services/client.service';
+import {CoachService} from '../../services/coach.service';
 
 @Component({
   selector: 'app-login',
@@ -18,17 +20,15 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
 
-  constructor(private authService: AuthService, private tokenService: TokenStorageService, private router: Router) { }
+  constructor(private authService: AuthService, private tokenService: TokenStorageService, private router: Router,
+              private clientService: ClientService, private coachService: CoachService) { }
 
   ngOnInit() {
     if (this.tokenService.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenService.getAuthorities();
-      this.router.navigate(['/']).then(value => {
-        console.log(value); // true if navigation is successful
-      }, reason => {
-        console.log(reason); // when there's an error
-      });
+      // console.log(this.roles);
+      this.redirectUser();
     }
   }
 
@@ -49,7 +49,9 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenService.getAuthorities();
-        this.reloadPage();
+        // this.reloadPage();
+        this.redirectUser();
+
       },
       error => {
         console.log(error);
@@ -59,6 +61,26 @@ export class LoginComponent implements OnInit {
       }
     );
 
+  }
+  redirectUser() {
+    if (this.roles[0] === 'ROLE_USER') {
+      this.clientService.getClientByUsername(this.tokenService.getUsername()).subscribe(client => {
+        this.router.navigate(['/espace/client/informations/', client.id]).then(value => {
+          console.log(value);
+          // window.location.reload();
+        }, reason => {
+          console.log(reason); // when there's an error
+        });
+      });
+    } else {
+      this.coachService.getCoachByUsername(this.tokenService.getUsername()).subscribe(coach => {
+        this.router.navigate(['/espace/coach/informations/', coach.id]).then(value => {
+          console.log(value); // true if navigation is successful
+        }, reason => {
+          console.log(reason); // when there's an error
+        });
+      });
+    }
   }
 
   reloadPage() {

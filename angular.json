@@ -64,7 +64,10 @@
               "src/assets/revolution/js/extensions/revolution.extension.navigation.min.js",
               "src/assets/revolution/js/extensions/revolution.extension.parallax.min.js",
               "src/assets/revolution/js/extensions/revolution.extension.slideanims.min.js",
-              "src/assets/revolution/js/extensions/revolution.extension.video.min.js"
+              "src/assets/revolution/js/extensions/revolution.extension.video.min.js",
+              "node_modules/@fullcalendar/core/main.js",
+              "node_modules/@fullcalendar/daygrid/main.js",
+              "node_modules/@fullcalendar/bootstrap/main.js"
             ]
           },
           "configurations": {

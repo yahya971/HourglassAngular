@@ -12,9 +12,10 @@ export class Program {
   coachid: number;
   client: Client;
   name: string;
+  price: number;
 
   constructor(id: number, photo: any, description: string, duration: number, objectifs: string,
-              rating: number, endDate: any, audianceid: number, coachid: number, client: Client, name: string) {
+              rating: number, endDate: any, audianceid: number, coachid: number, client: Client, name: string, price: number) {
     this.id = id;
     this.backgroundImage = photo;
     this.description = description;
@@ -26,6 +27,7 @@ export class Program {
     this.coachid = coachid;
     this.client = client;
     this.name = name;
+    this.price = price;
   }
 
 

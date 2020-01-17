@@ -1,1 +1,17 @@
-<p>client-calendar works!</p>
+
+
+<div class="container" id="calendar">
+  <div class="row">
+    <full-calendar
+                   deepChangeDetection="true"
+                   defaultView="dayGridMonth"
+                   [plugins]="calendarPlugins"
+                   themeSystem="bootstrap"
+                   weekNumbers="true"
+                   eventLimit="true"
+                   [header]="header"
+                   [events]="events"
+
+    ></full-calendar>
+  </div>
+</div>

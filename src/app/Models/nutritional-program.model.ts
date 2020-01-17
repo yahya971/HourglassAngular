@@ -7,11 +7,11 @@ export class NutritionalProgram {
   mealsNumber: number;
   meals: any[];
   name: string;
-  constructor(day, description, mealsNumber, meals,name) {
+  constructor(day, description, mealsNumber, meals, name) {
     this.day = day;
     this.description = description;
     this.mealsNumber = mealsNumber;
     this.meals = meals;
-    this.name=name
+    this.name = name;
   }
 }

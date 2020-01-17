@@ -12,9 +12,12 @@ export class ClientService {
   getAllClients() {
     return this.http.get<Array<Client>>('http://localhost:8080/client');
   }
-
   getClientById(id) {
     return this.http.get<Client>('http://localhost:8080/client/' + id);
+  }
+
+  getClientByUsername(username) {
+    return this.http.get<Client>('http://localhost:8080/client/byUsername/' + username);
   }
 
   getClientByCoachId(id) {
@@ -26,7 +29,7 @@ export class ClientService {
     });
   }
 
-  updateClient(client: Client, id) {
+  updateClient(client: Client, id: number) {
     return this.http.put<Client>('http://localhost:8080/client/updateclient/' + id, client);
   }
 }

@@ -13,6 +13,10 @@ export class CoachService {
     return this.http.get<Array<Coach>>('http://localhost:8080/coach');
   }
 
+  getCoachByUsername(username) {
+    return this.http.get<Coach>('http://localhost:8080/coach/byUsername/' + username);
+  }
+
   getCoachById(id) {
     return this.http.get<Coach>('http://localhost:8080/coach/' + id);
   }

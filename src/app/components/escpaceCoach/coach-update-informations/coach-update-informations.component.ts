@@ -29,7 +29,7 @@ id: any;
     if (formulaire.value.lastname !== '') {
       this.coach.lastname = formulaire.value.lastname;
     }
-    if (formulaire.value.name !== '') {
+    if (formulaire.value.age !== '') {
       this.coach.age = formulaire.value.age;
     }
     if (formulaire.value.experience !== '') {

@@ -23,18 +23,22 @@ import {MyClientsComponent} from './components/escpaceCoach/my-clients/my-client
 import { EspaceCoachCoursesComponent } from './components/escpaceCoach/espace-coach-courses/espace-coach-courses.component';
 import { CoachCreateCourseComponent } from './components/escpaceCoach/coach-create-course/coach-create-course.component';
 import { ClientInformationsComponent } from './components/espaceClient/client-informations/client-informations.component';
+// tslint:disable-next-line:max-line-length
 import { ClientUpdateInformationsComponent } from './components/espaceClient/client-update-informations/client-update-informations.component';
 import { ClientCoursesComponent } from './components/espaceClient/client-courses/client-courses.component';
 import {Form2Component} from './components/escpaceCoach/coach-create-program/form2/form2.component';
 import {Form3Component} from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
-import {ClientDayComponent} from "./components/espaceClient/client-day/client-day.component";
-import {ClientSurveyComponent} from "./components/espaceClient/client-survey/client-survey.component";
-import {ClientCalendarComponent} from "./components/espaceClient/client-calendar/client-calendar.component";
+import {ClientDayComponent} from './components/espaceClient/client-day/client-day.component';
+import {ClientSurveyComponent} from './components/espaceClient/client-survey/client-survey.component';
+import {ClientCalendarComponent} from './components/espaceClient/client-calendar/client-calendar.component';
+import {ClientComponent} from './components/escpaceCoach/client/client.component';
+import {ListprogramsComponent} from './components/programmeDuJour/listprograms/listprograms.component';
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
-import { ClientComponent } from './components/escpaceCoach/client/client.component';
+import {CheckoutComponent} from './components/programmeDuJour/checkout/checkout.component';
+
 import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
 
 
@@ -61,7 +65,9 @@ const routes: Routes = [
       {
         path: 'wlprogram',
         children: [
-          {path: ':id', component: ProgrammeDuJourComponent}
+          {path: '', component: ListprogramsComponent},
+          {path: ':id', component: ProgrammeDuJourComponent},
+          {path: 'checkout/:id', component: CheckoutComponent}
         ]
       },
       {path: 'cours', component: CoursComponent}

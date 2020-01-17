@@ -72,9 +72,12 @@ import { ClientCalendarComponent } from './components/espaceClient/client-calend
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
+import { ListprogramsComponent } from './components/programmeDuJour/listprograms/listprograms.component';
 import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
 import { CoachCreateDayProgram2Component } from './components/escpaceCoach/coach-create-day-program2/coach-create-day-program2.component';
 
+import { FullCalendarModule} from '@fullcalendar/angular';
+import { CheckoutComponent } from './components/programmeDuJour/checkout/checkout.component';
 
 
 @NgModule({
@@ -133,11 +136,10 @@ import { CoachCreateDayProgram2Component } from './components/escpaceCoach/coach
     ClientDayComponent,
     ClientCalendarComponent,
     ClientComponent,
+    ListprogramsComponent,
+
     WorkoutComponent,
-    CoachUpdateWorkoutComponent,
-    CoachCreateDayProgram1Component,
-    CoachCreateDayProgram2Component,
-   
+    CoachUpdateWorkoutComponent
   ],
   imports: [
     BrowserModule,
@@ -152,7 +154,7 @@ import { CoachCreateDayProgram2Component } from './components/escpaceCoach/coach
     MaterialFileInputModule,
     MatDividerModule,
     ReactiveFormsModule,
-    DragDropModule, MatGridListModule
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

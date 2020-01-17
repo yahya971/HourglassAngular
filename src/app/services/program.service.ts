@@ -9,6 +9,9 @@ import { WeightLossProgramPogo } from '../Models/weight-loss-program-pogo.class'
 export class ProgramService {
 
   constructor(private http: HttpClient) { }
+  getAllPrograms() {
+    return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram');
+  }
   getProgramByCoachId(id) {
     return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/byCoach/' + id );
   }
@@ -22,5 +25,8 @@ export class ProgramService {
     this.http.post<WeightLossProgramPogo>('http://localhost:8080/WeightLossProgram/' + coachId, program).subscribe(res => {
       console.log(res);
     });
+  }
+  getOldProgramsByClientId(id) {
+    return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/old/byClient/' + id);
   }
 }

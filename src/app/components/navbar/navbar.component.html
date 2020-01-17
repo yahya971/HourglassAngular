@@ -74,9 +74,9 @@
                       <span >Logout</span>
                     </button>
                   </mat-menu>
-                  <span class="ttm-header-icon ttm-header-cart-link">
-                                            <a href="#"><i class="fa fa-shopping-cart"></i>
-                                                <span class="number-cart">0</span>
+                  <span class="ttm-header-icon ttm-header-cart-link" (click)="popupNotification()">
+                                            <a href="#"><i class="fa fa-bell"></i>
+                                                <span class="number-cart" *ngIf="newFollowsAndClients.length !=  0&& !notificationVerified">{{newFollowsAndClients.length}}</span>
                                             </a>
                                         </span>
                 </div><!-- header-icons end -->
@@ -151,8 +151,20 @@
 <div class="ttm-btn-box pr-20 pb-20">
 
 </div>
-
+ <div class="container" *ngIf="notifications.length > 0">
+   <div class="row"  *ngFor="let notfication of notifications">
+     <div class="col-lg-6 offset-lg-7">
+       <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 500px">
+         <strong>Notification!</strong> {{notfication}} has sent his survey.Please go check it
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
 <div class="info-widget">
+
     <div class="col-sm" *ngIf="islogged">
       <div class="ttm-btn-box pr-20 pb-20">
         <a
