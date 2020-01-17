@@ -83,7 +83,11 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
 @NgModule({
   declarations: [
     AppComponent,
+   
+    CheckoutComponent,
+    CoachCreateDayProgram1Component,
     WeeklyProgramComponent,
+    CoachCreateDayProgram2Component,
     DailyProgramListComponent,
 
     DailyProgramItemWorkoutComponent,
@@ -155,6 +159,7 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
     MatDividerModule,
     ReactiveFormsModule,
     DragDropModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
