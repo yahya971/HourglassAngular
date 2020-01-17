@@ -12,6 +12,7 @@ import {Coach} from '../../../Models/coach.Model';
 export class CoachUpdateInformationsComponent implements OnInit {
 id: any;
   coach: Coach;
+  photo:any;
   constructor(private coachService: CoachService, private aroute: ActivatedRoute, private router: Router) {
     aroute.params.subscribe(params => {this.id = params.id; });
     this.coachService.getCoachById(this.id).subscribe(value => {
@@ -65,7 +66,27 @@ id: any;
     if (formulaire.value.skill4 !== '') {
       this.coach.score4 = formulaire.value.skill4;
     }
+    if (this.photo !== '') {
+      this.coach.photo = this.photo;
+    }
+
     this.coachService.updateCoach(this.coach , this.id);
     this.router.navigate(['espace/coach/informations/', this.id]);
 }
+
+  convertImage(imageUrl) {
+    var file: any = imageUrl.target.files[0];
+
+    var myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.photo = myReader.result;
+
+    }
+    myReader.readAsDataURL(file);
+  }
+
+  onChangeFile($event) {
+    this.convertImage($event);
+  }
 }
