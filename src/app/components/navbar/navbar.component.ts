@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit, DoCheck {
               private coachService: CoachService) { }
 
   ngOnInit() {
-    $('#toast').toast('show');
     this.islogged = this.tokenStorageService.getUsername() !== null;
     // console.log(this.tokenStorageService.getUsername());
     // console.log(this.islogged);

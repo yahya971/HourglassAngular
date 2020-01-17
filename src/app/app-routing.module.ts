@@ -30,7 +30,6 @@ import {Form2Component} from './components/escpaceCoach/coach-create-program/for
 import {Form3Component} from './components/escpaceCoach/coach-create-program/form3/form3.component';
 import { MealComponent } from './components/escpaceCoach/meal/meal.component';
 import { CoachUpdateMealComponent } from './components/escpaceCoach/coach-update-meal/coach-update-meal.component';
-import {ListprogramsComponent} from './components/programmeDuJour/listprograms/listprograms.component';
 import {ClientDayComponent} from './components/espaceClient/client-day/client-day.component';
 import {ClientSurveyComponent} from './components/espaceClient/client-survey/client-survey.component';
 import {ClientCalendarComponent} from './components/espaceClient/client-calendar/client-calendar.component';

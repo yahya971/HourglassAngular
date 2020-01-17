@@ -28,7 +28,6 @@
     "@fullcalendar/list": "^4.3.0",
     "@material/menu": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "4.0.1",
-    "@popperjs/core": "^2.0.0-rc.2",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "ngx-material-file-input": "^2.0.0",
