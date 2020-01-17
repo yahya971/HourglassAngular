@@ -21,27 +21,5 @@ export class IndexComponent implements OnInit {
     this.coachService.getAllCoaches().subscribe( value => {
       this.coaches = value;
     });
-    this.owlCaroussel();
-  }
-  owlCaroussel() {
-    $('.blog-slide').owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: $('.blog-slide').data('nav'),
-      dots: $('.blog-slide').data('dots'),
-      autoplay: $('.blog-slide').data('auto'),
-      smartSpeed: 3000,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 2,
-        },
-        992: {
-          items: $('.blog-slide').data('item')
-        }
-      }
-    });
   }
 }
