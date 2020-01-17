@@ -83,7 +83,11 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
 @NgModule({
   declarations: [
     AppComponent,
+   
+    CheckoutComponent,
+    CoachCreateDayProgram1Component,
     WeeklyProgramComponent,
+    CoachCreateDayProgram2Component,
     DailyProgramListComponent,
     CoachCreateDayProgram1Component,
     CheckoutComponent,

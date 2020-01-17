@@ -32,4 +32,11 @@ export class ProgramService {
   getOldProgramsByClientId(id) {
     return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/old/byClient/' + id);
   }
+
+  affecterProgramme(clientId, programId) {
+   return this.http.get<String>('localhost:8080/WeightLossProgram/affecter/' + clientId + "/" + programId);
+  }
+
+
+
 }
