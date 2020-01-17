@@ -33,6 +33,7 @@ import {ClientDayComponent} from './components/espaceClient/client-day/client-da
 import {ClientSurveyComponent} from './components/espaceClient/client-survey/client-survey.component';
 import {ClientCalendarComponent} from './components/espaceClient/client-calendar/client-calendar.component';
 import {ClientComponent} from './components/escpaceCoach/client/client.component';
+import {ListprogramsComponent} from './components/programmeDuJour/listprograms/listprograms.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,7 @@ const routes: Routes = [
       {
         path: 'wlprogram',
         children: [
+          {path: '', component: ListprogramsComponent},
           {path: ':id', component: ProgrammeDuJourComponent}
         ]
       },

@@ -70,6 +70,7 @@ import { ClientSurveyComponent } from './components/espaceClient/client-survey/c
 import { ClientDayComponent } from './components/espaceClient/client-day/client-day.component';
 import { ClientCalendarComponent } from './components/espaceClient/client-calendar/client-calendar.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
+import { ListprogramsComponent } from './components/programmeDuJour/listprograms/listprograms.component';
 
 
 
@@ -129,6 +130,7 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
     ClientDayComponent,
     ClientCalendarComponent,
     ClientComponent,
+    ListprogramsComponent,
 
   ],
   imports: [

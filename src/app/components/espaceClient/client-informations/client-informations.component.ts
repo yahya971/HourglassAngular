@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ProgramService} from '../../../services/program.service';
+import {ClientService} from '../../../services/client.service';
+import {Client} from '../../../Models/client.model';
+import {Program} from '../../../Models/program.model';
 
 @Component({
   selector: 'app-client-informations',
@@ -6,10 +11,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-informations.component.css']
 })
 export class ClientInformationsComponent implements OnInit {
-
-  constructor() { }
+  id: any;
+  client: Client;
+  program: Program;
+  constructor(private clientService: ClientService, aroute: ActivatedRoute, private wlprogramService: ProgramService) {
+    aroute.params.subscribe(params => {this.id = params.id; });
+  }
 
   ngOnInit() {
+    this.clientService.getClientById(this.id).subscribe(value => {
+      this.client = value;
+    });
+    this.wlprogramService.getProgramByClientId(this.id).subscribe(
+      value1 => {
+        this.program = value1;
+      });
   }
 
 }
