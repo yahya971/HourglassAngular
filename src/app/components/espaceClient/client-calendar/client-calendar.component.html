@@ -3,19 +3,14 @@
 <div class="container" id="calendar">
   <div class="row">
     <full-calendar
+                   deepChangeDetection="true"
                    defaultView="dayGridMonth"
                    [plugins]="calendarPlugins"
                    themeSystem="bootstrap"
                    weekNumbers="true"
                    eventLimit="true"
                    [header]="header"
-                   [events]="[
-    { title: 'event 1', start: '2020-01-16T10:00:00', end: '2020-01-16T12:00:00', backgroundColor: 'red', borderColor:'black', textColor: 'white' },
-    { title: 'event 2', date: '2020-01-16' },
-    { title: 'event 3', date: '2020-01-16' },
-    { title: 'event 4', date: '2020-01-16' },
-    { title: 'event 5', date: '2020-01-16' }
-  ]"
+                   [events]="events"
 
     ></full-calendar>
   </div>
