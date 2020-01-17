@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeeklyProgramComponent } from './components/programmeDuJour/WeeklyPrograms/weekly-program/weekly-program.component';
@@ -73,8 +73,11 @@ import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-upd
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
 import { ListprogramsComponent } from './components/programmeDuJour/listprograms/listprograms.component';
+import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
+import { CoachCreateDayProgram2Component } from './components/escpaceCoach/coach-create-day-program2/coach-create-day-program2.component';
 
 import { FullCalendarModule} from '@fullcalendar/angular';
+import { CheckoutComponent } from './components/programmeDuJour/checkout/checkout.component';
 
 
 @NgModule({
@@ -152,7 +155,6 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     MatDividerModule,
     ReactiveFormsModule,
     DragDropModule,
-    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

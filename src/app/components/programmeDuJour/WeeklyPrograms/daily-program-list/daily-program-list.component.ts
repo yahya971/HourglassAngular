@@ -8,7 +8,7 @@ import { SportsProgramService } from '../../../../services/sports-program.servic
   styleUrls: ['./daily-program-list.component.css']
 })
 export class DailyProgramListComponent implements OnInit {
-  week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  week = ['1', '2', '3', '4', '5', '6', '7'];
   clicked = [true, false, false, false, false, false, false];
   nutritionalPrograms: Array<any>=[];
   sportsPrograms: Array<any>=[];

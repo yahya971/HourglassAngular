@@ -14,4 +14,12 @@ export class NutritionalProgramService {
   getDayProgramByWeightLossProgramAndDay(id, day) {
     return this.http.get<any>('http://localhost:8080/nutritionalProgram/byWeightLossProgramAndDay/' + id + '/' + day);
   }
+
+
+
+  save(wlpId, program) {
+    return this.http.post('http://localhost:8080/nutritionalProgram/addNutritional/' + wlpId, program);
+  }
+
+
 }

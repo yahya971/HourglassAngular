@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="ttm-tabs ttm-tabs-style-classic ttm-tabs-bgcolor-grey">
       <ul class="tabs">
-        <li [ngClass]='{"tab":true,"active":clicked[i]}' *ngFor="let day of week; let i=index " (click)="showDay(i)"><a ><i class="fa fa-gift"></i><span>{{day}}</span></a></li>
+        <li [ngClass]='{"tab":true,"active":clicked[i]}' *ngFor="let day of week; let i=index " (click)="showDay(i)"><a ><i class="fa fa-gift"></i><span>Day{{day}}     </span></a></li>
 
       </ul>
 

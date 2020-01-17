@@ -26,4 +26,7 @@ export class ProgramService {
       console.log(res);
     });
   }
+  getOldProgramsByClientId(id) {
+    return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/old/byClient/' + id);
+  }
 }

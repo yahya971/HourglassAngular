@@ -19,7 +19,7 @@ export class ClientUpdateInformationsComponent implements OnInit {
     });
     this.clientService.getClientById(this.id).subscribe(value => {
       this.client = value;
-      console.log(this.client);
+      // console.log(this.client);
     });
   }
 
@@ -27,7 +27,7 @@ export class ClientUpdateInformationsComponent implements OnInit {
   }
 
   onSubmit(formulaire: NgForm) {
-    console.log(formulaire.value);
+    // console.log(formulaire.value);
     if (formulaire.value.name !== '') {
       this.client.name = formulaire.value.name;
     }
@@ -59,18 +59,17 @@ export class ClientUpdateInformationsComponent implements OnInit {
       this.client.frame = formulaire.value.frame;
     }
     if (formulaire.value.silouhette !== '') {
-      this.client.silhouete = formulaire.value.silouhette;
+      this.client.silhouette = formulaire.value.silouhette;
     }
-    if (formulaire.value.fatDerstribution !== '') {
-      // this.client.fatDistribution = formulaire.value.fatDistribution;
+    if (formulaire.value.fatDistribution !== '') {
+      this.client.fatDistribution = formulaire.value.fatDistribution;
     }
-    console.log(this.client);
-    console.log(this.id);
-    const newClient = new Client(this.client.email, this.client.lastname, this.client.name, this.client.password,
-  this.client.username, this.client.age, this.client.currentWeight, this.client.desiredWeight, this.client.fatDistribution,
-  this.client.frame, this.client.height, this.client.sex, this.client.photo, this.client.silhouete);
-    console.log(this.client);
-    this.clientService.updateClient(this.client, 7);
-    // this.router.navigate(['espace/client/informations/', this.id]);
-  }
+    // console.log(this.client);
+    this.clientService.updateClient(this.client, this.id).subscribe(value => {
+      console.log(value);
+    }, error => {
+      console.log(error);
+    });
+    this.router.navigate(['espace/client/informations/', this.id]);
+ }
 }

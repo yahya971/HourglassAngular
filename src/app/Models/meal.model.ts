@@ -1,7 +1,7 @@
 export class Meal {
   id: number;
   caloricValue: number;
-  photo: Array<any>;
+  photo: string;
   isTaken: boolean;
   recipe: string;
   ingredients: string;
