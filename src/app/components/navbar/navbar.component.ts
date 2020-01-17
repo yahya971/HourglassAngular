@@ -7,7 +7,6 @@ import {FollowService} from '../../services/follow.service';
 import {Follow} from '../../Models/follow.model';
 import {FollowAndClient} from '../../Models/follow-and-client';
 import {CoachService} from '../../services/coach.service';
-import $ from '../../../assets/login/vendor/bootstrap/js/bootstrap.js';
 
 
 @Component({

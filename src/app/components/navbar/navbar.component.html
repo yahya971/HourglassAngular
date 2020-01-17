@@ -69,7 +69,7 @@
                       <span>Settings</span>
                     </button>
                     <mat-divider></mat-divider>
-                    <button mat-menu-item disabled (click)="signOut()">
+                    <button mat-menu-item  (click)="signOut()">
                       <mat-icon >power_settings_new</mat-icon>
                       <span >Logout</span>
                     </button>
@@ -165,13 +165,13 @@
  </div>
 <div class="info-widget">
 
-    <div class="col-sm" *ngIf="islogged">
+    <!--<div class="col-sm" *ngIf="islogged">
       <div class="ttm-btn-box pr-20 pb-20">
         <a
           class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-skincolor"
           (click)="signOut()" title="">Sign out</a>
       </div>
-    </div>
+    </div>-->
   </div>
 
  <div>
