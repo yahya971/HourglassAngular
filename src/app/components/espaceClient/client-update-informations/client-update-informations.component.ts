@@ -19,7 +19,6 @@ export class ClientUpdateInformationsComponent implements OnInit {
     });
     this.clientService.getClientById(this.id).subscribe(value => {
       this.client = value;
-      // console.log(this.client);
     });
   }
 

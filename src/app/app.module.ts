@@ -89,7 +89,8 @@ import { CheckoutComponent } from './components/programmeDuJour/checkout/checkou
     WeeklyProgramComponent,
     CoachCreateDayProgram2Component,
     DailyProgramListComponent,
-
+    CoachCreateDayProgram1Component,
+    CheckoutComponent,
     DailyProgramItemWorkoutComponent,
     DailyProgramItemMealComponent,
     TestComponent,

@@ -26,6 +26,9 @@ export class ProgramService {
       console.log(res);
     });
   }
+  rateProgram(program: Program, id) {
+   return this.http.put<Program>('http://localhost:8080/WeightLossProgram/rateProgram/' + id, program);
+  }
   getOldProgramsByClientId(id) {
     return this.http.get<Array<Program>>('http://localhost:8080/WeightLossProgram/old/byClient/' + id);
   }
