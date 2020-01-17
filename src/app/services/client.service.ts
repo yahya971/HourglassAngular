@@ -12,7 +12,6 @@ export class ClientService {
   getAllClients() {
     return this.http.get<Array<Client>>('http://localhost:8080/client');
   }
-
   getClientById(id) {
     return this.http.get<Client>('http://localhost:8080/client/' + id);
   }

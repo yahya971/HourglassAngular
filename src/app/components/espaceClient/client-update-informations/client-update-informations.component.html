@@ -37,12 +37,12 @@
                   <p> <span>
                       <input class="form-control" type="text" placeholder="AGE" ngModel name="age">
                       </span>
-                    <input class="form-control" type="text" placeholder="WEIGHT" ngModel name="Weight">
+                    <input class="form-control" type="text" placeholder="WEIGHT" ngModel name="weight">
                   </p>
                 </li>
                 <li>
                   <p> <span>
-                      <input class="form-control" type="text" placeholder="Height" ngModel name="Height">
+                      <input class="form-control" type="text" placeholder="Height" ngModel name="height">
                       </span>
                     <input class="form-control" type="text" placeholder="EMAIL" ngModel name="email">
                   </p>
@@ -78,16 +78,33 @@
                   <div class="skill-type-info">
 
                     <label> Desired Weight
-                      <input type="text" class="form-control" placeholder="0" ngModel name="desiredWeight">
+                      <input type="number" class="form-control" placeholder="0" ngModel name="desiredWeight">
                     </label>
                     <label> Frame
-                      <input type="text" class="form-control" placeholder="0" ngModel name="Frame">
+                      <select class="form-control"ngModel name="Frame">
+                        <option value="Normal" >Normal</option>
+                        <option value="Delicate">Delicate</option>
+                        <option value="Thick">Thick</option>
+                        <option value="None">None</option>
+                      </select>
                     </label>
                     <label> Silouhette
-                      <input type="text" class="form-control" placeholder="0" ngModel name="Silouhette">
+                      <select class="form-control" ngModel name="silouhette">
+                        <option value="Hourglass">Hourglass</option>
+                        <option value="Pyramid">Pyramid</option>
+                        <option value="InvertedPyramid">InvertedPyramid</option>
+                        <option value="Rectangle">Rectangle</option>
+                        <option value="Round">Round</option>
+                        <option value="Eight">Eight</option>
+                      </select>
                     </label>
                     <label> Fat Distibution
-                      <input type="text" class="form-control" placeholder="0" ngModel name="Fat Distribution">
+                      <select class="form-control" ngModel name="fatdDistribution">
+                      <option value="AllOver">AllOver</option>
+                      <option value="BellyAndHips">BellyAndHips</option>
+                      <option value="BellyAndUpperBody">BellyAndHips</option>
+                      <option value="HipsAndLowerBody">HipsAndLowerBody</option>
+                      </select>
                     </label>
                   </div>
                 </div>
