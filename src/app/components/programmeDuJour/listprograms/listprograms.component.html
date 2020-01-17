@@ -5,20 +5,19 @@
       <div class="col-md-12 text-center">
         <div class="title-box ttm-textcolor-white">
           <div class="page-title-heading ttm-textcolor-white">
-            <h1 class="title">Our Coachs</h1>
+            <h1 class="title">Our Programs</h1>
           </div><!-- /.page-title-captions -->
           <div class="breadcrumb-wrapper">
                                 <span>
                                     <a title="Homepage" href="index.html"><i class="ti ti-home"></i> Home : </a>
                                 </span>
-            <span><span class="ttm-textcolor-skincolor">Our Coachs</span></span>
+            <span><span class="ttm-textcolor-skincolor">Our Programs</span></span>
           </div>
         </div>
       </div><!-- /.col-md-12 -->
     </div><!-- /.row -->
   </div><!-- /.container -->
 </div><!-- page-title end-->
-
 <!--site-main start-->
 <div class="site-main">
 
@@ -26,12 +25,12 @@
   <section class="ttm-row team-style2-section clearfix">
     <div class="container">
       <div class="row" ><!-- row -->
-        <div class="col-md-6 col-lg-3"*ngFor="let coach of coaches">
+        <div class="col-md-6 col-lg-3"*ngFor="let program of programs">
           <!-- featured-imagebox -->
           <div class="featured-imagebox featured-imagebox-team ttm-team-box-view-overlay-style2 mb-30">
             <div class="ttm-box-view-overlay ttm-team-style2-box-view-overlay">
               <div class="featured-thumbnail"><!-- team-member-image -->
-                <a routerLink="{{coach.id}}"><img class="img-fluid" src="data:image/jpeg;base64,{{coach.photo}}" alt=""></a>
+                <a routerLink="{{program.id}}"><img class="img-fluid" src="data:image/jpeg;base64,{{program.backgroundImage}}"  alt=""></a>
                 <div class="ttm-social-links-wrapper">
                   <ul class="social-icons list-inline"><!-- team-member-social-links -->
                     <li class="social-facebook"><a target="_blank" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -43,9 +42,9 @@
             </div>
             <div class="featured-content featured-content-team">
               <div class="featured-title"><!-- team-member-name -->
-                <h5><a href="team-details.html">{{coach.name}} {{coach.lastname}}</a></h5>
+                <h5><a href="team-details.html">{{program.name}}</a></h5>
               </div>
-              <div class="ttm-team-position ttm-textcolor-white">{{coach.speciality}}</div><!-- team-member-position -->
+              <div class="ttm-team-position ttm-textcolor-white">{{program.objectifs}}</div><!-- team-member-position -->
             </div>
           </div><!-- featured-imagebox END-->
         </div>

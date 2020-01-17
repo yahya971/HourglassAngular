@@ -21,11 +21,11 @@ export class CoachInformationsComponent implements OnInit {
   ngOnInit() {
     this.coachService.getCoachById(this.id).subscribe(value => {
       this.coach = value;
-      this.wlprogramService.getProgramByCoachId(this.id).subscribe(
-        value1 => {
-          this.programs = value1;
-        });
     });
+    this.wlprogramService.getProgramByCoachId(this.id).subscribe(
+      value1 => {
+        this.programs = value1;
+      });
   }
 
 }

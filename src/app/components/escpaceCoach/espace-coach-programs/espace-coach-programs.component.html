@@ -52,7 +52,7 @@
                         </div>
                         <div class="ttm-box-view-overlay">
                           <div class="featured-iconbox ttm-media-link">
-                            <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]" title="Pilates Exercises" href="images/portfolio/06.jpg" data-rel="prettyPhoto">
+                            <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]" title="Pilates Exercises" routerLink="/wlprogram/{{program.id}}" data-rel="prettyPhoto">
                               <i class="ti ti-search"></i>
                             </a>
                             <a href="portfolio-style-3.html" class="ttm_link"><i class="ti ti-link"></i></a>
@@ -62,7 +62,7 @@
                       <div class="ttm-box-bottom-content">
                         <p class="category">rating: {{program.rating}}</p><!-- team-member-category -->
                         <div class="featured-title"><!-- team-member-name -->
-                          <h5><a href="portfolio-style-3.html">{{program.name}}</a></h5>
+                          <h5><a routerLink="/wlprogram/{{program.id}}">{{program.name}}</a></h5>
                         </div>
                       </div>
                     </div><!-- featured-imagebox end-->

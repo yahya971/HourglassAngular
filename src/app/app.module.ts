@@ -72,6 +72,8 @@ import { ClientCalendarComponent } from './components/espaceClient/client-calend
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
+import { ListprogramsComponent } from './components/programmeDuJour/listprograms/listprograms.component';
+
 import { FullCalendarModule} from '@fullcalendar/angular';
 
 
@@ -131,6 +133,8 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     ClientDayComponent,
     ClientCalendarComponent,
     ClientComponent,
+    ListprogramsComponent,
+
     WorkoutComponent,
     CoachUpdateWorkoutComponent
   ],
