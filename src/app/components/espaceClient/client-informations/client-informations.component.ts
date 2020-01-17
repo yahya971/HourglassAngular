@@ -4,6 +4,7 @@ import {ProgramService} from '../../../services/program.service';
 import {ClientService} from '../../../services/client.service';
 import {Client} from '../../../Models/client.model';
 import {Program} from '../../../Models/program.model';
+import { TokenStorageService } from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-client-informations',
@@ -19,17 +20,19 @@ export class ClientInformationsComponent implements OnInit {
   selectedValue: number;
   olds2: boolean[] = [];
   display = 'inline-block';
-  constructor(private clientService: ClientService, private aroute: ActivatedRoute, private wlprogramService: ProgramService) {
+  constructor(private clientService: ClientService, private aroute: ActivatedRoute, private wlprogramService: ProgramService, private tokenService: TokenStorageService) {
+    this.id = +this.tokenService.getUserId();
 
   }
 
   ngOnInit() {
-    this.aroute.params.subscribe(params => {
-      this.id = params.id;
-    });
-    this.clientService.getClientById(this.id).subscribe(value => {
-      this.client = value;
-    });
+    
+      this.clientService.getClientById(this.id).subscribe(value => {
+        this.client = value;
+        console.log(this.client);
+      });
+
+ 
     this.wlprogramService.getProgramByClientId(this.id).subscribe(
       value1 => {
         this.program = value1;
