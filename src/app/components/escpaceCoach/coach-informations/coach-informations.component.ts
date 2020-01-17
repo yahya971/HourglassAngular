@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CoachService} from '../../../services/coach.service';
 import {Coach} from '../../../Models/coach.Model';
 import {ActivatedRoute} from '@angular/router';
-import {Program} from "../../../Models/program.model";
-import {ProgramService} from "../../../services/program.service";
+import {Program} from '../../../Models/program.model';
+import {ProgramService} from '../../../services/program.service';
 
 @Component({
   selector: 'app-coach-informations',

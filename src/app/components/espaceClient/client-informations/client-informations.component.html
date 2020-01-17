@@ -136,7 +136,7 @@
                   <h5 class="tittle">My Old Programs</h5>
                   <div class="row padding-20 margin-top-50">
 
-                    <div class="col-md-4" *ngFor="let old of olds">
+                    <div class="col-md-4" *ngFor="let old of olds;let i = index">
                       <!-- featured-imagebox -->
                       <div class="featured-imagebox featured-imagebox-team  ttm-box-view-top-image ttm-team-box-view-overlay box-shadow1 mb-30">
                         <div class="featured-imagebox-team-inner">
@@ -148,7 +148,7 @@
                               <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]" title="Pilates Exercises" routerLink="/wlprogram/{{old.id}}" data-rel="prettyPhoto">
                                 <i class="ti ti-search"></i>
                               </a>
-                              <a routerLink="/wlprogram/{{old.id}}" class="ttm_link"><i class="ti ti-star"></i></a>
+                              <a (click)="clicked(i)" class="ttm_link"><i class="ti ti-star"></i></a>
                             </div>
                           </div>
                         </div>
@@ -156,6 +156,11 @@
                           <p class="category">rating: {{old.rating}}</p><!-- team-member-category -->
                           <div class="featured-title"><!-- team-member-name -->
                             <h5><a routerLink="/wlprogram/{{old.id}}">{{old.name}}</a></h5>
+                          </div>
+                          <div *ngIf="this.olds2[i] == true" >
+                          <ul class="list-inline rating-list" *ngFor="let star of stars" [style.display]=display >
+                            <li (click)="countStar(star, i)" [ngClass]="{'selected': (star <= selectedValue)}"><i   class="fa fa-star "></i></li>
+                          </ul>
                           </div>
                         </div>
                       </div><!-- featured-imagebox end-->
