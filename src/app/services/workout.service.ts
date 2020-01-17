@@ -8,9 +8,12 @@ import {Workout} from '../Models/workout.model';
 export class WorkoutService {
 
   constructor(private http: HttpClient) { }
-
-  updateWorkout(workout, coachId) {
-    const url = 'http://localhost:8080/workout/updateWorkout/' + coachId;
+  getWorkoutByIdAndCoachId(id, coachId) {
+    let myurl = "http://localhost:8080/workout/" + id + "/" + coachId;
+    return this.http.get<Workout>(myurl);
+  }
+  updateWorkout(workout, id) {
+    const url = 'http://localhost:8080/workout/updateWorkout/' + id;
     return this.http.put<Workout>(url, workout);
   }
   saveWorkout(workout, coachId) {

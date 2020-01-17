@@ -4,7 +4,7 @@ export class Workout {
   startingHour: Date;
   duration: number;
   description: string;
-  equipement: string;
+  equipment: string;
   burnedCalories: number;
   coach: any;
 

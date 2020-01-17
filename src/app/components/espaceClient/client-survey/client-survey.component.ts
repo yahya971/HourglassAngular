@@ -26,7 +26,9 @@ export class ClientSurveyComponent implements OnInit {
               private followService: FollowService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => { this.cliendId = params.id; });
+    this.route.params.subscribe(params => { this.cliendId = params.id;
+    });
+
     this.programService.getProgramByClientId(this.cliendId).subscribe(value => {
       this.program = value;
       this.checkSurvey();
@@ -74,7 +76,7 @@ export class ClientSurveyComponent implements OnInit {
     if (mm < 10) {
       mmString = '0' + mm;
     }
-    return (ddString + '-' + mmString + '-' + yyyy);
+    return (yyyy + '-' + mmString + '-' + ddString);
   }
 
   submitForm() {

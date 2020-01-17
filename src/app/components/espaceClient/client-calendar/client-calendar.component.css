@@ -1,0 +1,7 @@
+@import url('https://bootswatch.com/4/minty/bootstrap.css');
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+  /* background-color: white; */
+  padding: 30px 50px;
+}
