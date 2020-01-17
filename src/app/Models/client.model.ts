@@ -15,10 +15,9 @@ export class Client {
   photo: any;
   silhouete: string;
 
-  constructor(id: number, email: string, lastname: string, name: string, password: string, username: string, age: number,
-              currentWeight: number, desiredWeight: number, fatDistribution: string, frame: string, height: number,
-              sex: string, photo: any, silhouete: string) {
-    this.id = id;
+  constructor( email: string, lastname: string, name: string, password: string, username: string, age: number,
+               currentWeight: number, desiredWeight: number, fatDistribution: string, frame: string, height: number,
+               sex: string, photo: any, silhouete: string) {
     this.email = email;
     this.lastname = lastname;
     this.name = name;

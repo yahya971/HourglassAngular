@@ -11,7 +11,7 @@ import {Program} from '../../../Models/program.model';
   styleUrls: ['./client-informations.component.css']
 })
 export class ClientInformationsComponent implements OnInit {
-  id: any;
+  id: number;
   client: Client;
   program: Program;
   constructor(private clientService: ClientService, private aroute: ActivatedRoute, private wlprogramService: ProgramService) {

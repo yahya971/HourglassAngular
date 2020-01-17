@@ -29,7 +29,7 @@ export class ClientService {
     });
   }
 
-  updateClient(client: Client, id) {
+  updateClient(client: Client, id: number) {
     return this.http.put<Client>('http://localhost:8080/client/updateclient/' + id, client);
   }
 }
