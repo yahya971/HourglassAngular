@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeeklyProgramComponent } from './components/programmeDuJour/WeeklyPrograms/weekly-program/weekly-program.component';
@@ -72,6 +72,8 @@ import { ClientCalendarComponent } from './components/espaceClient/client-calend
 import { CoachUpdateWorkoutComponent } from './components/escpaceCoach/coach-update-workout/coach-update-workout.component';
 import { WorkoutComponent } from './components/escpaceCoach/workout/workout.component';
 import { ClientComponent } from './components/escpaceCoach/client/client.component';
+import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
+import { CoachCreateDayProgram2Component } from './components/escpaceCoach/coach-create-day-program2/coach-create-day-program2.component';
 
 
 
@@ -132,7 +134,10 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
     ClientCalendarComponent,
     ClientComponent,
     WorkoutComponent,
-    CoachUpdateWorkoutComponent
+    CoachUpdateWorkoutComponent,
+    CoachCreateDayProgram1Component,
+    CoachCreateDayProgram2Component,
+   
   ],
   imports: [
     BrowserModule,
@@ -147,7 +152,7 @@ import { ClientComponent } from './components/escpaceCoach/client/client.compone
     MaterialFileInputModule,
     MatDividerModule,
     ReactiveFormsModule,
-    DragDropModule,
+    DragDropModule, MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

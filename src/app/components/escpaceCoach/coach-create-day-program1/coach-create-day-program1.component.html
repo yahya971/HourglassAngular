@@ -1,0 +1,163 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+
+        <form [formGroup]="myForm">
+          <label for="client" class="myLabel">Please Select The Client  </label>
+          <select class="custom-select mr-sm-2" formControlName="client" id="client">
+            <option *ngFor="let program of programs" [value]="program.client.name">{{program.client.name}}</option>
+          </select>
+          <label for="type" class="myLabel">Please Select The Type of Day Program  </label>
+          <select class="custom-select mr-sm-2" formControlName="type" id="type">
+            <option value="nutritionalProgram">Nutritional Program</option>
+            <option value="SportsProgram">Sports Program</option>
+          </select>
+          <label for="date" class="myLabel">Choose The Date  </label>
+          <input type="date" formControlName="date" />
+
+        </form>
+        <div class="row">
+          <button style="margin-top:1em" class="btn btn-success" (click)="next()">Next</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row" *ngIf="nextClicked">
+    <div class="col-md-12">
+      <div style="background-color:white;  -moz-box-shadow:    3px 3px 5px 6px #ccc;-webkit-box-shadow: 3px 3px 5px 6px #ccc;box-shadow:3px 3px 5px 6px #ccc; padding:2em;margin:1em">
+
+
+        <div *ngIf="isNutritional">
+          <form [formGroup]="nutritionalForm" style="margin-bottom:2em">
+
+            <label class="myLabel">Name:  </label>
+            <input type="text" formControlName="name" />
+            <label class="myLabel">Description:  </label>
+            <input type="text" formControlName="description" />
+          </form>
+          <hr style="margin-bottom:2em"/>
+          <div cdkDropListGroup>
+         
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <h2>BreakFasts</h2>
+
+                  <div cdkDropList
+                       [cdkDropListData]="createdBreakfasts"
+                       #breakFastList="cdkDropList"
+                       [cdkDropListConnectedTo]="[mealsList]"
+                       class="example-list"
+                       (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let meal of createdBreakfasts" cdkDrag>{{meal.name}}: {{meal.type}}</div>
+                  </div>
+                </div>
+                <div>
+                  <h2>Lunches</h2>
+
+                  <div cdkDropList
+                       [cdkDropListData]="createdLunches"
+                       #lunchList="cdkDropList"
+                       [cdkDropListConnectedTo]="[mealsList]"
+                       class="example-list"
+                       (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let meal of createdLunches" cdkDrag>{{meal.name}}: {{meal.type}}</div>
+                  </div>
+                </div>
+                <div>
+                  <h2>Dinners</h2>
+
+                  <div cdkDropList
+                       [cdkDropListData]="createdDinners"
+                       #dinnerList="cdkDropList"
+                       [cdkDropListConnectedTo]="[mealsList]"
+                       class="example-list"
+                       (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let meal of createdDinners" cdkDrag>{{meal.name}}: {{meal.type}}</div>
+                  </div>
+                </div>
+                <div>
+                  <h2>Snacks</h2>
+
+                  <div cdkDropList
+                       [cdkDropListData]="createdSnacks"
+                       #snackList="cdkDropList"
+                       [cdkDropListConnectedTo]="[mealsList]"
+                       class="example-list"
+                       (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let meal of createdSnacks" cdkDrag>{{meal.name}}: {{meal.type}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h2>Meals</h2>
+
+                <div cdkDropList
+                     #mealslist="cdkDropList"
+                     [cdkDropListData]="mealsTab"
+                     [cdkDropListConnectedTo]="[breakFastList,lunchList,dinnerList,snackList]"
+                     class="example-list"
+                     (cdkDropListDropped)="drop($event)">
+
+                  <div class="example-box" *ngFor="let meal of mealsTab" cdkDrag>{{meal.name}}: {{meal.type}}</div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <button class="btn btn-success" (click)="submitNutritional()" style="margin-top:2em">Submit</button>
+        </div>
+
+
+
+        <div *ngIf="isSportive">
+          <form [formGroup]="sportiveForm">
+            <label class="myLabel">Name:  </label>
+            <input type="text" formControlName="name" />
+            <label class="myLabel">Description:  </label>
+            <input type="text" formControlName="description" />
+          </form>
+          <hr style="margin-bottom:2em" />
+          <div class="row">
+
+            <div class="col-md-5">
+              <h3>All Workouts</h3>
+
+
+
+              <div cdkDropList
+                   [cdkDropListData]="workoutsTab"
+                   #workoutList="cdkDropList"
+                   [cdkDropListConnectedTo]="[cworkoutList]"
+                   class="example-list"
+                   (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let workout of workoutsTab" cdkDrag>{{workout.name}}</div>
+              </div>
+            </div>
+
+
+
+            <div class="col-md-5">
+              <h3>Selected Workouts</h3>
+              <div cdkDropList
+                   [cdkDropListData]="createdWorkouts"
+                   #cworkoutList="cdkDropList"
+                   [cdkDropListConnectedTo]="[workoutList]"
+                   class="example-list"
+                   (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let workout of createdWorkouts" cdkDrag>{{workout.name}}</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success" (click)="submitSportive()" style="margin-top:2em">Submit</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
