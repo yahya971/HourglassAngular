@@ -87,7 +87,7 @@ export class CoachCreateWorkoutComponent implements OnInit {
     console.log(formResult);
     this.workoutService.saveWorkout(formResult, this.id).subscribe(value => {
       console.log(value);
-      this.rrouter.navigate(['/espace/coach/workout', this.id]);
+      this.rrouter.navigate(['/espace/coach/workouts', this.id]);
 
     });
   }
