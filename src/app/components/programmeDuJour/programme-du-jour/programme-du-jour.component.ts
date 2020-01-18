@@ -10,6 +10,8 @@ import {TokenStorageService} from '../../../auth/token-storage.service';
   styleUrls: ['./programme-du-jour.component.css']
 })
 export class ProgrammeDuJourComponent implements OnInit {
+  isClient = false;
+  isCoach = false;
   program: Program;
   id: any;
   hasProgram = false;
@@ -18,6 +20,11 @@ export class ProgrammeDuJourComponent implements OnInit {
     // router.params.subscribe(params => {this.id = params.id; } );
     this.id = +this.tokenStorageService.getUserId();
     console.log(this.id);
+    if (this.tokenStorageService.getAuthorities()[0] === 'ROLE_USER') {
+      this.isClient = true;
+    } else if ( this.tokenStorageService.getAuthorities()[0] === 'ROLE_COACH') {
+      this.isCoach = true;
+    }
   }
 
   ngOnInit() {
@@ -25,12 +32,14 @@ export class ProgrammeDuJourComponent implements OnInit {
       this.program = value;
       console.log(this.program);
     });
-    this.programService.getProgramByClientId(this.id).subscribe(value => {
-      console.log(value);
-      if (value !== undefined) {
-        this.hasProgram = true;
-      }
-    });
+    if (this.tokenStorageService.getAuthorities()[0] === 'ROLE_USER') {
+      this.programService.getProgramByClientId(this.id).subscribe(value => {
+        console.log(value);
+        if (value !== undefined) {
+          this.hasProgram = true;
+        }
+      });
+    }
   }
 
 }
