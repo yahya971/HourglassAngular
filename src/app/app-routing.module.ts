@@ -40,6 +40,8 @@ import { WorkoutComponent } from './components/escpaceCoach/workout/workout.comp
 import {CheckoutComponent} from './components/programmeDuJour/checkout/checkout.component';
 
 import { CoachCreateDayProgram1Component } from './components/escpaceCoach/coach-create-day-program1/coach-create-day-program1.component';
+import { CoachGuard } from './Guards/coach.guard';
+import { ClientGuardGuard } from './Guards/client-guard.guard';
 
 
 const routes: Routes = [
@@ -74,65 +76,65 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'espace/coach', component: EspaceCoachComponent,
+    path: 'espace/coach', component: EspaceCoachComponent ,
     children: [
       {
-        path: 'informations/:id', component: CoachInformationsComponent
+        path: 'informations/:id', component: CoachInformationsComponent, canActivate: [CoachGuard]
 
       },
       {
-        path: 'clients/:id', component: MyClientsComponent
+        path: 'clients/:id', component: MyClientsComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'client/:id/:clientId', component: ClientComponent
+        path: 'client/:id/:clientId', component: ClientComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'programs/:id', component: EspaceCoachProgramsComponent
+        path: 'programs/:id', component: EspaceCoachProgramsComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'workouts/:id', component: EspaceCoachWorkoutsComponent
+        path: 'workouts/:id', component: EspaceCoachWorkoutsComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'meals/:id', component: EspaceCoachMealsComponent
+        path: 'meals/:id', component: EspaceCoachMealsComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'update/informations/:id', component: CoachUpdateInformationsComponent
+        path: 'update/informations/:id', component: CoachUpdateInformationsComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'update/meal/:id/:mealId', component: CoachUpdateMealComponent
+        path: 'update/meal/:id/:mealId', component: CoachUpdateMealComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'update/workout/:id/:workoutId', component: CoachUpdateWorkoutComponent
+        path: 'update/workout/:id/:workoutId', component: CoachUpdateWorkoutComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'create/program/:id', component: CoachCreateProgramComponent
+        path: 'create/program/:id', component: CoachCreateProgramComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'create/program/form2/:id', component: Form2Component
+        path: 'create/program/form2/:id', component: Form2Component, canActivate: [CoachGuard]
       },
       {
-        path: 'create/program/form3/:id', component: Form3Component
+        path: 'create/program/form3/:id', component: Form3Component, canActivate: [CoachGuard]
       },
       {
-        path: 'create/workout/:id' , component: CoachCreateWorkoutComponent
+        path: 'create/workout/:id', component: CoachCreateWorkoutComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'create/meal/:id', component: CoachCreateMealComponent
+        path: 'create/meal/:id', component: CoachCreateMealComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'courses/:id', component: EspaceCoachCoursesComponent
+        path: 'courses/:id', component: EspaceCoachCoursesComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'create/course/:id', component: CoachCreateCourseComponent
+        path: 'create/course/:id', component: CoachCreateCourseComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'meal/:id/:mealId', component: MealComponent
+        path: 'meal/:id/:mealId', component: MealComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'workout/:id/:workoutId', component: WorkoutComponent
+        path: 'workout/:id/:workoutId', component: WorkoutComponent, canActivate: [CoachGuard]
       },
       {
-        path: 'create/dayProgram/:id', component: CoachCreateDayProgram1Component
+        path: 'create/dayProgram/:id', component: CoachCreateDayProgram1Component, canActivate: [CoachGuard]
       }
     ]
 
@@ -141,24 +143,25 @@ const routes: Routes = [
     path: 'espace/client', component: EspaceClientComponent,
     children: [
       {
-        path: 'informations/:id', component: ClientInformationsComponent},
-      {
-        path: 'update/informations/:id', component: ClientUpdateInformationsComponent
+        path: 'informations/:id', component: ClientInformationsComponent, canActivate: [ClientGuardGuard]
       },
       {
-        path: 'survey/:id', component: ClientSurveyComponent
+        path: 'update/informations/:id', component: ClientUpdateInformationsComponent, canActivate: [ClientGuardGuard]
       },
       {
-        path: 'calendar/:id', component: ClientCalendarComponent
+        path: 'survey/:id', component: ClientSurveyComponent, canActivate: [ClientGuardGuard]
       },
       {
-        path: 'courses/:id', component: ClientCoursesComponent
+        path: 'calendar/:id', component: ClientCalendarComponent, canActivate: [ClientGuardGuard]
       },
       {
-        path: 'day/:id', component: ClientDayComponent
+        path: 'courses/:id', component: ClientCoursesComponent, canActivate: [ClientGuardGuard]
       },
       {
-        path: '**', component: ClientInformationsComponent
+        path: 'day/:id', component: ClientDayComponent, canActivate: [ClientGuardGuard]
+      },
+      {
+        path: '**', component: ClientInformationsComponent, canActivate: [ClientGuardGuard]
       }
 
     ]

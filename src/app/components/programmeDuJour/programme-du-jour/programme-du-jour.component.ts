@@ -15,8 +15,8 @@ export class ProgrammeDuJourComponent implements OnInit {
   hasProgram = false;
   constructor(private programService: ProgramService, private router: ActivatedRoute,
               private tokenStorageService: TokenStorageService) {
-    // router.params.subscribe(params => {this.id = params.id; } );
-    this.id = +this.tokenStorageService.getUserId();
+     router.params.subscribe(params => {this.id = params.id; } );
+    //this.id = +this.tokenStorageService.getUserId();
     console.log(this.id);
   }
 
