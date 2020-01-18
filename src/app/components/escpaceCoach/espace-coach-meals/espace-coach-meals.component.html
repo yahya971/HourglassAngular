@@ -41,7 +41,7 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of breakfasts">
-                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                  <app-meal-card [id]="meal.id" [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
                                  [photo]="meal.photo" [time]="meal.time" [carbKcal]="meal.carbKcal"
                                  [calcium]="meal.calcium" [cholesterol]="meal.cholesterol" [dietLabels]="meal.dietLabels"
                   [energKcal]="meal.energKcal" [fatKcal]="meal.fatKcal" [healthLabels]="meal.healthLabels"
@@ -55,7 +55,7 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of lunchs">
-                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                  <app-meal-card [id]="meal.id" [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
                                  [photo]="meal.photo" [time]="meal.time" [carbKcal]="meal.carbKcal"
                                  [calcium]="meal.calcium" [cholesterol]="meal.cholesterol" [dietLabels]="meal.dietLabels"
                                  [energKcal]="meal.energKcal" [fatKcal]="meal.fatKcal" [healthLabels]="meal.healthLabels"
@@ -68,7 +68,7 @@
             <div class="content-inner">
             <div class="row">
               <div class="col" *ngFor="let meal of dinners">
-                <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                <app-meal-card [id]="meal.id" [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
                                [photo]="meal.photo" [time]="meal.time" [carbKcal]="meal.carbKcal"
                                [calcium]="meal.calcium" [cholesterol]="meal.cholesterol" [dietLabels]="meal.dietLabels"
                                [energKcal]="meal.energKcal" [fatKcal]="meal.fatKcal" [healthLabels]="meal.healthLabels"
@@ -81,7 +81,7 @@
             <div class="content-inner">
               <div class="row">
                 <div class="col" *ngFor="let meal of snacks">
-                  <app-meal-card [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
+                  <app-meal-card [id]="meal.id" [calories]="meal.caloricValue" [name]="meal.name" [description]="meal.description"
                                  [photo]="meal.photo" [time]="meal.time" [carbKcal]="meal.carbKcal"
                                  [calcium]="meal.calcium" [cholesterol]="meal.cholesterol" [dietLabels]="meal.dietLabels"
                                  [energKcal]="meal.energKcal" [fatKcal]="meal.fatKcal" [healthLabels]="meal.healthLabels"
