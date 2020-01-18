@@ -32,9 +32,12 @@ export class ClientCalendarComponent implements OnInit {
               private sportsProgramService: SportsProgramService) {
     // this.events.push(new EventCalendar('test', '2020-01-17', '2020-01-17', 'blue'));
     this.route.params.subscribe(params => {
-      this.clientId = params.id ;
+      this.clientId = +params.id;
+      console.log(this.clientId);
       this.programService.getProgramByClientId(this.clientId).subscribe(program => {
+        console.log(program)
         this.nutritionalProgramService.getDayProgramByWeightLossProgram(program.id).subscribe(nutritionalPrograms => {
+          console.log(this.nutritionalPrograms);
           this.nutritionalPrograms = nutritionalPrograms;
           for (const nutritionalProgram of this.nutritionalPrograms) {
             if ( nutritionalProgram.mealsNumber !== 1) {

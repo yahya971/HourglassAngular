@@ -22,11 +22,13 @@ export class NavbarComponent implements OnInit, DoCheck {
   notifications: string[] = [];
   notificationVerified = false;
   role;
+  id:number;
   constructor(private tokenStorageService: TokenStorageService, private clientService: ClientService, private router: ActivatedRoute,
               private programService: ProgramService, private followService: FollowService, private myRouter: Router,
               private coachService: CoachService) { }
 
   ngOnInit() {
+    this.id=+localStorage.getItem('id')
     this.islogged = this.tokenStorageService.getUsername() !== null;
     // console.log(this.tokenStorageService.getUsername());
     // console.log(this.islogged);

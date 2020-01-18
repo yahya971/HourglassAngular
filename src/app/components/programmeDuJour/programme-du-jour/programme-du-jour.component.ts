@@ -14,11 +14,12 @@ export class ProgrammeDuJourComponent implements OnInit {
   isCoach = false;
   program: Program;
   id: any;
+  userId: number;
   hasProgram = false;
   constructor(private programService: ProgramService, private router: ActivatedRoute,
               private tokenStorageService: TokenStorageService) {
      router.params.subscribe(params => {this.id = params.id; } );
-    //this.id = +this.tokenStorageService.getUserId();
+    this.userId = +this.tokenStorageService.getUserId();
     console.log(this.id);
     if (this.tokenStorageService.getAuthorities()[0] === 'ROLE_USER') {
       this.isClient = true;
@@ -33,9 +34,10 @@ export class ProgrammeDuJourComponent implements OnInit {
       console.log(this.program);
     });
     if (this.tokenStorageService.getAuthorities()[0] === 'ROLE_USER') {
-      this.programService.getProgramByClientId(this.id).subscribe(value => {
+      this.programService.getProgramByClientId(this.userId).subscribe(value => {
+        console.log('okok')
         console.log(value);
-        if (value !== undefined) {
+        if (value !== null) {
           this.hasProgram = true;
         }
       });
