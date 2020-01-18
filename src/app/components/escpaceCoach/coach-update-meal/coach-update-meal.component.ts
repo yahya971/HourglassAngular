@@ -77,10 +77,11 @@ export class CoachUpdateMealComponent implements OnInit {
       if(ingredient)
       ingredientString += ingredient.ingredient + ',';
     formResult.ingredients = ingredientString;
+    if (this.imageString!=='')
     formResult.photo = this.imageString ;
     console.log(formResult);
     
-    this.mealService.updateMeal(formResult, this.coachId).subscribe(value => { console.log(value); this.router.navigate(['espace/coach/meal', this.coachId, this.mealId]); })
+    this.mealService.updateMeal(formResult, this.mealId).subscribe(value => { console.log(value); this.router.navigate(['espace/coach/meal', this.coachId, this.mealId]); })
   }
   convertImage(imageUrl) {
     var file: any = imageUrl.target.files[0];

@@ -76,20 +76,8 @@ export class CoachCreateProgramComponent implements OnInit {
     this.convertImage($event);
   }
 
-  convertImage(imageUrl) {
-    var file: any = imageUrl.target.files[0];
 
-    var myReader: FileReader = new FileReader();
 
-    myReader.onloadend = (e) => {
-      this.photo = myReader.result;
 
-    }
-    myReader.readAsDataURL(file);
-  }
-
-  onChangeFile($event) {
-    this.convertImage($event);
-  }
 
 }

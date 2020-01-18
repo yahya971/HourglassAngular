@@ -8,10 +8,10 @@
       <div class="col-3 col-md-3">
         <label for="type" class="myLabel">Type:  </label>
         <select class="custom-select mr-sm-2" formControlName="type" id="type">
-          <option selected>BreakFast</option>
-          <option value="1">Lunch</option>
-          <option value="2">Dinner</option>
-          <option value="3">Snack</option>
+          <option selected value="breakfast">BreakFast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="snack">Snack</option>
         </select>
       </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="row">
       <div class="col-9 col-md-9">
         <label for="description" class="myLabel">Description: </label>
-        <input type="text" id="description" class="form-control" formControlName="description" />
+        <textarea cols="10" rows="3" id="description" class="form-control" formControlName="description" ></textarea>
       </div>
       <div class="col-3 col-md-3">
         <label for="photo" class="myLabel">Photo</label>
