@@ -17,7 +17,10 @@ export class SideBarComponent implements OnInit {
   }
 
   ngOnInit() {
-  this.coachService.getCoachById(this.id).subscribe(value => this.coach = value);
+    this.coachService.getCoachById(this.id).subscribe(value => {
+      this.coach = value;
+      console.log(this.coach);
+    });
 
   }
 

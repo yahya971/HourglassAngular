@@ -29,6 +29,7 @@ export class ClientDayComponent implements OnInit {
               private sportsProgramService: SportsProgramService) { }
 
   ngOnInit() {
+    this.tabs();
     this.route.params.subscribe(params => {
       this.clientId = params.id;
       console.log(this.clientId);

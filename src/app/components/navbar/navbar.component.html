@@ -38,9 +38,9 @@
           <div class="site-header-menu-inner ttm-stickable-header">
             <div class="container">
               <!-- site-branding -->
-              <div class="site-branding">
-                <a class="home-link" href="index.html" title="Nutricare" rel="home">
-                  <img id="logo-img" class="img-center" src="../../../assets/images/logo-img.png" alt="logo-img">
+              <div class="site-branding" >
+                <a  href="index.html" title="Hourglass" rel="home" >
+                  <img id="logo-img"  src="./assets/images/logo.png" alt="logo-img" style="width:200px;"> 
                 </a>
               </div><!-- site-branding end -->
               <!--site-navigation -->
@@ -62,7 +62,7 @@
                   <mat-menu #menu="matMenu" xPosition="after">
                     <button mat-menu-item>
                       <mat-icon>person</mat-icon>
-                      <span>My profile</span>
+                      <span routerLink="">My profile</span>
                     </button>
                     <button mat-menu-item >
                       <mat-icon>settings</mat-icon>
@@ -89,55 +89,20 @@
                   </label>
                 </div>
                 <nav id="menu" class="menu">
-                  <ul class="dropdown">
-                    <li class="active"><a href="#">Home</a>
-                      <ul>
-                        <li><a href="index.html">Sample Homepage 1</a></li>
-                        <li><a href="home-2.html">Sample Homepage 2</a></li>
-                        <li><a href="home-3.html">Sample Homepage 3</a></li>
-                        <li class="active"><a href="#">Header Styles</a>
-                          <ul>
-                            <li class="active"><a href="header-classic.html" target="_blank" >Header Classic</a></li>
-                            <li><a target="_blank" href="header-overlay.html">Header Overlay</a></li>
-                            <li><a href="index.html">Header Stack Center</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Pages</a>
-                      <ul>
-                        <li><a routerLink="/wlprogram">WPL</a></li>
+                  <ul >
+                   
+                    
+                      
+                        <li><a routerLink="/wlprogram">Our Programs</a></li>
                         <li><a routerLink="/coach">Our coaches</a></li>
                         <li><a routerLink="/espace/coach">espace coach</a></li>
                         <li><a routerLink="/espace/client">espace client</a></li>
 
-                      </ul>
-                    </li>
-                    <li><a href="#">Services</a>
-                      <ul>
-                        <li><a href="personalized-nutrition.html">Personalized Nutrition</a></li>
-                        <li><a href="weight-loss-programs.html">Weight Loss Programs</a></li>
-                        <li><a href="workout-routines.html">Workout Routines</a></li>
-                        <li><a href="sports-nutritionist.html">Sports Nutritionist</a></li>
-                        <li><a href="individual-coaching.html">Individual Coaching</a></li>
-                        <li><a href="child-nutrition.html">Child Nutrition</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Portfolio</a>
-                      <ul>
-                        <li><a href="portfolio-style-1.html">Gallery Classic</a></li>
-                        <li><a href="portfolio-style-2.html">Gallery Overlay</a></li>
-                        <li><a href="portfolio-style-3.html">Gallery Single</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Blog</a>
-                      <ul>
-                        <li><a href="blog.html">Blog Classic</a></li>
-                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                        <li><a href="blog-left-image.html">Blog Left Image</a></li>
-                        <li><a href="single-blog.html">Single Blog View</a></li>
-                      </ul>
-                    </li>
+                     
+                    
+                   
+                   
+                    
                   </ul>
                 </nav>
               </div><!-- site-navigation end-->
