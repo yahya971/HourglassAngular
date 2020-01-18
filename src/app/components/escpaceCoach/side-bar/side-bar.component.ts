@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Coach} from "../../../Models/coach.Model";
+import {CoachService} from "../../../services/coach.service";
+import {TokenStorageService} from "../../../auth/token-storage.service";
 
 @Component({
   selector: 'app-side-bar',
@@ -7,15 +9,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  id: string;
-  constructor(private aroute: ActivatedRoute) {
-
+  id: number;
+  coach: Coach;
+  constructor(private tokenService: TokenStorageService, private coachService: CoachService) {
+    this.id = +this.tokenService.getUserId();
 
   }
 
   ngOnInit() {
-    this.id = localStorage.getItem('coachId');
-    console.log(this.id);
+  this.coachService.getCoachById(this.id).subscribe(value => this.coach = value);
 
   }
 
