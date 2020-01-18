@@ -1,4 +1,5 @@
 export class Workout {
+  id: number;
   name: string;
   photo: string;
   startingHour: Date;
