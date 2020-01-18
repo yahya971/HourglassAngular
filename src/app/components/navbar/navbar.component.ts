@@ -23,12 +23,21 @@ export class NavbarComponent implements OnInit, DoCheck {
   notificationVerified = false;
   role;
   id:number;
+  userId: number;
+  isClient = false;
+  isCoach = false;
   constructor(private tokenStorageService: TokenStorageService, private clientService: ClientService, private router: ActivatedRoute,
               private programService: ProgramService, private followService: FollowService, private myRouter: Router,
               private coachService: CoachService) { }
 
   ngOnInit() {
-    this.id=+localStorage.getItem('id')
+    this.userId = +this.tokenStorageService.getUserId();
+    this.id = +localStorage.getItem('id');
+    if ( this.tokenStorageService.getAuthorities()[0] === 'ROLE_USER') {
+      this.isClient = true;
+    } else if ( this.tokenStorageService.getAuthorities()[0] === 'ROLE_COACH') {
+      this.isCoach = true;
+    }
     this.islogged = this.tokenStorageService.getUsername() !== null;
     // console.log(this.tokenStorageService.getUsername());
     // console.log(this.islogged);

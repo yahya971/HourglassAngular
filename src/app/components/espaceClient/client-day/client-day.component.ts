@@ -8,6 +8,7 @@ import {SportsProgram} from '../../../Models/sports-program.model';
 import {Program} from '../../../Models/program.model';
 import {Meal} from '../../../Models/meal.model';
 import $ from '../../../../assets/js/jquery.min';
+import {TokenStorageService} from "../../../auth/token-storage.service";
 
 @Component({
   selector: 'app-client-day',
@@ -21,12 +22,12 @@ export class ClientDayComponent implements OnInit {
   sportProgram: SportsProgram;
   program: Program;
   breakfasts: Meal[] = [];
-  lunch: Meal[] = [];
-  dinner: Meal[] = [];
-  snack: Meal[] = [];
+  lunchs: Meal[] = [];
+  dinners: Meal[] = [];
+  snacks: Meal[] = [];
   constructor(private route: ActivatedRoute, private programService: ProgramService,
               private nutritionalProgramService: NutritionalProgramService,
-              private sportsProgramService: SportsProgramService) { }
+              private sportsProgramService: SportsProgramService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit() {
     this.tabs();
@@ -38,6 +39,7 @@ export class ClientDayComponent implements OnInit {
         console.log(program.id);
         this.sportsProgramService.getDayProgramByWeightLossProgramAndDay(program.id, this.getCurrentDay()).subscribe(
           sportProgram => {
+            console.log(sportProgram);
             this.sportProgram = sportProgram;
             this.sportProgram.workouts[0].equipment = this.sportProgram.workouts[0].equipment.slice(0, -1).split(',');
             console.log(sportProgram);
@@ -45,21 +47,28 @@ export class ClientDayComponent implements OnInit {
         );
         this.nutritionalProgramService.getDayProgramByWeightLossProgramAndDay(program.id, this.getCurrentDay()).subscribe(
           nutritionalProgram => {
+            console.log(nutritionalProgram);
             this.nutritionalProgram = nutritionalProgram;
+            for ( const meal of this.nutritionalProgram.meals) {
+              meal.ingredients = meal.ingredients.slice(0, -1).split(',');
+            }
             this.nutritionalProgram.meals.map(value => {
-              if (value.type === 'breakFast') {
+              if (value.type === 'breakfast') {
                 this.breakfasts.push(value);
               } else
                 if (value.type === 'lunch') {
-                this.lunch.push(value);
+                this.lunchs.push(value);
               } else
                 if (value.type === 'dinner') {
-                  this.dinner.push(value);
+                  this.dinners.push(value);
                 } else {
-                  this.snack.push(value);
+                  this.snacks.push(value);
                 }
             });
-            console.log(nutritionalProgram);
+            console.log(this.breakfasts);
+            console.log(this.lunchs);
+            console.log(this.dinners);
+            console.log(this.snacks);
           }
         );
       });
@@ -68,7 +77,7 @@ export class ClientDayComponent implements OnInit {
 
   getCurrentDay(): string {
     const today = new Date();
-    const dd = today.getDate();
+    const dd = today.getDate() + 1;
     const mm = today.getMonth() + 1;
     let ddString = dd.toString();
     let mmString = mm.toString();

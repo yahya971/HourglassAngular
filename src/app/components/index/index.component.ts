@@ -15,13 +15,13 @@ export class IndexComponent implements OnInit {
   constructor(private programService: ProgramService, private coachService: CoachService) { }
 
   ngOnInit() {
-    this.jquery();
     this.programService.getAllPrograms().subscribe(value => {
       this.programs = value;
     });
     this.coachService.getAllCoaches().subscribe( value => {
       this.coaches = value;
     });
+    this.jquery();
   }
   jquery() {
     $(window).on("load",function() {

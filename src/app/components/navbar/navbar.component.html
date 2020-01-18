@@ -40,7 +40,7 @@
               <!-- site-branding -->
               <div class="site-branding" >
                 <a  href="index.html" title="Hourglass" rel="home" >
-                  <img id="logo-img"  src="./assets/images/logo.png" alt="logo-img" style="width:200px;"> 
+                  <img id="logo-img"  src="./assets/images/logo.png" alt="logo-img" style="width:200px;">
                 </a>
               </div><!-- site-branding end -->
               <!--site-navigation -->
@@ -90,19 +90,19 @@
                 </div>
                 <nav id="menu" class="menu">
                   <ul >
-                   
-                    
-                      
+
+
+
                         <li><a routerLink="/wlprogram">Our Programs</a></li>
                         <li><a routerLink="/coach">Our coaches</a></li>
-                        <li><a routerLink="/espace/coach">espace coach</a></li>
-                        <li><a routerLink="/espace/client">espace client</a></li>
+                        <li><a *ngIf="isCoach" routerLink="/espace/coach/informations/{{userId}}">espace coach</a></li>
+                        <li><a *ngIf="isClient" routerLink="/espace/client/{{userId}}">espace client</a></li>
 
-                     
-                    
-                   
-                   
-                    
+
+
+
+
+
                   </ul>
                 </nav>
               </div><!-- site-navigation end-->

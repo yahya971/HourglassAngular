@@ -4,7 +4,7 @@
     <div class="ttm-service-single-content-area">
       <div class="ttm_single_image-wrapper mb-25">
         <!--<img class="img-fluid" src="{{program.backgroundImage}}" alt="">-->
-        <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" />
+        <img class="img-fluid" src="{{program.backgroundImage}}" />
       </div>
       <div class="separator">
         <div class="sep-line mt_5 mb-50"></div>
@@ -27,20 +27,20 @@
               <div class="content-inner">
                 <div class="row">
                   <div class="ttm-service-description">
-                    <h4 class="font-27 line-h40">sportProgram?.name</h4>
+                    <h4 class="font-27 line-h40">{{sportProgram?.name}}</h4>
                     <div class="mb-35">
-                      <p>sportProgram?.description</p>
+                      <p>{{sportProgram?.description}}</p>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="ttm_single_image-wrapper mb-35">
-                        <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
+                        <img class="img-fluid" src="{{sportProgram?.workouts[0]?.photo}}" alt="">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="ttm-service-description">
-                        <h4 class="font-27 pb-10 line-h35">sportProgram?.workouts[0]?.name</h4>
+                        <h4 class="font-27 pb-10 line-h35">{{sportProgram?.workouts[0]?.name}}</h4>
                         <div class="row">
                           <div class="col-md-4 col-sm-4">
                             <!--featured-icon-box-->
@@ -50,7 +50,7 @@
                               </div>
                               <div class="featured-content">
                                 <div class="featured-title">
-                                  <h5>sportProgram?.workouts[0]?.startingHour A.M</h5>
+                                  <h5>{{sportProgram?.workouts[0]?.startingHour}} A.M</h5>
                                 </div>
                               </div>
                             </div><!-- featured-icon-box end-->
@@ -63,7 +63,7 @@
                               </div>
                               <div class="featured-content">
                                 <div class="featured-title">
-                                  <h5>sportProgram?.workouts[0]?.duration minutes</h5>
+                                  <h5>{{sportProgram?.workouts[0]?.duration}} minutes</h5>
                                 </div>
                               </div>
                             </div><!-- featured-icon-box end-->
@@ -76,57 +76,56 @@
                               </div>
                               <div class="featured-content">
                                 <div class="featured-title">
-                                  <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
+                                  <h5>{{sportProgram?.workouts[0]?.burnedCalories}} calories</h5>
                                 </div>
                               </div>
                             </div><!-- featured-icon-box end-->
                           </div>
                         </div>
-                        <P>sportProgram?.workouts[0]?.description</P>
+                        <P>{{sportProgram?.workouts[0]?.description}}</P>
                       </div>
-                      <ul class="ttm-list ttm-list-style-icon mb-20" >
-                        <li *ngFor="let equipment of sportProgram?.workouts[0]?.equipment, let last = last">
+                      <!-- <ul class="ttm-list ttm-list-style-icon mb-20" *ngIf="1==2">
+                       <li *ngFor="let equipment of sportProgram?.workouts[0]?.equipment, let last = last">
                           <i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
                           <span class="ttm-list-li-content"
                           >{{equipment}}</span></li>
-                      </ul>
+                      </ul>-->
                     </div>
                   </div>
                 </div>
               </div>
               <div class="content-inner">
                 <div class="ttm-service-description">
-                  <h4 class="font-27 line-h40">nutritionalProgram?.name</h4>
+                  <h4 class="font-27 line-h40">{{nutritionalProgram?.name}}</h4>
                   <div class="mb-35">
-                    <p>nutritionalProgram?.description</p>
+                    <p>{{nutritionalProgram?.description}}</p>
                   </div>
                 </div>
-                <div class="container">
+                <div class="container" *ngIf="breakfasts.length > 0">
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
                         <!-- tabs -->
                         <div class="row">
                           <div class="col-lg-6 offset-lg-4">
-                            <ul class="tabs clearfix">
-                              <li class="tab active"><a href="#"><i class="fa fa-cog"></i>Meal1</a></li>
-                              <li class="tab"><a href="#"><i class="fa fa-binoculars"></i>Meal2</a></li>
+                            <ul class="tabs clearfix" *ngFor="let meal of breakfasts; let i = index">
+                              <li class="tab active"><a><i class="fa fa-cog"></i>meal {{i+1}}</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="content-tab">
-                          <div class="content-inner">
+                        <div class="content-tab" >
+                          <div class="content-inner"*ngFor="let meal of breakfasts;">
                             <div class="row">
                               <div class="row">
                                 <div class="row" >
                                   <div class="col-md-6">
                                     <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
+                                      <img class="img-fluid" src="{{meal.photo}}" alt="">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
+                                      <h4 class="font-27 pb-10 line-h35">{{meal?.name}}</h4>
                                       <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                           <!--featured-icon-box-->
@@ -136,7 +135,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5> A.M</h5>
+                                                <h5>{{meal?.time}}A.M</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -149,7 +148,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
+                                                <h5>{{meal?.preparationTime}} minutes</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -162,85 +161,19 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
+                                                <h5>{{meal?.caloricValue}} calories</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
                                         </div>
                                       </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
+                                      <P>{{meal?.recipe}}</P>
                                     </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="content-inner">
-                            <div class="row">
-                              <div class="row">
-                                <div class="row" >
-                                  <div class="col-md-6">
-                                    <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
-                                      <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-timer"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5> A.M</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-alarm-clock"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-medall-alt"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                      </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
-                                    </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
+                                    <ul class="ttm-list ttm-list-style-icon mb-20" >
+                                      <li *ngFor="let ingredient of meal?.ingredients, let last = last">
+                                        <i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
+                                        <span class="ttm-list-li-content"
+                                        >{{ingredient}}</span></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -255,32 +188,31 @@
                 <div class="separator">
                   <div class="sep-line mt_5 mb-50"></div>
                 </div>
-                <div class="container">
+                <div class="container" *ngIf="lunchs.length > 0">
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
                         <!-- tabs -->
                         <div class="row">
                           <div class="col-lg-6 offset-lg-4">
-                            <ul class="tabs clearfix">
-                              <li class="tab active"><a href="#"><i class="fa fa-cog"></i>Meal1</a></li>
-                              <li class="tab"><a href="#"><i class="fa fa-binoculars"></i>Meal2</a></li>
+                            <ul class="tabs clearfix" *ngFor="let meal of lunchs; let i = index">
+                              <li class="tab active"><a><i class="fa fa-cog"></i>meal {{i+1}}</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="content-tab">
-                          <div class="content-inner">
+                        <div class="content-tab" >
+                          <div class="content-inner"*ngFor="let meal of lunchs;">
                             <div class="row">
                               <div class="row">
                                 <div class="row" >
                                   <div class="col-md-6">
                                     <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
+                                      <img class="img-fluid" src="{{meal.photo}}" alt="">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
+                                      <h4 class="font-27 pb-10 line-h35">{{meal?.name}}</h4>
                                       <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                           <!--featured-icon-box-->
@@ -290,7 +222,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5> A.M</h5>
+                                                <h5>{{meal?.time}}A.M</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -303,7 +235,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
+                                                <h5>{{meal?.preparationTime}} minutes</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -316,85 +248,19 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
+                                                <h5>{{meal?.caloricValue}} calories</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
                                         </div>
                                       </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
+                                      <P>{{meal?.recipe}}</P>
                                     </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="content-inner">
-                            <div class="row">
-                              <div class="row">
-                                <div class="row" >
-                                  <div class="col-md-6">
-                                    <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
-                                      <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-timer"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5> A.M</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-alarm-clock"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-medall-alt"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                      </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
-                                    </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
+                                    <ul class="ttm-list ttm-list-style-icon mb-20" >
+                                      <li *ngFor="let ingredient of meal?.ingredients, let last = last">
+                                        <i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
+                                        <span class="ttm-list-li-content"
+                                        >{{ingredient}}</span></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -409,32 +275,31 @@
                 <div class="separator">
                   <div class="sep-line mt_5 mb-50"></div>
                 </div>
-                <div class="container">
+                <div class="container" *ngIf="dinners.length > 0">
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
                         <!-- tabs -->
                         <div class="row">
                           <div class="col-lg-6 offset-lg-4">
-                            <ul class="tabs clearfix">
-                              <li class="tab active"><a href="#"><i class="fa fa-cog"></i>Meal1</a></li>
-                              <li class="tab"><a href="#"><i class="fa fa-binoculars"></i>Meal2</a></li>
+                            <ul class="tabs clearfix" *ngFor="let meal of dinners; let i = index">
+                              <li class="tab active"><a><i class="fa fa-cog"></i>meal {{i+1}}</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="content-tab">
-                          <div class="content-inner">
+                        <div class="content-tab" >
+                          <div class="content-inner"*ngFor="let meal of dinners;">
                             <div class="row">
                               <div class="row">
                                 <div class="row" >
                                   <div class="col-md-6">
                                     <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
+                                      <img class="img-fluid" src="{{meal.photo}}" alt="">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
+                                      <h4 class="font-27 pb-10 line-h35">{{meal?.name}}</h4>
                                       <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                           <!--featured-icon-box-->
@@ -444,7 +309,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5> A.M</h5>
+                                                <h5>{{meal?.time}}A.M</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -457,7 +322,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
+                                                <h5>{{meal?.preparationTime}} minutes</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -470,85 +335,19 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
+                                                <h5>{{meal?.caloricValue}} calories</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
                                         </div>
                                       </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
+                                      <P>{{meal?.recipe}}</P>
                                     </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="content-inner">
-                            <div class="row">
-                              <div class="row">
-                                <div class="row" >
-                                  <div class="col-md-6">
-                                    <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
-                                      <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-timer"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5> A.M</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-alarm-clock"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-medall-alt"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                      </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
-                                    </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
+                                    <ul class="ttm-list ttm-list-style-icon mb-20" >
+                                      <li *ngFor="let ingredient of meal?.ingredients, let last = last">
+                                        <i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
+                                        <span class="ttm-list-li-content"
+                                        >{{ingredient}}</span></li>
                                     </ul>
                                   </div>
                                 </div>
@@ -563,32 +362,31 @@
                 <div class="separator">
                   <div class="sep-line mt_5 mb-50"></div>
                 </div>
-                <div class="container">
+                <div class="container" *ngIf="snacks.length > 0">
                   <div class="row">
                     <div class="col-lg-12 col-md-12">
                       <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
                         <!-- tabs -->
                         <div class="row">
                           <div class="col-lg-6 offset-lg-4">
-                            <ul class="tabs clearfix">
-                              <li class="tab active"><a href="#"><i class="fa fa-cog"></i>Meal1</a></li>
-                              <li class="tab"><a href="#"><i class="fa fa-binoculars"></i>Meal2</a></li>
+                            <ul class="tabs clearfix" *ngFor="let meal of snacks; let i = index">
+                              <li class="tab active"><a><i class="fa fa-cog"></i>meal {{i+1}}</a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="content-tab">
-                          <div class="content-inner">
+                        <div class="content-tab" >
+                          <div class="content-inner"*ngFor="let meal of snacks;">
                             <div class="row">
                               <div class="row">
                                 <div class="row" >
                                   <div class="col-md-6">
                                     <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
+                                      <img class="img-fluid" src="{{meal.photo}}" alt="">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
+                                      <h4 class="font-27 pb-10 line-h35">{{meal?.name}}</h4>
                                       <div class="row">
                                         <div class="col-md-4 col-sm-4">
                                           <!--featured-icon-box-->
@@ -598,7 +396,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5> A.M</h5>
+                                                <h5>{{meal?.time}}A.M</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -611,7 +409,7 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
+                                                <h5>{{meal?.preparationTime}} minutes</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
@@ -624,85 +422,19 @@
                                             </div>
                                             <div class="featured-content">
                                               <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
+                                                <h5>{{meal?.caloricValue}} calories</h5>
                                               </div>
                                             </div>
                                           </div><!-- featured-icon-box end-->
                                         </div>
                                       </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
+                                      <P>{{meal?.recipe}}</P>
                                     </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="content-inner">
-                            <div class="row">
-                              <div class="row">
-                                <div class="row" >
-                                  <div class="col-md-6">
-                                    <div class="ttm_single_image-wrapper mb-35">
-                                      <img class="img-fluid" src="../../../../assets/images/portfolio/post-seven.jpg" alt="">
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="ttm-service-description">
-                                      <h4 class="font-27 pb-10 line-h35">meal?.name</h4>
-                                      <div class="row">
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-timer"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5> A.M</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon" style="padding-left: 10px">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-alarm-clock"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.duration minutes</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                          <!--featured-icon-box-->
-                                          <div class="featured-icon-box style2 left-icon">
-                                            <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-md">
-                                              <i class="ti ti-medall-alt"></i>
-                                            </div>
-                                            <div class="featured-content">
-                                              <div class="featured-title">
-                                                <h5>sportProgram?.workouts[0]?.burnedCalories calories</h5>
-                                              </div>
-                                            </div>
-                                          </div><!-- featured-icon-box end-->
-                                        </div>
-                                      </div>
-                                      <P>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accu doloremque laudantium, totam rem aperiam, eaque.</P>
-                                    </div>
-                                    <ul class="ttm-list ttm-list-style-icon mb-20">
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Cooking Tips and Trends</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Snack and Meal Ideas</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Vegetarian and Special Diets</span></li>
-                                      <li><i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">Nutrition Facts and Food Labels</span></li>
+                                    <ul class="ttm-list ttm-list-style-icon mb-20" >
+                                      <li *ngFor="let ingredient of meal?.ingredients, let last = last">
+                                        <i class="fa fa-arrow-circle-right ttm-textcolor-skincolor"></i>
+                                        <span class="ttm-list-li-content"
+                                        >{{ingredient}}</span></li>
                                     </ul>
                                   </div>
                                 </div>

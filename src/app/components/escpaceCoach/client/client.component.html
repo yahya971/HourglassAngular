@@ -36,7 +36,7 @@
                       </div>
                       <div class="col-lg-3 offset-lg-3">
                         <img class="img-fluid" style="width:250px;height:250px; padding-bottom: 50px "
-                             alt="Soft-Scrambled Eggs Recipe" src="../../../../assets/images/artist-bg.jpg"
+                             alt="Soft-Scrambled Eggs Recipe" src="{{client.photo}}"
                              itemprop="image" data-pin-no-hover="true">
                       </div>
                     </div>
@@ -81,7 +81,7 @@
                       <div class="recipe-ingredients">
                         <h2 class="title-section">silhouette</h2>
                         <ul >
-                          <li class="ingredient" itemprop="ingredients" >{{client?.silhouete}}</li>
+                          <li class="ingredient" itemprop="ingredients" >{{client?.silhouette}}</li>
                         </ul>
                       </div>
 
@@ -95,7 +95,7 @@
                     </div>
 
 
-                    <button class="btn btn-primary btn-lg" routerLink="">Create Day Program
+                    <button class="btn btn-primary btn-lg" routerLink="/espace/coach/create/dayProgram/{{coachId}}">Create Day Program
                     </button>
 
                   </div>
@@ -126,6 +126,7 @@
                         <tbody>
                         <tr *ngFor="let follow of follows">
                           <th scope="row">{{follow.day}}</th>
+                          <td>{{follow.weight}}</td>
                           <td>{{follow.question1}}</td>
                           <td>{{follow.question2}}</td>
                           <td>{{follow.question3}}</td>
