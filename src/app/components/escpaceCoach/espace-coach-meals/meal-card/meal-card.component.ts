@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TokenStorageService} from '../../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-meal-card',
@@ -8,6 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MealCardComponent implements OnInit {
 
   @Input() calories: any;
+  @Input() id: any;
   @Input() name: any;
   @Input() description: any;
   @Input() photo: any;
@@ -24,12 +26,14 @@ export class MealCardComponent implements OnInit {
   @Input() water;
   @Input() magnesium;
   @Input() vitE;
+  coachId: number;
 
 
 
-  constructor() { }
+  constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit() {
+    this.coachId = +this.tokenStorageService.getUserId();
   }
   hidePopup() {
     document.getElementById('popup').classList.add('popupActive');

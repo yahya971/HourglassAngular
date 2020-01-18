@@ -1,24 +1,24 @@
-<div (click)="popup()">
+<div>
   <div class="card" style="height: 150px; width: 400px">
     <div class="additional">
       <div class="user-card">
         <div class="points center" style="margin-top: 0px">
           {{calories}} calories
         </div>
-        <img src="{{photo}}"  class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
+        <img (click)="popup()" src="{{photo}}"  class="center" style="margin-top: -20px;border-radius: 50%;width : 110px; height : 110px" alt="Avatar"/>
       </div>
       <div class="more-info">
-        <h3 style="font-family: Lato; margin-left: 23px">{{name}}</h3>
-        <div class="coords">
-          <span>Program Name</span>
-        </div>
+        <h4 (click)="popup()" style="font-family: Lato; margin-left: 23px">{{name}}</h4>
         <div class="coords">
           <span>{{time}}</span>
+        </div>
+        <div class="coords">
+          <button routerLink="/espace/coach/meal/{{coachId}}/{{id}}" class="btn-danger" style="background-color: #dE685E; border-color: #dE685E">More details</button>
         </div>
       </div>
     </div>
     <div class="general" style="padding-bottom: -20px">
-      <h3 style="font-family: Lato; margin-left: 60px">{{name}}</h3>
+      <h4 style="font-family: Lato; margin-left: 60px">{{name}}</h4>
       <p style="margin-left: 50px">{{description}}</p>
     </div>
   </div>
@@ -28,11 +28,11 @@
                                             top: 50%;
                                             left: 50%;
                                             transform: translate(-50%, -50%);
-                                            border: 1px solid black;
+                                            border: 1px solid white;
                                             border-radius: 10px;
                                             z-index: 100;
-                                            background-color: #0a0a0a;
-                                            width: 400px;
+                                            background-color: #E7EFC5;
+                                            width: 500px;
 
 
 ">
@@ -51,22 +51,20 @@
       >&times;</button>
     </div>
   </div>
-  <div class="row" id="popupSection1" style="padding: 10px 15px; border-bottom: 1px solid white;">
+  <!--<div class="row" id="popupSection1" style="padding: 10px 15px; border-bottom: 1px solid white;">
     <div class="row">
       {{dietLabels}}
     </div>
     <div class="row">
       {{healthLabels}}
     </div>
-  </div>
+  </div>-->
   <mat-divider></mat-divider>
   <div class="row" id="popupSection2" style="padding: 10px 15px; border-bottom: 1px solid white;">
     <div class="col-lg-6">
-      <p>Calories from carbohydrates: {{carbKcal}}</p>
       <p>Energy :{{energKcal}}</p>
     </div>
     <div class="col-lg-6">
-      <p>Calories from fat: {{fatKcal}}</p>
       <p>Calories from protein: {{proteinKcal}}</p>
     </div>
   </div>
