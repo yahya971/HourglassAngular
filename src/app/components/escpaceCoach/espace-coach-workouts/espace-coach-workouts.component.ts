@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import $ from '../../../../assets/js/jquery.min';
 import {WorkoutService} from '../../../services/workout.service';
 import {Workout} from '../../../Models/workout.model';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-espace-coach-workouts',
@@ -9,12 +10,13 @@ import {Workout} from '../../../Models/workout.model';
   styleUrls: ['./espace-coach-workouts.component.css']
 })
 export class EspaceCoachWorkoutsComponent implements OnInit {
-  id: string;
+  id: number;
   workouts: Array<Workout>;
-  constructor(private workoutService: WorkoutService) { }
+  constructor(private workoutService: WorkoutService, private tokenStorageService: TokenStorageService) { }
   ngOnInit() {
     this.tabs();
-    this.id = localStorage.getItem('coachId');
+    // this.id = localStorage.getItem('coachId');
+    this.id = +this.tokenStorageService.getUserId();
     console.log(this.id);
     this.workoutService.getWorkoutByCoachId(this.id).subscribe(value => {
       this.workouts = value;

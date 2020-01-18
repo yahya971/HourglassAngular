@@ -26,7 +26,7 @@
         </div>
         <div class="row">
           <div class="col-md-3 offset-md-9">
-            <div  class="btn btn-outline-danger" routerLink="/espace/coach/create/workout/1">Add new Workout</div>
+            <div  class="btn btn-outline-danger" routerLink="/espace/coach/create/workout/{{id}}">Add new Workout</div>
           </div>
         </div>
         <div class="ttm-tabs ttm-tab-style-horizontal clearfix">
@@ -36,7 +36,7 @@
               <div class="row">
                 <div class="col" *ngFor="let workout of workouts">
                   <div>
-                    <div class="card" style="height: 150px; width: 400px">
+                    <div class="card green" style="height: 150px; width: 400px">
                       <div class="additional">
                         <div class="user-card">
                           <div class="points center" style="margin-top: 0px"> {{workout.burnedCalories}}
@@ -46,10 +46,10 @@
                         <div class="more-info">
                           <h3 style="font-family: Lato; margin-left: 23px">{{workout.name}}</h3>
                           <div class="coords">
-                            <span>Workout Program</span>
+                            <span>{{workout.duration}}</span>
                           </div>
                           <div class="coords">
-                            <span>{{workout.duration}}</span>
+                            <button routerLink="/espace/coach/workout/{{id}}/{{workout.id}}" class="btn btn-success" style="background-color: #92bCa6; border-color: #92bCa6">More details</button>
                           </div>
                         </div>
                       </div>

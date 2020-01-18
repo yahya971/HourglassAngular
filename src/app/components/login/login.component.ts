@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
       this.clientService.getClientByUsername(this.tokenService.getUsername()).subscribe(client => {
         this.router.navigate(['/espace/client/informations/', client.id]).then(value => {
           console.log(value);
-          // window.location.reload();
+          window.location.reload();
         }, reason => {
           console.log(reason); // when there's an error
         });
